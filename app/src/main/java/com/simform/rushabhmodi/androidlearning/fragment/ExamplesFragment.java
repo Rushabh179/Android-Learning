@@ -1,7 +1,6 @@
 package com.simform.rushabhmodi.androidlearning.fragment;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -49,9 +48,9 @@ public class ExamplesFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_examples, container, false);
     }
 
-    public void onButtonPressed(Uri uri) {
+    public void onButtonPressed(String text) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onFragmentInteraction(text);
         }
     }
 
@@ -73,6 +72,6 @@ public class ExamplesFragment extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(String text);
     }
 }

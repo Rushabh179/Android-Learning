@@ -1,6 +1,5 @@
 package com.simform.rushabhmodi.androidlearning.activity;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -23,6 +22,8 @@ public class HomeNavigationActivity extends AppCompatActivity
         InformationFragment.OnFragmentInteractionListener,
         ExamplesFragment.OnFragmentInteractionListener {
 
+    FragmentTransaction fragmentTransaction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,7 @@ public class HomeNavigationActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.framelayout_main, new ExamplesFragment());
         fragmentTransaction.commit();
     }
@@ -75,7 +76,7 @@ public class HomeNavigationActivity extends AppCompatActivity
         }
 
         if (fragment != null) {
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.framelayout_main, fragment);
             fragmentTransaction.commit();
         }
@@ -86,7 +87,7 @@ public class HomeNavigationActivity extends AppCompatActivity
     }
 
     @Override
-    public void onFragmentInteraction(Uri uri) {
+    public void onFragmentInteraction(String text) {
 
     }
 
