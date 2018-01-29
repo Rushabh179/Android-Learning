@@ -5,4 +5,10 @@
     <string name="textview_home_examples">Examples</string>
     <string name="textview_home_quiz">Quiz</string>
     <string name="toast_not_ready">Not Ready</string>
+    <string name="title_activity_home_navigation">HomeNavigationActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
