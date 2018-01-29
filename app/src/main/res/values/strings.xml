@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Android Learning</string>
     <string name="title_main_screen">Android</string>
+    <string name="textview_home_information">Information</string>
+    <string name="textview_home_examples">Examples</string>
+    <string name="textview_home_quiz">Quiz</string>
+    <string name="toast_not_ready">Not Ready</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.simform.rushabhmodi.androidlearning.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,8 +44,9 @@ public class MainScreenActivity extends AppCompatActivity {
         mainScreenListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                switch (position){
+                switch (position) {
                     case 0:
+                        startActivity(new Intent(MainScreenActivity.this, HomeScreenActivity.class));
                         break;
                     case 1:
                         break;
