@@ -1,7 +1,9 @@
-package com.simform.rushabhmodi.androidlearning;
+package com.simform.rushabhmodi.androidlearning.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.simform.rushabhmodi.androidlearning.R;
 
 public class MainActivity extends AppCompatActivity {
 
