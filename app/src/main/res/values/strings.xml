@@ -11,4 +11,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="example_fragment">Hello example fragment</string>
+    <string name="information_fragment">Hello information fragment</string>
 </resources>

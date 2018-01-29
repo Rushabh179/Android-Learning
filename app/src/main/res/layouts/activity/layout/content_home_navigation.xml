@@ -8,4 +8,9 @@
     tools:context="com.simform.rushabhmodi.androidlearning.activity.HomeNavigationActivity"
     tools:showIn="@layout/app_bar_home_navigation">
 
+    <FrameLayout
+        android:id="@+id/framelayout_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </android.support.constraint.ConstraintLayout>
