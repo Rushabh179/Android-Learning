@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
+import com.simform.rushabhmodi.androidlearning.fragment.BaseRecyclerFragment;
 import com.simform.rushabhmodi.androidlearning.fragment.ExamplesFragment;
 import com.simform.rushabhmodi.androidlearning.fragment.InformationFragment;
 

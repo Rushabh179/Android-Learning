@@ -14,4 +14,5 @@
 
     <string name="example_fragment">Hello example fragment</string>
     <string name="information_fragment">Hello information fragment</string>
+    <string name="recycler_image_contentdesc">Check Image</string>
 </resources>
