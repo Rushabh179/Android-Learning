@@ -8,14 +8,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.adapter.BaseRecyclerAdapter;
+import com.simform.rushabhmodi.androidlearning.interfaces.OnRecyclerItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExamplesFragment extends Fragment {
+public class ExamplesFragment extends Fragment implements OnRecyclerItemClickListener {
 
     private RecyclerView baseRecyclerView;
     private RecyclerView.LayoutManager baseRecyclerLayoutManager;
@@ -38,9 +40,19 @@ public class ExamplesFragment extends Fragment {
             titleTextList.add("Example" + i);
         }
         baseRecyclerAdapter = new BaseRecyclerAdapter(titleTextList);
+        baseRecyclerAdapter.setOnReclyclerItemClickListener(this);
         baseRecyclerView.setAdapter(baseRecyclerAdapter);
 
         return view;
+    }
+
+    @Override
+    public void onRecyclerItemCLick(View view, int position) {
+        Toast.makeText(getContext(), "Exam"+position, Toast.LENGTH_SHORT).show();
+        switch (position) {
+            case 0:
+
+        }
     }
 
     public interface OnFragmentInteractionListener {

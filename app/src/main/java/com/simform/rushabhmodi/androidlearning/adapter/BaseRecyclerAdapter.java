@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
+import com.simform.rushabhmodi.androidlearning.interfaces.OnRecyclerItemClickListener;
 
 import java.util.List;
 
@@ -15,9 +16,10 @@ import java.util.List;
  * Created by rushabh.modi on 30/01/18.
  */
 
-public class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseRecyclerAdapter.ViewHolder>{
+public class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseRecyclerAdapter.ViewHolder> {
 
     private List<String> titleTextList;
+    private OnRecyclerItemClickListener recyclerItemClickListener;
 
     public BaseRecyclerAdapter(List<String> titleTextList) {
         this.titleTextList = titleTextList;
@@ -40,15 +42,28 @@ public class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseRecyclerAdapte
         return titleTextList.size();
     }
 
+    public void setOnReclyclerItemClickListener(OnRecyclerItemClickListener reclyclerItemClickListener) {
+        this.recyclerItemClickListener = reclyclerItemClickListener;
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView titleTextView;
         CardView baseRecyclerCard;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(final View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.textview_base_recycler);
             baseRecyclerCard = itemView.findViewById(R.id.cardview_base_recycler);
+            baseRecyclerCard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (recyclerItemClickListener != null){
+                        recyclerItemClickListener.onRecyclerItemCLick(view, getAdapterPosition());
+                    }
+                }
+            });
         }
     }
+
 }
