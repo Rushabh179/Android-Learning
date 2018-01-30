@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.adapter.BaseRecyclerAdapter;
 import com.simform.rushabhmodi.androidlearning.examples.GestureExampleActivity;
+import com.simform.rushabhmodi.androidlearning.examples.IntentExampleActivity;
 import com.simform.rushabhmodi.androidlearning.interfaces.OnRecyclerItemClickListener;
 
 import java.util.ArrayList;
@@ -39,7 +40,8 @@ public class ExamplesFragment extends Fragment implements OnRecyclerItemClickLis
 
         titleTextList = new ArrayList<>();
         titleTextList.add("Gestures");
-        for (int i = 2; i <= 15; i++) {
+        titleTextList.add("Intents");
+        for (int i = 3; i <= 15; i++) {
             titleTextList.add("Example" + i);
         }
         baseRecyclerAdapter = new BaseRecyclerAdapter(titleTextList);
@@ -54,6 +56,9 @@ public class ExamplesFragment extends Fragment implements OnRecyclerItemClickLis
         switch (position) {
             case 0:
                 startActivity(new Intent(getContext(), GestureExampleActivity.class));
+                break;
+            case 1:
+                startActivity(new Intent(getContext(), IntentExampleActivity.class));
                 break;
             default:
                 Toast.makeText(getContext(), R.string.toast_not_ready, Toast.LENGTH_SHORT).show();

@@ -4,6 +4,7 @@ import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 import com.simform.rushabhmodi.androidlearning.R;
 
 public class GestureExampleActivity extends AppCompatActivity implements GestureDetector.OnGestureListener,
-        GestureDetector.OnDoubleTapListener{
+        GestureDetector.OnDoubleTapListener {
 
     private TextView statusText;
     private GestureDetectorCompat gestureDetector;
@@ -21,6 +22,9 @@ public class GestureExampleActivity extends AppCompatActivity implements Gesture
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gesture_example);
+
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         statusText = findViewById(R.id.textview_status);
         this.gestureDetector = new GestureDetectorCompat(this, this);
@@ -46,6 +50,13 @@ public class GestureExampleActivity extends AppCompatActivity implements Gesture
                     }
                 }
         );
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return true;
     }
 
     @Override
