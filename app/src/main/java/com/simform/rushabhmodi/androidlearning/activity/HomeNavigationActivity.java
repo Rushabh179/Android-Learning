@@ -43,14 +43,12 @@ public class HomeNavigationActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
         if (Objects.equals(getIntent().getStringExtra(FixedVars.DRAWER_TAG), FixedVars.DRAWER_ITEM_INFORMATION)) {
-            fragmentTransaction.replace(R.id.framelayout_main, new InformationFragment());
+            fragmentSetter(new InformationFragment());
         }
         else if (Objects.equals(getIntent().getStringExtra(FixedVars.DRAWER_TAG), FixedVars.DRAWER_ITEM_EXAMPLES)){
-            fragmentTransaction.replace(R.id.framelayout_main, new ExamplesFragment());
+            fragmentSetter(new ExamplesFragment());
         }
-        fragmentTransaction.commit();
     }
 
     @Override
@@ -69,12 +67,10 @@ public class HomeNavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        Fragment fragment = null;
-
         if (id == R.id.nav_information) {
-            fragment = new InformationFragment();
+            fragmentSetter(new InformationFragment());
         } else if (id == R.id.nav_examples) {
-            fragment = new ExamplesFragment();
+            fragmentSetter(new ExamplesFragment());
         } else if (id == R.id.nav_quiz) {
             Toast.makeText(this, R.string.toast_not_ready, Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_share) {
@@ -82,37 +78,15 @@ public class HomeNavigationActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
-
-        if (fragment != null) {
-            fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.framelayout_main, fragment);
-            fragmentTransaction.commit();
-        }
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home_navigation, menu);
-        return true;
+    public void fragmentSetter(Fragment fragmentToLoad){
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.framelayout_main, fragmentToLoad);
+        fragmentTransaction.commit();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
 }

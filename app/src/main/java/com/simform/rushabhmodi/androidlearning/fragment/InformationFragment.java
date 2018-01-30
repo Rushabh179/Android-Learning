@@ -48,7 +48,7 @@ public class InformationFragment extends Fragment implements OnRecyclerItemClick
 
     @Override
     public void onRecyclerItemCLick(View view, int position) {
-        Toast.makeText(getContext(), "Info" + position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), R.string.toast_not_ready, Toast.LENGTH_SHORT).show();
     }
 
     public interface OnFragmentInteractionListener {

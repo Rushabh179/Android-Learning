@@ -26,6 +26,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.simform.rushabhmodi.androidlearning.activity.HomeScreenActivity" />
         </activity>
+        <activity android:name=".examples.GestureExampleActivity" />
     </application>
 
 </manifest>

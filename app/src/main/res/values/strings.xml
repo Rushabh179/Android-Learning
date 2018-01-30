@@ -15,4 +15,19 @@
     <string name="example_fragment">Hello example fragment</string>
     <string name="information_fragment">Hello information fragment</string>
     <string name="recycler_image_contentdesc">Check Image</string>
+    <string name="text_gesture_status">Status</string>
+    <string name="btn_gesture">Try</string>
+    <string name="text_gesture_description">tap, double tap, fling, scroll, press, long press, click, etc.</string>
+    <string name="singletapconfirmed">Single Tap</string>
+    <string name="doubletap">Double Tap</string>
+    <string name="doubletapevent">Double Tap Event</string>
+    <string name="down">Down</string>
+    <string name="showpress">Show Press</string>
+    <string name="singletapup">Single Tap UP</string>
+    <string name="scroll">Scroll</string>
+    <string name="longpress">Long Press</string>
+    <string name="fling">Fling</string>
+    <string name="simpleclick">Simple Click</string>
+    <string name="longClick">Long Click</string>
+    <string name="title_activity_test_basic">TestBasicActivity</string>
 </resources>
