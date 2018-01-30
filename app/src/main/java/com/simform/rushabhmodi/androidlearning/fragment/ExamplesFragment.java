@@ -48,80 +48,9 @@ public class ExamplesFragment extends Fragment implements OnRecyclerItemClickLis
 
     @Override
     public void onRecyclerItemCLick(View view, int position) {
-        Toast.makeText(getContext(), "Exam"+position, Toast.LENGTH_SHORT).show();
-        switch (position) {
-            case 0:
-
-        }
+        Toast.makeText(getContext(), "Exam" + position, Toast.LENGTH_SHORT).show();
     }
 
     public interface OnFragmentInteractionListener {
     }
-
-
-
-    /*// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
-
-    public ExamplesFragment() {
-        // Required empty public constructor
-    }
-
-    public static ExamplesFragment newInstance(String param1, String param2) {
-        ExamplesFragment fragment = new ExamplesFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_examples, container, false);
-    }
-
-    public void onButtonPressed(String text) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(text);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(String text);
-    }*/
 }
