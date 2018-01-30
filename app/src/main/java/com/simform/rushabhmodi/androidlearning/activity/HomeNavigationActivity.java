@@ -14,16 +14,18 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.fragment.BaseRecyclerFragment;
+import com.simform.rushabhmodi.androidlearning.constant.FixedVars;
 import com.simform.rushabhmodi.androidlearning.fragment.ExamplesFragment;
 import com.simform.rushabhmodi.androidlearning.fragment.InformationFragment;
+
+import java.util.Objects;
 
 public class HomeNavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         InformationFragment.OnFragmentInteractionListener,
         ExamplesFragment.OnFragmentInteractionListener {
 
-    FragmentTransaction fragmentTransaction;
+    private FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,12 @@ public class HomeNavigationActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.framelayout_main, new ExamplesFragment());
+        if (Objects.equals(getIntent().getStringExtra(FixedVars.DRAWER_TAG), FixedVars.DRAWER_ITEM_INFORMATION)) {
+            fragmentTransaction.replace(R.id.framelayout_main, new InformationFragment());
+        }
+        else if (Objects.equals(getIntent().getStringExtra(FixedVars.DRAWER_TAG), FixedVars.DRAWER_ITEM_EXAMPLES)){
+            fragmentTransaction.replace(R.id.framelayout_main, new ExamplesFragment());
+        }
         fragmentTransaction.commit();
     }
 
@@ -85,11 +92,6 @@ public class HomeNavigationActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    @Override
-    public void onFragmentInteraction(String text) {
-
     }
 
     /*@Override
