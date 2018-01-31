@@ -27,7 +27,8 @@
                 android:value="com.simform.rushabhmodi.androidlearning.activity.HomeScreenActivity" />
         </activity>
         <activity android:name=".examples.GestureExampleActivity" />
-        <activity android:name=".examples.IntentExampleActivity"></activity>
+        <activity android:name=".examples.IntentExampleActivity" />
+        <activity android:name=".examples.ExpandableRecyclerViewExampleActivity"></activity>
     </application>
 
 </manifest>
