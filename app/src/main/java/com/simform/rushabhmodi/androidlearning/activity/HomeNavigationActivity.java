@@ -21,9 +21,7 @@ import com.simform.rushabhmodi.androidlearning.fragment.InformationFragment;
 import java.util.Objects;
 
 public class HomeNavigationActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,
-        InformationFragment.OnFragmentInteractionListener,
-        ExamplesFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     private FragmentTransaction fragmentTransaction;
 

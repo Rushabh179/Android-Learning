@@ -69,7 +69,4 @@ public class ExamplesFragment extends Fragment implements OnRecyclerItemClickLis
                 Toast.makeText(getContext(), R.string.toast_not_ready, Toast.LENGTH_SHORT).show();
         }
     }
-
-    public interface OnFragmentInteractionListener {
-    }
 }

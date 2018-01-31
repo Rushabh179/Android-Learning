@@ -18,10 +18,10 @@ import java.util.List;
  * Created by rushabh.modi on 31/01/18.
  */
 
-public class ErvParentAdapter
+public class ErvAdapter
         extends ExpandableRecyclerViewAdapter<ErvParentViewHolder,ErvChildViewHolder> {
 
-    public ErvParentAdapter(List<? extends ExpandableGroup> groups) {
+    public ErvAdapter(List<? extends ExpandableGroup> groups) {
         super(groups);
     }
 

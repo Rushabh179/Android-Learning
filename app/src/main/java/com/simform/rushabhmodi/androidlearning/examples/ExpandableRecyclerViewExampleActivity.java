@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.adapter.ErvParentAdapter;
+import com.simform.rushabhmodi.androidlearning.adapter.ErvAdapter;
 
 import static com.simform.rushabhmodi.androidlearning.constant.ErvParentDataFactory.makeParents;
 
@@ -18,7 +18,7 @@ import static com.simform.rushabhmodi.androidlearning.constant.ErvParentDataFact
 public class ExpandableRecyclerViewExampleActivity extends AppCompatActivity {
 
     private RecyclerView expandableRecyclerView;
-    public ErvParentAdapter ervParentAdapter;
+    public ErvAdapter ervAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +30,8 @@ public class ExpandableRecyclerViewExampleActivity extends AppCompatActivity {
         expandableRecyclerView = findViewById(R.id.recyclerview_expandable);
         expandableRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ervParentAdapter = new ErvParentAdapter(makeParents());
-        expandableRecyclerView.setAdapter(ervParentAdapter);
+        ervAdapter = new ErvAdapter(makeParents());
+        expandableRecyclerView.setAdapter(ervAdapter);
     }
 
     @Override
