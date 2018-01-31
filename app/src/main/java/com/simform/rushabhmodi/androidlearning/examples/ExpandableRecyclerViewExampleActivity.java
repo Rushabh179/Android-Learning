@@ -1,7 +1,7 @@
 package com.simform.rushabhmodi.androidlearning.examples;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
@@ -39,4 +39,5 @@ public class ExpandableRecyclerViewExampleActivity extends AppCompatActivity {
         finish();
         return true;
     }
+
 }

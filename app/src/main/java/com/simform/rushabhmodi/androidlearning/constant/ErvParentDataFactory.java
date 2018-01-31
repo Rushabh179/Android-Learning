@@ -10,7 +10,7 @@ import java.util.List;
 public class ErvParentDataFactory {
 
     public static List<ErvParent> makeParents() {
-        return Arrays.asList(makeParent1(), makeParent2(), makeParent3());
+        return Arrays.asList(makeParent1(), makeParent2(), makeParent3(), makeParent4());
     }
 
     private static ErvParent makeParent1() {
@@ -44,5 +44,9 @@ public class ErvParentDataFactory {
         ErvChild child3_3 = new ErvChild("Child 3.3");
         ErvChild child3_4 = new ErvChild("Child 3.4");
         return Arrays.asList(child3_1, child3_2, child3_3, child3_4);
+    }
+
+    private static ErvParent makeParent4() {
+        return new ErvParent("Parent 4", null);
     }
 }
