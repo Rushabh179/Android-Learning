@@ -1,10 +1,12 @@
 package com.simform.rushabhmodi.androidlearning.adapter;
 
+import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
@@ -34,7 +36,7 @@ public class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseRecyclerAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.titleTextView.setText(titleTextList.get(position));
+        holder.baseRecyclerText.setText(titleTextList.get(position));
     }
 
     @Override
@@ -48,18 +50,21 @@ public class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseRecyclerAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView titleTextView;
+        TextView baseRecyclerText;
+        ImageView baseRecyclerImage;
         CardView baseRecyclerCard;
 
         public ViewHolder(final View itemView) {
             super(itemView);
-            titleTextView = itemView.findViewById(R.id.textview_base_recycler);
+            baseRecyclerText = itemView.findViewById(R.id.textview_base_recycler);
+            baseRecyclerImage = itemView.findViewById(R.id.imageview_base_recycler);
             baseRecyclerCard = itemView.findViewById(R.id.cardview_base_recycler);
             baseRecyclerCard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (recyclerItemClickListener != null){
                         recyclerItemClickListener.onRecyclerItemCLick(view, getAdapterPosition());
+                        baseRecyclerImage.setImageAlpha(100);
                     }
                 }
             });

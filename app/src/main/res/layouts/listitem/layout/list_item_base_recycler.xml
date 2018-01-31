@@ -16,15 +16,16 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/imageview_base_recycler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/ic_check_box"
             android:contentDescription="@string/recycler_image_contentdesc" />
 
         <TextView
             android:id="@+id/textview_base_recycler"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textSize="20sp"
             tools:text="@tools:sample/lorem"/>
 
