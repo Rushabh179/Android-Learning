@@ -14,9 +14,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.other.FixedVars;
-import com.simform.rushabhmodi.androidlearning.fragment.ExamplesFragment;
 import com.simform.rushabhmodi.androidlearning.fragment.InformationFragment;
+import com.simform.rushabhmodi.androidlearning.fragment.TestExamplesExpandableFragment;
+import com.simform.rushabhmodi.androidlearning.other.FixedVars;
 
 import java.util.Objects;
 
@@ -45,7 +45,8 @@ public class HomeNavigationActivity extends AppCompatActivity
             fragmentSetter(new InformationFragment());
         }
         else if (Objects.equals(getIntent().getStringExtra(FixedVars.DRAWER_TAG), FixedVars.DRAWER_ITEM_EXAMPLES)){
-            fragmentSetter(new ExamplesFragment());
+            //fragmentSetter(new ExamplesFragment());
+            fragmentSetter(new TestExamplesExpandableFragment());
         }
     }
 
@@ -68,7 +69,8 @@ public class HomeNavigationActivity extends AppCompatActivity
         if (id == R.id.nav_information) {
             fragmentSetter(new InformationFragment());
         } else if (id == R.id.nav_examples) {
-            fragmentSetter(new ExamplesFragment());
+            //fragmentSetter(new ExamplesFragment());
+            fragmentSetter(new TestExamplesExpandableFragment());
         } else if (id == R.id.nav_quiz) {
             Toast.makeText(this, R.string.toast_not_ready, Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_share) {

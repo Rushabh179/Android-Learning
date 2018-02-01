@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.adapter.ErvAdapter;
 
-import static com.simform.rushabhmodi.androidlearning.other.ErvParentDataFactory.makeParents;
+import static com.simform.rushabhmodi.androidlearning.other.ErvDataFactory.makeParents;
 
 /**
  * Visit https://github.com/thoughtbot/expandable-recycler-view/ for more.

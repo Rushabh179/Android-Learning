@@ -7,7 +7,7 @@ import java.util.List;
  * Created by rushabh.modi on 31/01/18.
  */
 
-public class ErvParentDataFactory {
+public class ErvDataFactory {
 
     public static List<ErvParent> makeParents() {
         return Arrays.asList(makeParent1(), makeParent2(), makeParent3(), makeParent4());
