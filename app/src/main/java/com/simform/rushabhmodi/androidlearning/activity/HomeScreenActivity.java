@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.constant.FixedVars;
+import com.simform.rushabhmodi.androidlearning.other.FixedVars;
 
 public class HomeScreenActivity extends AppCompatActivity {
 

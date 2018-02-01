@@ -30,7 +30,7 @@ public class InformationFragment extends Fragment implements OnRecyclerItemClick
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_base_recycler, container, false);
+        View view = inflater.inflate(R.layout.base_layout_recyclerview, container, false);
         baseRecyclerView = view.findViewById(R.id.recyclerview_base);
         baseRecyclerLayoutManager = new LinearLayoutManager(getContext());
         baseRecyclerView.setLayoutManager(baseRecyclerLayoutManager);

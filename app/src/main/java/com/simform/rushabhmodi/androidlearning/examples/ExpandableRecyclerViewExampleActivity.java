@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.adapter.ErvAdapter;
 
-import static com.simform.rushabhmodi.androidlearning.constant.ErvParentDataFactory.makeParents;
+import static com.simform.rushabhmodi.androidlearning.other.ErvParentDataFactory.makeParents;
 
 /**
  * Visit https://github.com/thoughtbot/expandable-recycler-view/ for more.
@@ -23,11 +23,11 @@ public class ExpandableRecyclerViewExampleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_expandable_recycler_view_example);
+        setContentView(R.layout.base_layout_recyclerview);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        expandableRecyclerView = findViewById(R.id.recyclerview_expandable);
+        expandableRecyclerView = findViewById(R.id.recyclerview_base);
         expandableRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         ervAdapter = new ErvAdapter(makeParents());
