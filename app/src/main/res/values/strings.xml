@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Android Learning</string>
-    <string name="title_main_screen">Android</string>
+    <string name="title_main_screen">Android Learning</string>
     <string name="textview_home_information">Information</string>
     <string name="textview_home_examples">Examples</string>
     <string name="textview_home_quiz">Quiz</string>

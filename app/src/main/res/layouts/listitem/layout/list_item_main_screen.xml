@@ -4,6 +4,7 @@
     android:id="@+id/textview_list_main_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="center"
     android:fontFamily="sans-serif-condensed"
     android:textColor="#f4bf4e"
     android:textSize="40sp"

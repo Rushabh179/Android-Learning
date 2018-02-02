@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_main_screen"
     tools:context="com.simform.rushabhmodi.androidlearning.activity.MainScreenActivity">
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_main_screen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textview_title_main_screen"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="119dp"
-        android:layout_marginTop="100dp"
         android:fontFamily="cursive"
         android:text="@string/title_main_screen"
+        android:textAlignment="center"
         android:textColor="#e6ceec"
         android:textSize="80sp"
         android:textStyle="bold"
@@ -23,16 +33,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  />
+        app:layout_constraintTop_toTopOf="@+id/guideline_main_screen"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <ListView
         android:id="@+id/listview_main_screen"
         android:layout_width="0dp"
-        android:layout_height="195dp"
+        android:layout_height="166dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title_main_screen"
-        app:layout_constraintVertical_bias="1.0"/>
+        tools:listitem="@layout/list_item_main_screen" />
 
 </android.support.constraint.ConstraintLayout>
