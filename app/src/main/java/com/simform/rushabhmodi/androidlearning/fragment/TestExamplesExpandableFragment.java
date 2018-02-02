@@ -35,6 +35,7 @@ public class TestExamplesExpandableFragment extends Fragment {
 
         testExamplesExpandableAdapter = new TestExamplesExpandableAdapter(makeTestParents());
         examplesExpandableRecyclerView.setAdapter(testExamplesExpandableAdapter);
+
         return view;
     }
 }

@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
+import com.simform.rushabhmodi.androidlearning.examples.ExpandableRecyclerViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.GestureExampleActivity;
+import com.simform.rushabhmodi.androidlearning.examples.IntentExampleActivity;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
 
@@ -26,13 +28,19 @@ public class TestExamplesParentViewHolder extends GroupViewHolder {
         testParentCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()){
-                    case 0:
-                        Intent intent = new Intent(itemView.getContext(), GestureExampleActivity.class);
-                        itemView.getContext().startActivity(intent);
+                switch (testParentText.getText().toString()){
+                    case "Gestures":
+                        itemView.getContext().startActivity(new Intent(itemView.getContext(), GestureExampleActivity.class));
+                        break;
+                    case "Intents":
+                        itemView.getContext().startActivity(new Intent(itemView.getContext(), IntentExampleActivity.class));
+                        break;
+                    case "Expandable RecyclerView":
+                        itemView.getContext().startActivity(new Intent(itemView.getContext(), ExpandableRecyclerViewExampleActivity.class));
                         break;
                     default:
                         TestExamplesParentViewHolder.super.onClick(view);
+
                 }
             }
         });
