@@ -47,4 +47,5 @@ public class TestExamplesExpandableAdapter
         final TestExamplesChild testExamplesChild = ((TestExamplesParent) group).getItems().get(childIndex);
         holder.setTestChildText(testExamplesChild.getTestChild());
     }
+
 }

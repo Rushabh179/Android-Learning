@@ -45,7 +45,7 @@ public class HomeNavigationActivity extends AppCompatActivity
             fragmentSetter(new InformationFragment());
         }
         else if (Objects.equals(getIntent().getStringExtra(FixedVars.DRAWER_TAG), FixedVars.DRAWER_ITEM_EXAMPLES)){
-            //fragmentSetter(new ExamplesFragment());
+            //fragmentSetter(new RedundantExamplesFragment());
             fragmentSetter(new TestExamplesExpandableFragment());
         }
     }
@@ -69,7 +69,7 @@ public class HomeNavigationActivity extends AppCompatActivity
         if (id == R.id.nav_information) {
             fragmentSetter(new InformationFragment());
         } else if (id == R.id.nav_examples) {
-            //fragmentSetter(new ExamplesFragment());
+            //fragmentSetter(new RedundantExamplesFragment());
             fragmentSetter(new TestExamplesExpandableFragment());
         } else if (id == R.id.nav_quiz) {
             Toast.makeText(this, R.string.toast_not_ready, Toast.LENGTH_SHORT).show();

@@ -21,14 +21,14 @@ import com.simform.rushabhmodi.androidlearning.interfaces.OnRecyclerItemClickLis
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExamplesFragment extends Fragment implements OnRecyclerItemClickListener {
+public class RedundantExamplesFragment extends Fragment implements OnRecyclerItemClickListener {
 
     private RecyclerView baseRecyclerView;
     private RecyclerView.LayoutManager baseRecyclerLayoutManager;
     private BaseRecyclerAdapter baseRecyclerAdapter;
     private List<String> titleTextList;
 
-    public ExamplesFragment() {
+    public RedundantExamplesFragment() {
     }
 
     @Nullable

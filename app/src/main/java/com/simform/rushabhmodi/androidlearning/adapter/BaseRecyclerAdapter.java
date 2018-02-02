@@ -20,7 +20,7 @@ import java.util.List;
 public class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseRecyclerAdapter.ViewHolder> {
 
     private List<String> titleTextList;
-    private OnRecyclerItemClickListener recyclerItemClickListener;
+    private OnRecyclerItemClickListener onRecyclerItemClickListener;
 
     public BaseRecyclerAdapter(List<String> titleTextList) {
         this.titleTextList = titleTextList;
@@ -43,8 +43,8 @@ public class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseRecyclerAdapte
         return titleTextList.size();
     }
 
-    public void setOnReclyclerItemClickListener(OnRecyclerItemClickListener reclyclerItemClickListener) {
-        this.recyclerItemClickListener = reclyclerItemClickListener;
+    public void setOnReclyclerItemClickListener(OnRecyclerItemClickListener onReclyclerItemClickListener) {
+        this.onRecyclerItemClickListener = onReclyclerItemClickListener;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -61,13 +61,12 @@ public class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseRecyclerAdapte
             baseRecyclerCard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (recyclerItemClickListener != null){
-                        recyclerItemClickListener.onRecyclerItemCLick(view, getAdapterPosition());
+                    if (onRecyclerItemClickListener != null){
+                        onRecyclerItemClickListener.onRecyclerItemCLick(view, getAdapterPosition());
                         baseRecyclerImage.setImageAlpha(100);
                     }
                 }
             });
         }
     }
-
 }
