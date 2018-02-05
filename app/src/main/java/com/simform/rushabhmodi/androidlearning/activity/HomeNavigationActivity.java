@@ -14,9 +14,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
+import com.simform.rushabhmodi.androidlearning.fragment.ExamplesExpandableFragment;
 import com.simform.rushabhmodi.androidlearning.fragment.InformationFragment;
-import com.simform.rushabhmodi.androidlearning.fragment.TestExamplesExpandableFragment;
-import com.simform.rushabhmodi.androidlearning.other.FixedVars;
 
 import java.util.Objects;
 
@@ -41,12 +40,12 @@ public class HomeNavigationActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        if (Objects.equals(getIntent().getStringExtra(FixedVars.DRAWER_TAG), FixedVars.DRAWER_ITEM_INFORMATION)) {
+        if (Objects.equals(getIntent().getStringExtra(getString(R.string.drawertag)), getString(R.string.draweriteminformation))) {
             fragmentSetter(new InformationFragment());
         }
-        else if (Objects.equals(getIntent().getStringExtra(FixedVars.DRAWER_TAG), FixedVars.DRAWER_ITEM_EXAMPLES)){
+        else if (Objects.equals(getIntent().getStringExtra(getString(R.string.drawertag)), getString(R.string.draweritemexamples))){
             //fragmentSetter(new RedundantExamplesFragment());
-            fragmentSetter(new TestExamplesExpandableFragment());
+            fragmentSetter(new ExamplesExpandableFragment());
         }
     }
 
@@ -70,7 +69,7 @@ public class HomeNavigationActivity extends AppCompatActivity
             fragmentSetter(new InformationFragment());
         } else if (id == R.id.nav_examples) {
             //fragmentSetter(new RedundantExamplesFragment());
-            fragmentSetter(new TestExamplesExpandableFragment());
+            fragmentSetter(new ExamplesExpandableFragment());
         } else if (id == R.id.nav_quiz) {
             Toast.makeText(this, R.string.toast_not_ready, Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_share) {

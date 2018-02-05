@@ -1,13 +1,10 @@
 package com.simform.rushabhmodi.androidlearning.viewholder;
 
 import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.adapter.TestExamplesExpandableAdapter;
 import com.simform.rushabhmodi.androidlearning.examples.ExpandableRecyclerViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.GestureExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.IntentExampleActivity;
@@ -18,22 +15,22 @@ import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
  * Created by rushabh.modi on 01/02/18.
  */
 
-public class TestExamplesParentViewHolder extends GroupViewHolder {
+public class ExamplesParentViewHolder extends GroupViewHolder {
 
-    private TextView testParentText;
+    private TextView parentText;
 
-    public TestExamplesParentViewHolder(final View itemView) {
+    public ExamplesParentViewHolder(final View itemView) {
         super(itemView);
-        testParentText = itemView.findViewById(R.id.textview_base_recycler);
+        parentText = itemView.findViewById(R.id.textview_base_recycler);
     }
 
-    public void setTestParentText(ExpandableGroup testExamplesParent) {
-        testParentText.setText(testExamplesParent.getTitle());
+    public void setParentText(ExpandableGroup examplesParent) {
+        parentText.setText(examplesParent.getTitle());
     }
 
     @Override
     public void onClick(View v) {
-        switch (testParentText.getText().toString()) {
+        switch (parentText.getText().toString()) {
             case "Gestures":
                 itemView.getContext().startActivity(new Intent(itemView.getContext(), GestureExampleActivity.class));
                 break;

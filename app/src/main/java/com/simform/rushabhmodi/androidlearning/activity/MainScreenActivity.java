@@ -35,9 +35,9 @@ public class MainScreenActivity extends AppCompatActivity {
         mainScreenListView = findViewById(R.id.listview_main_screen);
 
         mainScreenArrayList = new ArrayList<>(3);
-        mainScreenArrayList.add("Open");
-        mainScreenArrayList.add("Option");
-        mainScreenArrayList.add("Exit");
+        mainScreenArrayList.add(getString(R.string.open));
+        mainScreenArrayList.add(getString(R.string.options));
+        mainScreenArrayList.add(getString(R.string.exit));
         mainScreenAdapter = new ArrayAdapter<>(this, R.layout.list_item_main_screen, mainScreenArrayList);
         mainScreenListView.setAdapter(mainScreenAdapter);
 

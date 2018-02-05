@@ -27,9 +27,9 @@ public class IntentExampleActivity extends AppCompatActivity {
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        String message = "Hi ";
+        String message = getString(R.string.intenttoastdefault);
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
+        String name = intent.getStringExtra(getString(R.string.intenttoastname));
         if (name != null) message += name;
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
@@ -51,14 +51,14 @@ public class IntentExampleActivity extends AppCompatActivity {
         implicitIntentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://developer.android.com/guide/components/intents-filters.html")));
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(getString(R.string.intenturi))));
             }
         });
 
         explicitDataIntentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getIntent()).putExtra("name", nameEditText.getText().toString()));
+                startActivity(new Intent(getIntent()).putExtra(getString(R.string.intenttoastname), nameEditText.getText().toString()));
             }
         });
 
@@ -81,5 +81,4 @@ public class IntentExampleActivity extends AppCompatActivity {
         finish();
         return true;
     }
-
 }

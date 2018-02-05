@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.other.FixedVars;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
@@ -24,11 +23,11 @@ public class HomeScreenActivity extends AppCompatActivity {
     public void onHomeCardClicked(View view) {
         switch (view.getId()) {
             case R.id.cardview_information:
-                navigationDrawerIntent.putExtra(FixedVars.DRAWER_TAG, FixedVars.DRAWER_ITEM_INFORMATION);
+                navigationDrawerIntent.putExtra(getString(R.string.drawertag), getString(R.string.draweriteminformation));
                 startActivity(navigationDrawerIntent);
                 break;
             case R.id.cardview_examples:
-                navigationDrawerIntent.putExtra(FixedVars.DRAWER_TAG, FixedVars.DRAWER_ITEM_EXAMPLES);
+                navigationDrawerIntent.putExtra(getString(R.string.drawertag), getString(R.string.draweritemexamples));
                 startActivity(navigationDrawerIntent);
                 break;
             default:

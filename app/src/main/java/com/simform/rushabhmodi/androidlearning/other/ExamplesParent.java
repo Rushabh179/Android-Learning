@@ -8,9 +8,9 @@ import java.util.List;
  * Created by rushabh.modi on 01/02/18.
  */
 
-public class TestExamplesParent extends ExpandableGroup<TestExamplesChild> {
+public class ExamplesParent extends ExpandableGroup<ExamplesChild> {
 
-    public TestExamplesParent(String title, List<TestExamplesChild> items) {
+    public ExamplesParent(String title, List<ExamplesChild> items) {
         super(title, items);
     }
 

@@ -10,20 +10,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.adapter.TestExamplesExpandableAdapter;
+import com.simform.rushabhmodi.androidlearning.adapter.ExamplesExpandableAdapter;
 
-import static com.simform.rushabhmodi.androidlearning.other.TestExamplesDataFactory.makeTestParents;
+import static com.simform.rushabhmodi.androidlearning.other.ExamplesDataFactory.makeParents;
 
 /**
  * Created by rushabh.modi on 31/01/18.
  */
 
-public class TestExamplesExpandableFragment extends Fragment {
+public class ExamplesExpandableFragment extends Fragment {
 
     private RecyclerView examplesExpandableRecyclerView;
-    public TestExamplesExpandableAdapter testExamplesExpandableAdapter;
+    public ExamplesExpandableAdapter examplesExpandableAdapter;
 
-    public TestExamplesExpandableFragment() {
+    public ExamplesExpandableFragment() {
     }
 
     @Nullable
@@ -33,8 +33,8 @@ public class TestExamplesExpandableFragment extends Fragment {
         examplesExpandableRecyclerView = view.findViewById(R.id.recyclerview_base);
         examplesExpandableRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        testExamplesExpandableAdapter = new TestExamplesExpandableAdapter(makeTestParents());
-        examplesExpandableRecyclerView.setAdapter(testExamplesExpandableAdapter);
+        examplesExpandableAdapter = new ExamplesExpandableAdapter(makeParents());
+        examplesExpandableRecyclerView.setAdapter(examplesExpandableAdapter);
 
         return view;
     }
