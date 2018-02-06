@@ -45,6 +45,6 @@ public class ErvAdapter
     @Override
     public void onBindChildViewHolder(ErvChildViewHolder holder, int flatPosition, ExpandableGroup group, int childIndex) {
         final ErvChild ervChild = ((ErvParent) group).getItems().get(childIndex);
-        holder.setErvChildText(ervChild.getChild());
+        holder.setErvChildText(ervChild.getErvChildText());
     }
 }

@@ -17,6 +17,7 @@ public class GestureExampleActivity extends AppCompatActivity implements Gesture
 
     private TextView statusText;
     private GestureDetectorCompat gestureDetector;
+    private Button gestureBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +31,10 @@ public class GestureExampleActivity extends AppCompatActivity implements Gesture
         this.gestureDetector = new GestureDetectorCompat(this, this);
         gestureDetector.setOnDoubleTapListener(this);
 
-        Button button = findViewById(R.id.btn_action);
 
-        button.setOnClickListener(
+        gestureBtn = findViewById(R.id.btn_action);
+
+        gestureBtn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -41,7 +43,7 @@ public class GestureExampleActivity extends AppCompatActivity implements Gesture
                 }
         );
 
-        button.setOnLongClickListener(
+        gestureBtn.setOnLongClickListener(
                 new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {

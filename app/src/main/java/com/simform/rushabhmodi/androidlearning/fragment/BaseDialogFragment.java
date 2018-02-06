@@ -1,11 +1,15 @@
 package com.simform.rushabhmodi.androidlearning.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
@@ -19,64 +23,59 @@ import java.util.Objects;
 public class BaseDialogFragment extends DialogFragment {
 
     private String dialogType;
-    AlertDialog.Builder dialogBuilder;
-    CharSequence[] items = {"potato", "tomato"};
+    private AlertDialog.Builder dialogBuilder;
 
+    private EditText usernameEditText;
+    private LayoutInflater layoutInflater;
+    private View view;
+    private String[] items = new String[]{"Item 1", "Item 2", "Item 3"};
+
+    @SuppressLint("InflateParams")
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        dialogType = getArguments().getString("DIALOG_TYPE");
+        dialogType = getArguments().getString(getString(R.string.dialog_type_tag));
 
-        if (Objects.equals(dialogType, "Alert")) {
-            Toast.makeText(getContext(), "Alert", Toast.LENGTH_SHORT).show();
+        layoutInflater = getActivity().getLayoutInflater();
+        view = layoutInflater.inflate(R.layout.dialog_fragment_custom, null);
+        usernameEditText = view.findViewById(R.id.edittext_custom_dialog_username);
+
+        if (Objects.equals(dialogType, getString(R.string.dialog_type_alert))) {
             dialogBuilder = new AlertDialog.Builder(getActivity())
                     .setTitle("Alert Dialog")
                     .setIcon(R.drawable.ic_warning)
                     .setMessage("A custom message")
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getActivity(), "Pressed OK", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Pressed Ok", Toast.LENGTH_SHORT).show();
                         }
                     })
                     .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getActivity(), "Cancel", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
                         }
                     });
-        } else if (Objects.equals(dialogType, "Custom")) {
-            Toast.makeText(getContext(), "Custom", Toast.LENGTH_SHORT).show();
+        } else if (Objects.equals(dialogType, getString(R.string.dialog_type_custom))) {
             dialogBuilder = new AlertDialog.Builder(getActivity())
-                    .setView(R.layout.dialog_fragment_custom)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getActivity(), "Pressed OK", Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getActivity(), "Cancel", Toast.LENGTH_SHORT).show();
+                    .setTitle("Custom Dialog")
+                    .setView(view)
+                    .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Toast.makeText(getActivity(), "Hi "+ usernameEditText.getText().toString(), Toast.LENGTH_SHORT).show();
                         }
                     });
-        } else {
-            Toast.makeText(getContext(), "List", Toast.LENGTH_SHORT).show();
+        } else if (Objects.equals(dialogType, getString(R.string.dialog_type_list))) {
             dialogBuilder = new AlertDialog.Builder(getActivity())
                     .setTitle("List Dialog")
-                    .setItems(android.R.array.emailAddressTypes, null);
+                    .setItems(items, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int which) {
+                            Toast.makeText(getActivity(), "item "+ Integer.toString(which+1), Toast.LENGTH_SHORT).show();
+                        }
+                    });
         }
-        /*new AlertDialog.Builder(getActivity())
-                .setView(R.layout.dialog_fragment_custom)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getActivity(), "Pressed OK", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getActivity(), "Cancel", Toast.LENGTH_SHORT).show();
-                    }
-                }).create();*/
 
         return dialogBuilder.create();
     }
-
 }

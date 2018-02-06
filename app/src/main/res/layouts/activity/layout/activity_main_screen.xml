@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -26,12 +27,11 @@
         android:fontFamily="cursive"
         android:text="@string/title_main_screen"
         android:textAlignment="center"
-        android:textColor="#e6ceec"
-        android:textSize="80sp"
+        android:textColor="@color/main_screen_title"
+        android:textSize="@dimen/_60sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/listview_main_screen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline_main_screen"
         app:layout_constraintVertical_chainStyle="spread_inside" />
@@ -39,10 +39,9 @@
     <ListView
         android:id="@+id/listview_main_screen"
         android:layout_width="0dp"
-        android:layout_height="166dp"
+        android:layout_height="@dimen/_180sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title_main_screen"
         tools:listitem="@layout/list_item_main_screen" />

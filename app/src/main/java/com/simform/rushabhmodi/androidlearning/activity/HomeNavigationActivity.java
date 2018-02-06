@@ -28,7 +28,7 @@ public class HomeNavigationActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_navigation);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar_drawer);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -44,7 +44,6 @@ public class HomeNavigationActivity extends AppCompatActivity
             fragmentSetter(new InformationFragment());
         }
         else if (Objects.equals(getIntent().getStringExtra(getString(R.string.drawertag)), getString(R.string.draweritemexamples))){
-            //fragmentSetter(new RedundantExamplesFragment());
             fragmentSetter(new ExamplesExpandableFragment());
         }
     }
@@ -65,16 +64,13 @@ public class HomeNavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_information) {
+        if (id == R.id.nav_item_1) {
             fragmentSetter(new InformationFragment());
-        } else if (id == R.id.nav_examples) {
-            //fragmentSetter(new RedundantExamplesFragment());
+        } else if (id == R.id.nav_item_2) {
             fragmentSetter(new ExamplesExpandableFragment());
-        } else if (id == R.id.nav_quiz) {
+        } else if (id == R.id.nav_item_3) {
             Toast.makeText(this, R.string.toast_not_ready, Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_sub_item_1) {
 
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -82,10 +78,9 @@ public class HomeNavigationActivity extends AppCompatActivity
         return true;
     }
 
-    public void fragmentSetter(Fragment fragmentToLoad){
+    public void fragmentSetter(Fragment fragmentToShow){
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.framelayout_main, fragmentToLoad);
+        fragmentTransaction.replace(R.id.framelayout_drawer_main, fragmentToShow);
         fragmentTransaction.commit();
     }
-
 }

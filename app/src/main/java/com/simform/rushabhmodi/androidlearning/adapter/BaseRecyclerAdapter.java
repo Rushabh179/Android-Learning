@@ -49,21 +49,18 @@ public class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseRecyclerAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView baseRecyclerText;
-        ImageView baseRecyclerImage;
-        CardView baseRecyclerCard;
+        private TextView baseRecyclerText;
+        private CardView baseRecyclerCard;
 
         public ViewHolder(final View itemView) {
             super(itemView);
             baseRecyclerText = itemView.findViewById(R.id.textview_base_recycler);
-            baseRecyclerImage = itemView.findViewById(R.id.imageview_base_recycler);
             baseRecyclerCard = itemView.findViewById(R.id.cardview_base_recycler);
             baseRecyclerCard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (onRecyclerItemClickListener != null){
                         onRecyclerItemClickListener.onRecyclerItemCLick(view, getAdapterPosition());
-                        baseRecyclerImage.setImageAlpha(100);
                     }
                 }
             });

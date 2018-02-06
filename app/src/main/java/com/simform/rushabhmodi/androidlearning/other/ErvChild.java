@@ -9,18 +9,18 @@ import android.os.Parcelable;
 
 public class ErvChild implements Parcelable{
 
-    private String child;
+    private String ervChildText;
 
-    public ErvChild(String child) {
-        this.child = child;
+    public ErvChild(String ervChildText) {
+        this.ervChildText = ervChildText;
     }
 
     protected ErvChild(Parcel in) {
-        child = in.readString();
+        ervChildText = in.readString();
     }
 
-    public String getChild() {
-        return child;
+    public String getErvChildText() {
+        return ervChildText;
     }
 
     public static final Creator<ErvChild> CREATOR = new Creator<ErvChild>() {
@@ -42,6 +42,6 @@ public class ErvChild implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(child);
+        parcel.writeString(ervChildText);
     }
 }

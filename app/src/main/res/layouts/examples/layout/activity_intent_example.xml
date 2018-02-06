@@ -8,116 +8,143 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.simform.rushabhmodi.androidlearning.examples.IntentExampleActivity">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textview_intent_title_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:gravity="center"
-            android:text="Intent"
-            android:textColor="#971e1e"
-            android:textSize="50sp"
+            android:text="@string/intents_title_header"
+            android:textColor="@color/title_examples_header"
+            android:textSize="@dimen/_33sdp"
             android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/textview_intent_explicit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Explicit Intent:"
-            android:textColor="#3e414d"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            android:text="@string/intent_title_explicit"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_explicit_intent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_intent_title_header" />
 
         <Button
             android:id="@+id/btn_explicit_intent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#e48f8f"
-            android:text="Go to home"
-            tools:ignore="HardcodedText" />
+            android:background="@color/intent_btn_explicit"
+            android:text="@string/intent_btn_explicit"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_intent_implicit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_intent_explicit" />
 
         <TextView
+            android:id="@+id/textview_intent_implicit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Implicit Intent:"
-            android:textColor="#3e414d"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            android:text="@string/intent_title_implicit"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_implicit_intent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_explicit_intent" />
 
         <Button
             android:id="@+id/btn_implicit_intent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#e4de8f"
-            android:text="Get info about intents online"
-            tools:ignore="HardcodedText" />
+            android:background="@color/intent_btn_implicit"
+            android:text="@string/intent_btn_implicit"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_intent_explicit_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_intent_implicit" />
 
         <TextView
+            android:id="@+id/textview_intent_explicit_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Explicit Intent with data:"
-            android:textColor="#3e414d"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            android:text="@string/intent_title_explicit_data"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/edittext_name_intent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_implicit_intent" />
 
         <EditText
             android:id="@+id/edittext_name_intent"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter your name here"
-            tools:ignore="HardcodedText" />
+            android:hint="@string/intent_hint_explicit_data"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_explicit_data_intent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_intent_explicit_data" />
 
         <Button
             android:id="@+id/btn_explicit_data_intent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#aad19e"
-            android:text="Send name to the toast"
-            tools:ignore="HardcodedText" />
+            android:background="@color/intent_btn_explicit_data"
+            android:text="@string/intent_btn_explicit_data"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_intent_implicit_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_name_intent" />
 
         <TextView
+            android:id="@+id/textview_intent_implicit_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Implicit Intent with data:"
-            android:textColor="#3e414d"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            android:text="@string/intent_title_implicit_data"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/edittext_search_intent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_explicit_data_intent" />
 
         <EditText
             android:id="@+id/edittext_search_intent"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter your search here"
-            tools:ignore="HardcodedText" />
+            android:hint="@string/intent_hint_implicit_data"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_implicit_data_intent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_intent_implicit_data" />
 
         <Button
             android:id="@+id/btn_implicit_data_intent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="10dp"
-            android:background="#9eb5d1"
-            android:text="Search online"
-            tools:ignore="HardcodedText" />
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/intent_btn_implicit_data"
+            android:text="@string/intent_btn_implicit_data"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_search_intent" />
 
-    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

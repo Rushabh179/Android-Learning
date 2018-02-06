@@ -3,5 +3,37 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="foreground_material_light">#ffffff</color>
+
+    <color name="title_examples_header">#971e1e</color>
+
+    <!-- Main Screen -->
+    <color name="main_screen_title">#e6ceec</color>
+
+    <!-- Home Screen -->
+    <color name="home_information_text">#e14a4a</color>
+    <color name="home_examples_text">#4ea13f</color>
+    <color name="home_quiz_text">#5b6de7</color>
+    <color name="main_screen_list_text">#f4bf4e</color>
+
+    <!-- Examples -->
+    <color name="examples_child">#d29191</color>
+
+    <!-- Gestures -->
+    <color name="gesture_status">#006969</color>
+    <color name="gesture_btn_background">#7fbacc</color>
+    <color name="gesture_btn_text">#440971</color>
+
+    <!-- Intents -->
+    <color name="intent_btn_explicit">#e48f8f</color>
+    <color name="intent_btn_implicit">#e4de8f</color>
+    <color name="intent_btn_explicit_data">#aad19e</color>
+    <color name="intent_btn_implicit_data">#9eb5d1</color>
+
+    <!-- Dialogs -->
+    <color name="dialog_alert_btn">#8fe4d3</color>
+    <color name="dialog_custom_btn">#c38fe4</color>
+    <color name="dialog_list_btn">#e4dd8f</color>
+
+    <!-- Expandable RecyclerView -->
+    <color name="expandable_recyclerview_parent_text">#73b982</color>
 </resources>

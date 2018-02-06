@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,46 +16,42 @@
         app:layout_constraintGuide_percent="0.05" />
 
     <TextView
-        android:id="@+id/textview_status"
-        android:layout_width="0dp"
+        android:id="@+id/textview_explanation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="@string/text_gesture_status"
         android:textAlignment="center"
-        android:textColor="#006969"
-        android:textSize="50sp"
+        android:gravity="center"
+        android:textSize="@dimen/_12sdp"
+        android:text="@string/gesture_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_gestures" />
+
+    <TextView
+        android:id="@+id/textview_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gesture_status"
+        android:textAlignment="center"
+        android:textColor="@color/gesture_status"
+        android:textSize="@dimen/_45sdp"
         app:layout_constraintBottom_toTopOf="@+id/btn_action"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_explanation" />
 
     <Button
         android:id="@+id/btn_action"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:width="150dp"
-        android:height="50dp"
-        android:background="#7fbacc"
-        android:elevation="50dp"
-        android:text="@string/btn_gesture"
-        android:textColor="#440971"
-        android:textSize="20sp"
+        android:background="@color/gesture_btn_background"
+        android:text="@string/gesture_btn"
+        android:textColor="@color/gesture_btn_text"
+        android:textSize="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_status"
-        tools:ignore="UnusedAttribute" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_status" />
 
-    <TextView
-        android:id="@+id/textview_explanation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="@string/text_gesture_description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_gestures" />
 
 </android.support.constraint.ConstraintLayout>

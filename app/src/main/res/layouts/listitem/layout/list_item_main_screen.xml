@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     android:textAlignment="center"
     android:fontFamily="sans-serif-condensed"
-    android:textColor="#f4bf4e"
-    android:textSize="40sp"
+    android:textColor="@color/main_screen_list_text"
+    android:textSize="@dimen/_30sdp"
     tools:text="@tools:sample/lorem"/>

@@ -1,102 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.simform.rushabhmodi.androidlearning.examples.DialogFragmentExampleActivity">
 
-    <TextView
-        android:id="@+id/textview_title_dialog_fragments"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/example_title_dialog_fragments"
-        android:textAlignment="center"
-        android:textColor="#971e1e"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textview_title_alert_dialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_alert_dialog"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_alert_dialog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_title_dialog_fragments"
-        app:layout_constraintVertical_chainStyle="spread" />
+        <TextView
+            android:id="@+id/textview_title_dialog_fragments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/dialog_fragment_title_header"
+            android:textAlignment="center"
+            android:textColor="@color/title_examples_header"
+            android:textSize="@dimen/_33sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
 
-    <Button
-        android:id="@+id/btn_alert_dialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#8fe4d3"
-        android:text="@string/btn_alert_dialog"
-        app:layout_constraintBottom_toTopOf="@+id/textview_title_custom_dialog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_title_alert_dialog" />
+        <TextView
+            android:id="@+id/textview_title_alert_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_title_alert"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_alert_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_title_dialog_fragments"
+            app:layout_constraintVertical_chainStyle="spread" />
 
-    <TextView
-        android:id="@+id/textview_title_custom_dialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_custom_dialog"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_custom_dialog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_alert_dialog"
-        app:layout_constraintVertical_bias="0.39999998"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <Button
+            android:id="@+id/btn_alert_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/dialog_alert_btn"
+            android:text="@string/dialog_btn_alert"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_title_custom_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_title_alert_dialog" />
 
-    <Button
-        android:id="@+id/btn_custom_dialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#c38fe4"
-        android:text="@string/btn_custom_dialog"
-        app:layout_constraintBottom_toTopOf="@+id/textview_title_list_dialog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_title_custom_dialog" />
+        <TextView
+            android:id="@+id/textview_title_custom_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_title_custom"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_custom_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_alert_dialog" />
 
-    <TextView
-        android:id="@+id/textview_title_list_dialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_list_dialog"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_list_dialog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_custom_dialog" />
+        <Button
+            android:id="@+id/btn_custom_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dialog_custom_btn"
+            android:text="@string/dialog_btn_custom"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_title_list_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_title_custom_dialog" />
 
-    <Button
-        android:id="@+id/btn_list_dialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#e4dd8f"
-        android:text="@string/btn_list_dialog"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_title_list_dialog" />
+        <TextView
+            android:id="@+id/textview_title_list_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_title_list"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_list_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_custom_dialog" />
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_list_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@color/dialog_list_btn"
+            android:text="@string/dialog_btn_list"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_title_list_dialog" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

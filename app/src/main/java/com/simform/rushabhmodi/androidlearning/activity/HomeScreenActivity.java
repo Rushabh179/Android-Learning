@@ -10,14 +10,13 @@ import com.simform.rushabhmodi.androidlearning.R;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
-    Intent navigationDrawerIntent;
+    private Intent navigationDrawerIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         navigationDrawerIntent = new Intent(this, HomeNavigationActivity.class);
-        //TranslateAnimation translateAnimation = new TranslateAnimation(100,0,0,0);
     }
 
     public void onHomeCardClicked(View view) {

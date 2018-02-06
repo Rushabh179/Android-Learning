@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    tools:context="com.simform.rushabhmodi.androidlearning.examples.ListFragmentExampleActivity"
-    android:baselineAligned="false">
+    android:baselineAligned="false"
+    tools:context="com.simform.rushabhmodi.androidlearning.examples.ListFragmentExampleActivity">
 
     <fragment
         android:id="@+id/fragment_list_menu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.8"
         android:name="com.simform.rushabhmodi.androidlearning.fragment.MenuListFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_list_fragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_list_menu" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_list_fragment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.33"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <fragment
         android:id="@+id/fragment_list_details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
         android:name="com.simform.rushabhmodi.androidlearning.fragment.DetailsListFragment"
-        tools:layout="@layout/fragment_list_details"/>
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_list_fragment"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_list_details" />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

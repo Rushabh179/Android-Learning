@@ -11,9 +11,9 @@
     <string name="exit">Exit</string>
 
     <!-- Home Screen -->
-    <string name="textview_home_information">Information</string>
-    <string name="textview_home_examples">Examples</string>
-    <string name="textview_home_quiz">Quiz</string>
+    <string name="home_information">Information</string>
+    <string name="home_examples">Examples</string>
+    <string name="home_quiz">Quiz</string>
 
     <!-- Navigation Drawer -->
     <string name="title_activity_home_navigation">HomeNavigationActivity</string>
@@ -23,11 +23,19 @@
     <string name="drawertag">DRAWER_TAG</string>
     <string name="draweriteminformation">INFORMATION</string>
     <string name="draweritemexamples">EXAMPLES</string>
+    <string name="nav_header_main">Android Studio</string>
+    <string name="nav_header_sub">android.studio@android.com</string>
+    <string name="nav_header_image_contendescription">Nav Header Image</string>
+    <string name="nav_drawer_item1">Information</string>
+    <string name="nav_drawer_item2">Examples</string>
+    <string name="nav_drawer_item3">Quiz</string>
+    <string name="nav_drawer_sub_menu">Communicate</string>
+    <string name="nav_drawer_sub_item1">Share</string>
 
     <!-- Gestures Example -->
-    <string name="text_gesture_status">Status</string>
-    <string name="btn_gesture">Try</string>
-    <string name="text_gesture_description">tap, double tap, fling, scroll, press, long press, click, etc.</string>
+    <string name="gesture_status">Status</string>
+    <string name="gesture_btn">Try</string>
+    <string name="gesture_description">tap, double tap, fling, scroll, press, long press, click, etc.</string>
     <string name="singletapconfirmed">Single Tap</string>
     <string name="doubletap">Double Tap</string>
     <string name="doubletapevent">Double Tap Event</string>
@@ -41,21 +49,39 @@
     <string name="longClick">Long Click</string>
 
     <!-- Intent Example -->
-    <string name="intenttoastdefault">Hi </string>
-    <string name="intenttoastname">INTENTNAME</string>
-    <string name="intenturi">https://developer.android.com/guide/components/intents-filters.html</string>
+    <string name="intents_title_header">Intent</string>
+    <string name="intent_toast_default">Hi </string>
+    <string name="intent_toast_name">INTENTNAME</string>
+    <string name="intent_uri">https://developer.android.com/guide/components/intents-filters.html</string>
+    <string name="intent_title_explicit">Explicit Intent:</string>
+    <string name="intent_btn_explicit">Go to home</string>
+    <string name="intent_title_implicit">Implicit Intent:</string>
+    <string name="intent_btn_implicit">Get info about intents online</string>
+    <string name="intent_title_explicit_data">Explicit Intent with data:</string>
+    <string name="intent_hint_explicit_data">Enter your name here</string>
+    <string name="intent_btn_explicit_data">Send name to the toast</string>
+    <string name="intent_title_implicit_data">Implicit Intent with data:</string>
+    <string name="intent_hint_implicit_data">Enter your search here</string>
+    <string name="intent_btn_implicit_data">Search online</string>
 
     <!-- Dialog Fragment Example -->
-    <string name="example_title_dialog_fragments">Dialog Fragments</string>
-    <string name="title_alert_dialog">Alert Dialog:</string>
-    <string name="btn_alert_dialog">Show Alert</string>
-    <string name="title_custom_dialog">Custom Dialog:</string>
-    <string name="title_list_dialog">List Dialog:</string>
-    <string name="btn_custom_dialog">Show custom dialog</string>
-    <string name="btn_list_dialog">Show list dialog</string>
+    <string name="dialog_fragment_title_header">Dialog Fragments</string>
+    <string name="dialog_title_alert">Alert Dialog:</string>
+    <string name="dialog_btn_alert">Show Alert</string>
+    <string name="dialog_title_custom">Custom Dialog:</string>
+    <string name="dialog_btn_custom">Show custom dialog</string>
+    <string name="dialog_title_list">List Dialog:</string>
+    <string name="dialog_btn_list">Show list dialog</string>
     <string name="dialog_fragment_tag">DIALOG_FRAGMENT_TAG</string>
-    <string name="hint_custom_dialog_username">Enter username</string>
-    <string name="hint_custom_dialog_password">Enter password</string>
+    <string name="dialog_custom_hint_username">Enter username</string>
+    <string name="dialog_custom_hint_password">Enter password</string>
+    <string name="dialog_type_tag">DIALOG_TYPE</string>
+    <string name="dialog_type_alert">ALERT</string>
+    <string name="dialog_type_custom">CUSTOM</string>
+    <string name="dialog_type_list">LIST</string>
+
+    <!-- List Fragment Example -->
     <string name="list_fragment_name">Name</string>
     <string name="list_fragment_contact">Contact</string>
+
 </resources>

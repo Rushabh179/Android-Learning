@@ -27,10 +27,10 @@ public class IntentExampleActivity extends AppCompatActivity {
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        String message = getString(R.string.intenttoastdefault);
+        String message = getString(R.string.intent_toast_default);
         Intent intent = getIntent();
-        String name = intent.getStringExtra(getString(R.string.intenttoastname));
-        if (name != null) message += name;
+        String name = intent.getStringExtra(getString(R.string.intent_toast_name));
+        if (name != null) message += " "+name;
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
         nameEditText = findViewById(R.id.edittext_name_intent);
@@ -51,14 +51,14 @@ public class IntentExampleActivity extends AppCompatActivity {
         implicitIntentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(getString(R.string.intenturi))));
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(getString(R.string.intent_uri))));
             }
         });
 
         explicitDataIntentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getIntent()).putExtra(getString(R.string.intenttoastname), nameEditText.getText().toString()));
+                startActivity(new Intent(getIntent()).putExtra(getString(R.string.intent_toast_name), nameEditText.getText().toString()));
             }
         });
 

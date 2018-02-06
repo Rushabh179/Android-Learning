@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class MainScreenActivity extends AppCompatActivity {
 
-    Animation fadeInAnim, elevateAnim;
+    private Animation fadeInAnim, elevateAnim;
     private TextView titleTextView;
     private ListView mainScreenListView;
     private ArrayList<String> mainScreenArrayList;
