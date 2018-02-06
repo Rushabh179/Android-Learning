@@ -14,13 +14,15 @@ import com.simform.rushabhmodi.androidlearning.R;
  * Created by rushabh.modi on 05/02/18.
  */
 
-public class CustomDialogFragment extends DialogFragment {
+public class RedundantAlertDialogFragment extends DialogFragment {
 
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new AlertDialog.Builder(getActivity())
-                .setView(R.layout.dialog_fragment_custom)
+                .setIcon(R.drawable.ic_warning)
+                .setTitle("Alert dialog fragment example")
+                .setMessage("A custom message")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getActivity(), "Pressed OK", Toast.LENGTH_SHORT).show();
@@ -32,5 +34,4 @@ public class CustomDialogFragment extends DialogFragment {
                     }
                 }).create();
     }
-
 }

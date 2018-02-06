@@ -50,7 +50,9 @@
     <string name="title_alert_dialog">Alert Dialog:</string>
     <string name="btn_alert_dialog">Show Alert</string>
     <string name="title_custom_dialog">Custom Dialog:</string>
-    <string name="btn_custom_dialog">Show name dialog</string>
+    <string name="title_list_dialog">List Dialog:</string>
+    <string name="btn_custom_dialog">Show custom dialog</string>
+    <string name="btn_list_dialog">Show list dialog</string>
     <string name="dialog_fragment_tag">DIALOG_FRAGMENT_TAG</string>
     <string name="hint_custom_dialog_username">Enter username</string>
     <string name="hint_custom_dialog_password">Enter password</string>
