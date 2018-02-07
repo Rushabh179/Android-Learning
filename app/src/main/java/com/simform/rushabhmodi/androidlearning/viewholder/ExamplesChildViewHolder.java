@@ -1,5 +1,6 @@
 package com.simform.rushabhmodi.androidlearning.viewholder;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.examples.DialogFragmentExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.ListFragmentExampleActivity;
+import com.simform.rushabhmodi.androidlearning.other.ExamplesDataFactory;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 
 /**
@@ -16,20 +18,21 @@ import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 public class ExamplesChildViewHolder extends ChildViewHolder {
 
     private TextView childText;
+    private Context childContext;// = itemView.getContext();
 
     public ExamplesChildViewHolder(final View itemView) {
         super(itemView);
+        childContext = itemView.getContext();
         childText = itemView.findViewById(R.id.textview_examples_child);
         childText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(itemView.getContext(), childText.getText().toString(), Toast.LENGTH_SHORT).show();
-                switch (childText.getText().toString()){
-                    case "Dialog Fragment":
-                        itemView.getContext().startActivity(new Intent(itemView.getContext(),DialogFragmentExampleActivity.class));
+                switch (childText.getText().toString()) {
+                    case ExamplesDataFactory.parent4child1:
+                        childContext.startActivity(new Intent(childContext, DialogFragmentExampleActivity.class));
                         break;
-                    case "List Fragment":
-                        itemView.getContext().startActivity(new Intent(itemView.getContext(),ListFragmentExampleActivity.class));
+                    case ExamplesDataFactory.parent4child2:
+                        childContext.startActivity(new Intent(childContext, ListFragmentExampleActivity.class));
                         break;
                 }
             }

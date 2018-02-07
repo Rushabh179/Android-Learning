@@ -9,18 +9,18 @@ import android.os.Parcelable;
 
 public class ExamplesChild implements Parcelable {
 
-    private String child;
+    private String examplesChildText;
 
-    public ExamplesChild(String child) {
-        this.child = child;
+    public ExamplesChild(String examplesChildText) {
+        this.examplesChildText = examplesChildText;
     }
 
     protected ExamplesChild(Parcel in) {
-        child = in.readString();
+        examplesChildText = in.readString();
     }
 
-    public String getChild() {
-        return child;
+    public String getExamplesChildText() {
+        return examplesChildText;
     }
 
     public static final Creator<ExamplesChild> CREATOR = new Creator<ExamplesChild>() {
@@ -42,6 +42,6 @@ public class ExamplesChild implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(child);
+        parcel.writeString(examplesChildText);
     }
 }

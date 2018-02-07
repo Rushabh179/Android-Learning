@@ -45,7 +45,7 @@ public class ExamplesExpandableAdapter
     @Override
     public void onBindChildViewHolder(ExamplesChildViewHolder holder, int flatPosition, ExpandableGroup group, int childIndex) {
         final ExamplesChild examplesChild = ((ExamplesParent) group).getItems().get(childIndex);
-        holder.setChildText(examplesChild.getChild());
+        holder.setChildText(examplesChild.getExamplesChildText());
     }
 
 }

@@ -30,7 +30,11 @@
         <activity android:name=".examples.IntentExampleActivity" />
         <activity android:name=".examples.ExpandableRecyclerViewExampleActivity" />
         <activity android:name=".examples.DialogFragmentExampleActivity" />
-        <activity android:name=".examples.ListFragmentExampleActivity"></activity>
+        <activity android:name=".examples.ListFragmentExampleActivity" />
+        <activity
+            android:name=".examples.CollapsingToolbarScrollingExampleActivity"
+            android:label="@string/collapsing_scrolling_title"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

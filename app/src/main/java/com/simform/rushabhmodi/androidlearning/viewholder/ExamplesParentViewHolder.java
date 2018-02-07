@@ -1,5 +1,6 @@
 package com.simform.rushabhmodi.androidlearning.viewholder;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
@@ -8,6 +9,8 @@ import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.examples.ExpandableRecyclerViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.GestureExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.IntentExampleActivity;
+import com.simform.rushabhmodi.androidlearning.examples.CollapsingToolbarScrollingExampleActivity;
+import com.simform.rushabhmodi.androidlearning.other.ExamplesDataFactory;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
 
@@ -18,6 +21,7 @@ import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
 public class ExamplesParentViewHolder extends GroupViewHolder {
 
     private TextView parentText;
+    private Context parentContext;// = itemView.getContext();
 
     public ExamplesParentViewHolder(final View itemView) {
         super(itemView);
@@ -30,15 +34,19 @@ public class ExamplesParentViewHolder extends GroupViewHolder {
 
     @Override
     public void onClick(View v) {
+        parentContext = v.getContext();
         switch (parentText.getText().toString()) {
-            case "Gestures":
-                itemView.getContext().startActivity(new Intent(itemView.getContext(), GestureExampleActivity.class));
+            case ExamplesDataFactory.parent1:
+                parentContext.startActivity(new Intent(parentContext, GestureExampleActivity.class));
                 break;
-            case "Intents":
-                itemView.getContext().startActivity(new Intent(itemView.getContext(), IntentExampleActivity.class));
+            case ExamplesDataFactory.parent2:
+                parentContext.startActivity(new Intent(parentContext, IntentExampleActivity.class));
                 break;
-            case "Expandable RecyclerView":
-                itemView.getContext().startActivity(new Intent(itemView.getContext(), ExpandableRecyclerViewExampleActivity.class));
+            case ExamplesDataFactory.parent3:
+                parentContext.startActivity(new Intent(parentContext, ExpandableRecyclerViewExampleActivity.class));
+                break;
+            case ExamplesDataFactory.parent6:
+                parentContext.startActivity(new Intent(parentContext, CollapsingToolbarScrollingExampleActivity.class));
                 break;
             default:
                 super.onClick(v);
