@@ -32,7 +32,7 @@
     <string name="nav_drawer_sub_menu">Communicate</string>
     <string name="nav_drawer_sub_item1">Share</string>
 
-    <!-- Gestures Example -->
+    <!-- Gestures Example  -->
     <string name="gesture_status">Status</string>
     <string name="gesture_btn">Try</string>
     <string name="gesture_description">tap, double tap, fling, scroll, press, long press, click, etc.</string>
@@ -48,7 +48,7 @@
     <string name="simpleclick">Simple Click</string>
     <string name="longClick">Long Click</string>
 
-    <!-- Intent Example -->
+    <!-- Intent Example  -->
     <string name="intents_title_header">Intent</string>
     <string name="intent_toast_default">Hi </string>
     <string name="intent_toast_name">INTENTNAME</string>
