@@ -15,8 +15,9 @@ public class ExamplesDataFactory {
     public static final String parent4 = "Fragment";
     public static final String parent5 = "Storage";
     public static final String parent6 = "Collapsing Toolbar";
-    public static final String parent7 = "Example 7";
+    public static final String parent7 = "ScrollView";
     public static final String parent8 = "Example 8";
+    public static final String parent9 = "Example 9";
 
     public static final String parent4child1 = "Dialog Fragment";
     public static final String parent4child2 = "List Fragment";
@@ -26,7 +27,7 @@ public class ExamplesDataFactory {
     public static final String parent5child3 = "External Storage";
 
     public static List<ExamplesParent> makeParents() {
-        return Arrays.asList(makeParent1(), makeParent2(), makeParent3(), makeParent4(), makeParent5(), makeParent6(), makeParent7(), makeParent8());
+        return Arrays.asList(makeParent1(), makeParent2(), makeParent3(), makeParent4(), makeParent5(), makeParent6(), makeParent7(), makeParent8(), makeParent9());
     }
 
 
@@ -73,5 +74,9 @@ public class ExamplesDataFactory {
 
     private static ExamplesParent makeParent8() {
         return new ExamplesParent(parent8, null);
+    }
+
+    private static ExamplesParent makeParent9() {
+        return new ExamplesParent(parent9, null);
     }
 }
