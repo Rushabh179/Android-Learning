@@ -35,7 +35,8 @@
             android:name=".examples.CollapsingToolbarScrollingExampleActivity"
             android:label="@string/collapsing_scrolling_title"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".examples.ScrollViewsExample"></activity>
+        <activity android:name=".examples.ScrollViewsExampleActivity" />
+        <activity android:name=".examples.SearchExampleActivity"></activity>
     </application>
 
 </manifest>

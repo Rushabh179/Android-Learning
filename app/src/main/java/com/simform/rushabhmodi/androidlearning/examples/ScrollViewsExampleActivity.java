@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
 
-public class ScrollViewsExample extends AppCompatActivity {
+public class ScrollViewsExampleActivity extends AppCompatActivity {
 
     private TextView nestedScrollTextview, mainScrollTextview, horizontalscrollTextView;
     private String nestedScrollString = "A random NestedScrollView text.\n",
