@@ -30,6 +30,8 @@ public class WebViewExampleActivity extends AppCompatActivity {
         webViewSearchBtn = findViewById(R.id.btn_webview_search);
 
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
         webView.setWebViewClient(new WebViewClient());
     }
 
