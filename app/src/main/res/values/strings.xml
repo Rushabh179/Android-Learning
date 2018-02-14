@@ -93,11 +93,26 @@
     <string name="search_type">SEARCH_TYPE</string>
     <string name="search_simple">SEARCH_SIMPLE</string>
     <string name="search_enhanced">SEARCH_ENHANCED</string>
+
+    <!-- WebView Example -->
     <string name="webview_btn1">Open Google</string>
     <string name="webview_btn2">Open Youtube</string>
     <string name="webview_btn3">See the code</string>
     <string name="webview_btn4">Enter custom URL</string>
     <string name="webview_custom_url">Enter your custom URL</string>
     <string name="webview_btn_search">Go</string>
+
+    <!-- TextInput Example -->
+    <string name="textinput_title_header">TextInput</string>
+    <string name="textinput_default">TextInputEditText</string>
+    <string name="textinput_hint_default">Floating Hint Enabled Default</string>
+    <string name="textinput_hint_animdisabled">Hint Animation Disabled</string>
+    <string name="textinput_hint_custom">Custom Hint TextAppearance</string>
+    <string name="textinput_counter_default">Character Counter Limit 5</string>
+    <string name="textinput_counter_overflow">CounterOverflow CustomTextAppearance</string>
+    <string name="textinput_error_default">Default Error Label</string>
+    <string name="textinput_error_custom">Custom Error Label</string>
+    <string name="textinput_password_default">Password Visibility Toggle</string>
+    <string name="textinput_password_custom">Password Visibility Toggle Tint</string>
 
 </resources>
