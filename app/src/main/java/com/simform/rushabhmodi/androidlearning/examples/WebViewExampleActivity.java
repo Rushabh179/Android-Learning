@@ -42,7 +42,7 @@ public class WebViewExampleActivity extends AppCompatActivity {
                 webViewUrlString = "https://www.youtube.com";
                 break;
             case R.id.btn_webview_3:
-                webViewUrlString = "https://www.github.com";
+                webViewUrlString = "https://github.com/Rushabh179/Android-Learning/blob/master/app/src/main/java/com/simform/rushabhmodi/androidlearning/examples/WebViewExampleActivity.java";
                 break;
             case R.id.btn_webview_4:
                 if (webViewEditText.getVisibility() == View.VISIBLE && webViewSearchBtn.getVisibility() == View.VISIBLE) {
