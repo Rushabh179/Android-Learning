@@ -93,5 +93,11 @@
     <string name="search_type">SEARCH_TYPE</string>
     <string name="search_simple">SEARCH_SIMPLE</string>
     <string name="search_enhanced">SEARCH_ENHANCED</string>
+    <string name="webview_btn1">Open Google</string>
+    <string name="webview_btn2">Open Youtube</string>
+    <string name="webview_btn3">See the code</string>
+    <string name="webview_btn4">Enter custom URL</string>
+    <string name="webview_custom_url">Enter your custom URL</string>
+    <string name="webview_btn_search">Go</string>
 
 </resources>
