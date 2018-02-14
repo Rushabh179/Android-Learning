@@ -11,6 +11,7 @@ import com.simform.rushabhmodi.androidlearning.examples.GestureExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.IntentExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.CollapsingToolbarScrollingExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.SearchExampleActivity;
+import com.simform.rushabhmodi.androidlearning.examples.WebViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.other.ExamplesDataFactory;
 import com.simform.rushabhmodi.androidlearning.examples.ScrollViewsExampleActivity;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
@@ -52,6 +53,9 @@ public class ExamplesParentViewHolder extends GroupViewHolder {
                 break;
             case ExamplesDataFactory.parent7:
                 parentContext.startActivity(new Intent(parentContext, ScrollViewsExampleActivity.class));
+                break;
+            case ExamplesDataFactory.parent9:
+                parentContext.startActivity(new Intent(parentContext, WebViewExampleActivity.class));
                 break;
             default:
                 super.onClick(v);

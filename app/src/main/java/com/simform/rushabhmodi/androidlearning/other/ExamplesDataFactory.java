@@ -17,7 +17,7 @@ public class ExamplesDataFactory {
     public static final String parent6 = "Collapsing Toolbar";
     public static final String parent7 = "ScrollView";
     public static final String parent8 = "SearchView";
-    public static final String parent9 = "Example 9";
+    public static final String parent9 = "WebView";
     public static final String parent10 = "Example 10";
 
     public static final String parent4child1 = "Dialog Fragment";
