@@ -58,7 +58,7 @@ public class GestureExampleActivity extends AppCompatActivity implements Gesture
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         finish();
-        return true;
+        return false;
     }
 
     @Override

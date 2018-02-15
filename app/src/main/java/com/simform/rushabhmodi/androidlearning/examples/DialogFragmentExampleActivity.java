@@ -65,6 +65,6 @@ public class DialogFragmentExampleActivity extends AppCompatActivity implements 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         finish();
-        return true;
+        return false;
     }
 }

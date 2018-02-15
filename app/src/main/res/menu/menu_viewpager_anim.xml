@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/viewpager_normal"
+        android:title="@string/viewpager_normal"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/viewpager_zoom"
+        android:title="@string/viewpager_zoom"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/viewpager_depth"
+        android:title="@string/viewpager_depth"
+        app:showAsAction="never" />
+</menu>

@@ -3,6 +3,7 @@ package com.simform.rushabhmodi.androidlearning.examples;
 import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -24,6 +25,9 @@ public class WebViewExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view_example);
+
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         webView = findViewById(R.id.webview_example);
         webViewEditText = findViewById(R.id.edittext_webview);
@@ -64,5 +68,11 @@ public class WebViewExampleActivity extends AppCompatActivity {
             webView.loadUrl(webViewUrlString);
         else
             Toast.makeText(this, "No URL found", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return false;
     }
 }

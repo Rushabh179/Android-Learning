@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomnavigation_item1"
+        android:icon="@drawable/ic_circle"
+        android:title="@string/bottomnavigation_item1" />
+
+    <item
+        android:id="@+id/bottomnavigation_item2"
+        android:icon="@drawable/ic_circle"
+        android:title="@string/bottomnavigation_item2" />
+
+    <item
+        android:id="@+id/bottomnavigation_item3"
+        android:icon="@drawable/ic_circle"
+        android:title="@string/bottomnavigation_item3" />
+
+</menu>

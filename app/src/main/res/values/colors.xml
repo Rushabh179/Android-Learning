@@ -36,4 +36,10 @@
 
     <!-- Expandable RecyclerView -->
     <color name="expandable_recyclerview_parent_text">#73b982</color>
+
+    <!-- Design Support Library -->
+    <color name="viewpager_red">#55a91212</color>
+    <color name="viewpager_green">#652e8015</color>
+    <color name="viewpager_blue">#96271ad4</color>
+
 </resources>

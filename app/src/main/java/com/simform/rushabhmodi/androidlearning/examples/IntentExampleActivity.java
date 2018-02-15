@@ -79,6 +79,6 @@ public class IntentExampleActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         finish();
-        return true;
+        return false;
     }
 }

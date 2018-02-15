@@ -19,7 +19,7 @@ public class ExamplesDataFactory {
     public static final String parent8 = "SearchView";
     public static final String parent9 = "WebView";
     public static final String parent10 = "TextInput";
-    public static final String parent11 = "Example 11";
+    public static final String parent11 = "Design Support Library";
 
     public static final String parent4child1 = "Dialog Fragment";
     public static final String parent4child2 = "List Fragment";

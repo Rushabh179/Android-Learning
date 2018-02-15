@@ -38,4 +38,11 @@
         <item name="android:textColor">@android:color/holo_purple</item>
     </style>
 
+    <!-- Design Support Example -->
+    <style name="AppTheme.TabLayoutExample">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
 </resources>
