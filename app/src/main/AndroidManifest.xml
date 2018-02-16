@@ -49,6 +49,8 @@
             android:name=".examples.DesingSupportExampleActivity"
             android:label="@string/title_activity_tab_layout_example"
             android:theme="@style/AppTheme.TabLayoutExample" />
+        <activity android:name=".examples.MergeIncludeExampleActivity" />
+        <activity android:name=".examples.WidgetsExampleActivity"></activity>
     </application>
 
 </manifest>

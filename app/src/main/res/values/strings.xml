@@ -130,4 +130,28 @@
     <string name="viewpager_zoom">Zoom</string>
     <string name="viewpager_depth">Depth</string>
 
+    <!-- Widgets Example -->
+    <string name="widgets_title_header">Widgets</string>
+    <string name="widget_btn_long_click">Button Long Clicked</string>
+    <string name="widget_btn_click">Button Clicked</string>
+    <string name="widget_togglebtn_on">Togglebutton On</string>
+    <string name="widget_togglebtn_off">Togglebutton OFF</string>
+    <string name="widget_checkbox_checked">Checkbox Checked</string>
+    <string name="widget_checkbox_unchecked">Checkbox Unchecked</string>
+    <string name="widget_radiobtn_1">First Radiobutton Selected</string>
+    <string name="widget_radiobtn_2">Second Radiobutton Selected</string>
+    <string name="widget_imagebtn_clicked">Imagebutton Clicked</string>
+    <string name="widget_imagebtn_long_clicked">Imagebutton Long Clicked</string>
+    <string name="widget_spinner_item1">Item 1 Selected</string>
+    <string name="widget_spinner_item2">Item 2 Selected</string>
+    <string name="widget_spinner_item3">Item 3 Selected</string>
+    <string name="widget_switch_on">Switch ON</string>
+    <string name="widget_switch_off">Switch OFF</string>
+    <string name="widget_btn">Button</string>
+    <string name="widget_checkbox">CheckBox</string>
+    <string name="widget_radiobtn1">RadioButton1</string>
+    <string name="widget_radiobtn2">RadioButton2</string>
+    <string name="widget_imagebutton_contentdescription">ImageButton</string>
+    <string name="widget_switch">Switch</string>
+
 </resources>
