@@ -29,7 +29,7 @@ public class CollapsingToolbarScrollingExampleActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collapsing_scrolling_example);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar_collapsing);
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null)

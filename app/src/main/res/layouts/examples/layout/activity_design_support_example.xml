@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_content"
+    android:id="@+id/coordinatorlayout_design_support_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.simform.rushabhmodi.androidlearning.examples.DesingSupportExampleActivity">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+        android:id="@+id/appbar_design_support"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/appbar_padding_top"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_design_support"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_weight="1"
@@ -28,26 +29,26 @@
         </android.support.v7.widget.Toolbar>
 
         <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
+            android:id="@+id/tablayout_design_support"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabGravity="fill"
             app:tabMode="fixed">
 
             <android.support.design.widget.TabItem
-                android:id="@+id/tabItem"
+                android:id="@+id/tabitem_design_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tab_text_1" />
 
             <android.support.design.widget.TabItem
-                android:id="@+id/tabItem2"
+                android:id="@+id/tabitem_design_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tab_text_2" />
 
             <android.support.design.widget.TabItem
-                android:id="@+id/tabItem3"
+                android:id="@+id/tabitem_design_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tab_text_3" />
@@ -57,19 +58,19 @@
     </android.support.design.widget.AppBarLayout>
 
     <ScrollView
-        android:id="@+id/scrollview_tab"
+        android:id="@+id/scrollview_design_support"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/container"
+        android:id="@+id/viewpager_design_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottomnavigation"
+        android:id="@+id/bottomnavigation_design_support"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="0dp"
