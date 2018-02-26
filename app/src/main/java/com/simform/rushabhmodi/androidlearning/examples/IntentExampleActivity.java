@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.activity.HomeScreenActivity;
+import com.simform.rushabhmodi.androidlearning.activitymain.HomeScreenActivity;
 
 public class IntentExampleActivity extends AppCompatActivity {
 

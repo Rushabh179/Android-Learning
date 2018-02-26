@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.activity;
+package com.simform.rushabhmodi.androidlearning.activitymain;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

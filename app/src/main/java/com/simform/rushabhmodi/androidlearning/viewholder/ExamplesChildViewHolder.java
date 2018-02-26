@@ -9,6 +9,7 @@ import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.examples.DialogFragmentExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.ListFragmentExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.SearchExampleActivity;
+import com.simform.rushabhmodi.androidlearning.examples.SharedPreferencesExampleActivity;
 import com.simform.rushabhmodi.androidlearning.other.ExamplesDataFactory;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 
@@ -34,6 +35,9 @@ public class ExamplesChildViewHolder extends ChildViewHolder {
                         break;
                     case ExamplesDataFactory.parent4child2:
                         childContext.startActivity(new Intent(childContext, ListFragmentExampleActivity.class));
+                        break;
+                    case ExamplesDataFactory.parent5child1:
+                        childContext.startActivity(new Intent(childContext, SharedPreferencesExampleActivity.class));
                         break;
                     case ExamplesDataFactory.parent8child1:
                         childContext.startActivity(new Intent(childContext, SearchExampleActivity.class).putExtra(childContext.getString(R.string.search_type), childContext.getString(R.string.search_simple)));

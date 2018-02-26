@@ -11,9 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.simform.rushabhmodi.androidlearning.PageTransformer.DepthPageTransformer;
-import com.simform.rushabhmodi.androidlearning.PageTransformer.NormalPageTransformer;
-import com.simform.rushabhmodi.androidlearning.PageTransformer.ZoomOutPageTransformer;
+import com.simform.rushabhmodi.androidlearning.pagetransformer.DepthPageTransformer;
+import com.simform.rushabhmodi.androidlearning.pagetransformer.NormalPageTransformer;
+import com.simform.rushabhmodi.androidlearning.pagetransformer.ZoomOutPageTransformer;
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.adapter.SectionsPagerAdapter;
 import com.simform.rushabhmodi.androidlearning.behaviour.BottomNavigationViewBehavior;

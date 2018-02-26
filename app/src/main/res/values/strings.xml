@@ -154,4 +154,18 @@
     <string name="widget_imagebutton_contentdescription">ImageButton</string>
     <string name="widget_switch">Switch</string>
 
+
+    <string name="form_first_name">First Name:</string>
+    <string name="form_last_name">Last Name:</string>
+    <string name="form_age">Age:</string>
+
+    <!-- Shared Preferences Example -->
+    <string name="shared_pref_file_name">SharedPrefFileName</string>
+    <string name="shared_pref_first_name">FirstName</string>
+    <string name="shared_pref_last_name">LastName</string>
+    <string name="shared_pref_age">Age</string>
+    <string name="shared_pref_menu_edit">Edit</string>
+    <string name="shared_pref_btn_save">Save</string>
+    <string name="shared_pref_btn_cancel">Cancel</string>
+
 </resources>

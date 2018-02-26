@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.activity;
+package com.simform.rushabhmodi.androidlearning.activitymain;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -54,6 +54,7 @@ public class HomeNavigationActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+            finish();
             super.onBackPressed();
         }
     }

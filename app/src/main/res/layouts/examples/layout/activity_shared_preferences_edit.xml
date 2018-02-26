@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.simform.rushabhmodi.androidlearning.examples.SharedPreferencesEditActivity">
+
+    <TextView
+        android:id="@+id/textview_form_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/edittext_sharedpref_first_name"
+        android:text="@string/form_first_name"
+        android:textSize="@dimen/_23sdp"
+        app:layout_constraintBottom_toTopOf="@+id/textview_form_last_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_form_last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/edittext_sharedpref_last_name"
+        android:text="@string/form_last_name"
+        android:textSize="@dimen/_23sdp"
+        app:layout_constraintBottom_toTopOf="@+id/textview_form_age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_form_first_name" />
+
+    <TextView
+        android:id="@+id/textview_form_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:labelFor="@id/edittext_sharedpref_age"
+        android:text="@string/form_age"
+        android:textSize="@dimen/_23sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_form_last_name" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_shared_preferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <EditText
+        android:id="@+id/edittext_sharedpref_first_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textview_form_first_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_shared_preferences"
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:hint="@tools:sample/first_names" />
+
+    <EditText
+        android:id="@+id/edittext_sharedpref_last_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textview_form_last_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_shared_preferences"
+        tools:hint="@tools:sample/last_names" />
+
+    <EditText
+        android:id="@+id/edittext_sharedpref_age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textview_form_age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_shared_preferences"
+        tools:hint="18" />
+
+    <Button
+        android:id="@+id/btn_sharedpref_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSaveClicked"
+        android:text="@string/shared_pref_btn_save"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_shared_preferences"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_sharedpref_age" />
+
+    <Button
+        android:id="@+id/btn_sharedpref_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCancelClicked"
+        android:text="@string/shared_pref_btn_cancel"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_sharedpref_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_sharedpref_save" />
+
+</android.support.constraint.ConstraintLayout>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.simform.rushabhmodi.androidlearning.activity.HomeNavigationActivity"
+    tools:context="com.simform.rushabhmodi.androidlearning.activitymain.HomeNavigationActivity"
     tools:showIn="@layout/app_bar_home_navigation">
 
     <FrameLayout

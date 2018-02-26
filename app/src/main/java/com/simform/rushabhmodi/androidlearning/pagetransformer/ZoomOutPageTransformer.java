@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.PageTransformer;
+package com.simform.rushabhmodi.androidlearning.pagetransformer;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -7,8 +7,9 @@ import android.view.View;
  * Created by rushabh.modi on 16/02/18.
  */
 
-public class NormalPageTransformer implements ViewPager.PageTransformer {
-    private static final float MIN_SCALE = 1f;
+public class ZoomOutPageTransformer implements ViewPager.PageTransformer {
+    private static final float MIN_SCALE = 0.85f;
+    private static final float MIN_ALPHA = 0.5f;
 
     public void transformPage(View view, float position) {
         int pageWidth = view.getWidth();
@@ -16,7 +17,7 @@ public class NormalPageTransformer implements ViewPager.PageTransformer {
 
         if (position < -1) { // [-Infinity,-1)
             // This page is way off-screen to the left.
-            view.setAlpha(1);
+            view.setAlpha(0);
 
         } else if (position <= 1) { // [-1,1]
             // Modify the default slide transition to shrink the page as well
@@ -32,9 +33,12 @@ public class NormalPageTransformer implements ViewPager.PageTransformer {
             view.setScaleX(scaleFactor);
             view.setScaleY(scaleFactor);
 
+            // Fade the page relative to its size.
+            view.setAlpha(MIN_ALPHA + (scaleFactor - MIN_SCALE) / (1 - MIN_SCALE) * (1 - MIN_ALPHA));
+
         } else { // (1,+Infinity]
             // This page is way off-screen to the right.
-            view.setAlpha(1);
+            view.setAlpha(0);
         }
     }
 }

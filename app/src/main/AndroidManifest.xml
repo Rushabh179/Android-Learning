@@ -15,22 +15,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainScreenActivity">
+        <activity android:name=".activitymain.MainScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.HomeScreenActivity" />
+        <activity android:name=".activitymain.HomeScreenActivity" />
         <activity
-            android:name=".activity.HomeNavigationActivity"
+            android:name=".activitymain.HomeNavigationActivity"
             android:label="@string/title_activity_home_navigation"
-            android:parentActivityName=".activity.HomeScreenActivity"
+            android:parentActivityName=".activitymain.HomeScreenActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.simform.rushabhmodi.androidlearning.activity.HomeScreenActivity" />
+                android:value="com.simform.rushabhmodi.androidlearning.activitymain.HomeScreenActivity" />
         </activity>
         <activity android:name=".examples.GestureExampleActivity" />
         <activity android:name=".examples.IntentExampleActivity" />
@@ -49,8 +49,9 @@
             android:name=".examples.DesingSupportExampleActivity"
             android:label="@string/title_activity_tab_layout_example"
             android:theme="@style/AppTheme.TabLayoutExample" />
-        <activity android:name=".examples.MergeIncludeExampleActivity" />
-        <activity android:name=".examples.WidgetsExampleActivity"></activity>
+        <activity android:name=".examples.WidgetsExampleActivity" />
+        <activity android:name=".examples.SharedPreferencesExampleActivity" />
+        <activity android:name=".examples.SharedPreferencesEditActivity"></activity>
     </application>
 
 </manifest>
