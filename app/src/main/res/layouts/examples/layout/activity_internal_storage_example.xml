@@ -10,17 +10,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <Spinner
+            android:id="@+id/spinner_internal_storage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintBottom_toTopOf="@+id/edittext_internal_write"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
         <EditText
             android:id="@+id/edittext_internal_write"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:hint="@string/internal_storage_edittext_hint"
             android:inputType="textPersonName"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/spinner_internal_storage" />
 
         <Button
             android:id="@+id/btn_internal_write"
