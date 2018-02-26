@@ -2,14 +2,13 @@ package com.simform.rushabhmodi.androidlearning.examples;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.activitymain.HomeNavigationActivity;
 
 public class SharedPreferencesExampleActivity extends AppCompatActivity {
 
