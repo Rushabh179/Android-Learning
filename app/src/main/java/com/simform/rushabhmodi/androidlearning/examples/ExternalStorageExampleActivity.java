@@ -67,8 +67,7 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
-
-        Toast.makeText(this, externalStorageFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, externalStorageFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
     }
 
     private boolean isExternalStorageAvailable() {
