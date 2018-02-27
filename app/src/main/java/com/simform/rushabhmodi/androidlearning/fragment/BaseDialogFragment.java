@@ -62,7 +62,7 @@ public class BaseDialogFragment extends DialogFragment {
                     .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Toast.makeText(getActivity(), "Hi "+ usernameEditText.getText().toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Hi " + usernameEditText.getText().toString(), Toast.LENGTH_SHORT).show();
                         }
                     });
         } else if (Objects.equals(dialogType, getString(R.string.dialog_type_list))) {
@@ -71,7 +71,7 @@ public class BaseDialogFragment extends DialogFragment {
                     .setItems(items, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            Toast.makeText(getActivity(), "item "+ Integer.toString(which+1), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "item " + Integer.toString(which + 1), Toast.LENGTH_SHORT).show();
                         }
                     });
         }

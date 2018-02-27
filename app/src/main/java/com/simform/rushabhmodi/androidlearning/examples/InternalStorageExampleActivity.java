@@ -1,14 +1,19 @@
 package com.simform.rushabhmodi.androidlearning.examples;
 
-import android.support.v7.app.AppCompatActivity;
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
 
@@ -16,16 +21,23 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class InternalStorageExampleActivity extends AppCompatActivity {
 
     private Spinner internalSpinner;
-    private EditText writeInternal;
+    private EditText writeInternal, newFileName;
     private TextView readInternal;
     private FileOutputStream fileOutputStream;
     private OutputStreamWriter outputStreamWriter;
-
     private String internalFileName;
+    private List<String> internalFileList;
+    private ArrayAdapter<String> internalFileAdapter;
+    private LayoutInflater newFileLayoutInflater;
+    private View newFileView;
+    private AlertDialog.Builder newFileDialogBuilder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +48,12 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
         writeInternal = findViewById(R.id.edittext_internal_write);
         readInternal = findViewById(R.id.textview_internal_read);
 
-        String[] filesList = getFilesDir().list();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, filesList);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        internalSpinner.setAdapter(adapter);
+        internalFileList = new ArrayList<>();
+        internalFileList.addAll(Arrays.asList(getFilesDir().list()));
+        internalFileList.remove("instant-run");//To remove extra file
+        internalFileAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, internalFileList);
+        internalFileAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        internalSpinner.setAdapter(internalFileAdapter);
 
         internalSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -48,13 +62,35 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-            }
+            public void onNothingSelected(AdapterView<?> adapterView) {}
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)//Todo: review
+    @SuppressLint("InflateParams")
     public void onInternalStorageClick(View view) {
         switch (view.getId()) {
+            case R.id.imagebutton_internal_add:
+                newFileLayoutInflater = LayoutInflater.from(getBaseContext());
+                newFileView = newFileLayoutInflater.inflate(R.layout.dialog_add_new_file, null);
+                newFileName = newFileView.findViewById(R.id.edittext_dialog_new_file);
+                newFileDialogBuilder = new AlertDialog.Builder(this)
+                        .setTitle("New File")
+                        .setView(newFileView)
+                        .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                internalFileList.add(newFileName.getText().toString());
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+                newFileDialogBuilder.show();
+
             case R.id.btn_internal_write:
                 try {
                     //fileOutputStream = openFileOutput(getString(R.string.internal_storage_file_name), MODE_PRIVATE);
@@ -62,7 +98,6 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
                     outputStreamWriter = new OutputStreamWriter(fileOutputStream);
                     outputStreamWriter.write(writeInternal.getText().toString());
                     outputStreamWriter.close();
-                    Toast.makeText(this, R.string.internal_storage_toast_save, Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -75,7 +110,6 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
                     outputStreamWriter = new OutputStreamWriter(fileOutputStream);
                     outputStreamWriter.append(writeInternal.getText().toString());
                     outputStreamWriter.close();
-                    Toast.makeText(this, R.string.internal_storage_toast_save, Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

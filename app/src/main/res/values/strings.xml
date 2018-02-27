@@ -174,11 +174,13 @@
     <string name="internal_storage_read_btn">Read</string>
     <string name="internal_storage_file_name">InternalStorageFile.txt</string>
     <string name="internal_storage_toast_save">Saved</string>
+    <string name="internal_file_name_title">File name:</string>
+    <string name="internal_storage_new_file_imagebtn_contentdesc">new file internal storage</string>
+    <string name="internal_storage_dialog_new_file_hint">Enter a file name</string>
 
     <!-- Internal Storage Example -->
     <string name="external_storage_edittext_hint">Enter something in a file in <b>External</b> storage</string>
     <string name="external_storage_file_path">ExternalStoragePath</string>
     <string name="external_storage_file_name">ExternalStorageFile.txt</string>
-    <string name="internal_file_name_title">File name:</string>
 
 </resources>

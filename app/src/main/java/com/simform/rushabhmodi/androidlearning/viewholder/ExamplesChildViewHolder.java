@@ -47,6 +47,9 @@ public class ExamplesChildViewHolder extends ChildViewHolder {
                     case ExamplesDataFactory.parent5child3:
                         childContext.startActivity(new Intent(childContext, ExternalStorageExampleActivity.class));
                         break;
+                    case ExamplesDataFactory.parent5child4:
+                        childContext.startActivity(new Intent(childContext, ExternalStorageExampleActivity.class));
+                        break;
                     case ExamplesDataFactory.parent8child1:
                         childContext.startActivity(new Intent(childContext, SearchExampleActivity.class).putExtra(childContext.getString(R.string.search_type), childContext.getString(R.string.search_simple)));
                         break;

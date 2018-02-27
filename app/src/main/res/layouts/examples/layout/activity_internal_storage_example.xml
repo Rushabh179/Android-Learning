@@ -14,13 +14,12 @@
             android:id="@+id/textview_internal_file_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_30sdp"
-            android:textSize="@dimen/_12sdp"
             android:text="@string/internal_file_name_title"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_internal_storage"
             app:layout_constraintEnd_toStartOf="@+id/spinner_internal_storage"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/spinner_internal_storage" />
 
         <Spinner
             android:id="@+id/spinner_internal_storage"
@@ -28,10 +27,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_30sdp"
             app:layout_constraintBottom_toTopOf="@+id/edittext_internal_write"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imagebutton_internal_add"
             app:layout_constraintStart_toEndOf="@+id/textview_internal_file_name"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <ImageButton
+            android:id="@+id/imagebutton_internal_add"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:src="@android:drawable/ic_menu_add"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_internal_storage"
+            android:onClick="onInternalStorageClick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/spinner_internal_storage"
+            app:layout_constraintTop_toTopOf="@+id/spinner_internal_storage"
+            android:contentDescription="@string/internal_storage_new_file_imagebtn_contentdesc" />
 
         <EditText
             android:id="@+id/edittext_internal_write"

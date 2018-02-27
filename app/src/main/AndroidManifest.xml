@@ -56,7 +56,8 @@
         <activity android:name=".examples.SharedPreferencesExampleActivity" />
         <activity android:name=".examples.SharedPreferencesEditActivity" />
         <activity android:name=".examples.InternalStorageExampleActivity" />
-        <activity android:name=".examples.ExternalStorageExampleActivity"></activity>
+        <activity android:name=".examples.ExternalStorageExampleActivity" />
+        <activity android:name=".examples.SqliteDatabaseExampleActivity"></activity>
     </application>
 
 </manifest>

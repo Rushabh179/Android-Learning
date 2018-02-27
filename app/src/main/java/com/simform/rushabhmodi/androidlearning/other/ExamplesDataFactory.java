@@ -28,6 +28,7 @@ public class ExamplesDataFactory {
     public static final String parent5child1 = "Shared Preferences";
     public static final String parent5child2 = "Internal Storage";
     public static final String parent5child3 = "External Storage";
+    public static final String parent5child4 = "Sqlite Database";
 
     public static final String parent8child1 = "Simple SearchView";
     public static final String parent8child2 = "Enhanced SearchView";
@@ -67,7 +68,8 @@ public class ExamplesDataFactory {
         ExamplesChild child5_1 = new ExamplesChild(parent5child1);
         ExamplesChild child5_2 = new ExamplesChild(parent5child2);
         ExamplesChild child5_3 = new ExamplesChild(parent5child3);
-        return Arrays.asList(child5_1, child5_2, child5_3);
+        ExamplesChild child5_4 = new ExamplesChild(parent5child4);
+        return Arrays.asList(child5_1, child5_2, child5_3, child5_4);
     }
 
     private static ExamplesParent makeParent6() {
