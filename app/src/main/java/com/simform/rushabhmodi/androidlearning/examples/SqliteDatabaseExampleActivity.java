@@ -26,8 +26,7 @@ public class SqliteDatabaseExampleActivity extends AppCompatActivity {
         writeSqlite = findViewById(R.id.edittext_sqlite_write);
         readSqlite = findViewById(R.id.textview_sqlite_read);
         sqlitePojo = new SqlitePojo();
-        sqliteHelper = new SqliteHelper(this, null, null, 1);
-        printDatabase();
+        sqliteHelper = new SqliteHelper(this, null);
     }
 
     public void onSqliteClick(View view) {
@@ -40,6 +39,10 @@ public class SqliteDatabaseExampleActivity extends AppCompatActivity {
 
             case R.id.btn_sqlite_delete:
                 sqliteHelper.deleteItem(writeSqlite.getText().toString());
+                printDatabase();
+                break;
+
+            case R.id.btn_sqlite_show:
                 printDatabase();
                 break;
         }

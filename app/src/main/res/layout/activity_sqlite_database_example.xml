@@ -36,11 +36,22 @@
             android:id="@+id/btn_sqlite_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/sqlite_btn_delete"
             android:onClick="onSqliteClick"
+            android:text="@string/sqlite_btn_delete"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sqlite_show"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_sqlite_insert" />
+
+        <Button
+            android:id="@+id/btn_sqlite_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSqliteClick"
+            android:text="@string/sqlite_btn_show"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sqlite_delete" />
 
         <TextView
             android:id="@+id/textview_sqlite_read"
@@ -54,7 +65,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_sqlite_delete"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sqlite_show"
             tools:text="@tools:sample/lorem/random" />
 
     </android.support.constraint.ConstraintLayout>

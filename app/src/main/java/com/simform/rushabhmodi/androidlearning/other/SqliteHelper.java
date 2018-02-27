@@ -19,7 +19,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "sqlitetable";
     public static final String COLUMN_ITEM = "item";
 
-    public SqliteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public SqliteHelper(Context context, SQLiteDatabase.CursorFactory factory) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
 
@@ -65,6 +65,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
         while (!c.isAfterLast()) {
             if (c.getString(c.getColumnIndex(COLUMN_ITEM)) != null) {
+                dbString.append(c.getString(c.getColumnIndex(COLUMN_ID))).append(" ");
                 dbString.append(c.getString(c.getColumnIndex(COLUMN_ITEM)));
                 dbString.append("\n");
             }

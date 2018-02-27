@@ -187,5 +187,6 @@
     <string name="sqlite_edittext_hint">Enter something to database</string>
     <string name="sqlite_btn_insert">Insert</string>
     <string name="sqlite_btn_delete">Delete</string>
+    <string name="sqlite_btn_show">Show</string>
 
 </resources>
