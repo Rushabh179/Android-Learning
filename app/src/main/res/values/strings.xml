@@ -168,11 +168,17 @@
     <string name="shared_pref_btn_cancel">Cancel</string>
 
     <!-- Internal Storage Example -->
-    <string name="internal_storage_edittext_hint">Enter something to save in a file in internal storage</string>
+    <string name="internal_storage_edittext_hint">Enter something in a file in <b>Internal</b> storage</string>
     <string name="internal_storage_write_btn">Write</string>
     <string name="internal_storage_append_btn">Append</string>
     <string name="internal_storage_read_btn">Read</string>
     <string name="internal_storage_file_name">InternalStorageFile.txt</string>
     <string name="internal_storage_toast_save">Saved</string>
+
+    <!-- Internal Storage Example -->
+    <string name="external_storage_edittext_hint">Enter something in a file in <b>External</b> storage</string>
+    <string name="external_storage_file_path">ExternalStoragePath</string>
+    <string name="external_storage_file_name">ExternalStorageFile.txt</string>
+    <string name="internal_file_name_title">File name:</string>
 
 </resources>

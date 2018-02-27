@@ -4,86 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.simform.rushabhmodi.androidlearning.examples.InternalStorageExampleActivity">
+    tools:context="com.simform.rushabhmodi.androidlearning.examples.ExternalStorageExampleActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textview_internal_file_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_30sdp"
-            android:textSize="@dimen/_12sdp"
-            android:text="@string/internal_file_name_title"
-            app:layout_constraintEnd_toStartOf="@+id/spinner_internal_storage"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
+        <Spinner
+            android:id="@+id/spinner_external_file_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_30sdp"
+            app:layout_constraintBottom_toTopOf="@+id/edittext_external_write"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Spinner
-            android:id="@+id/spinner_internal_storage"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_30sdp"
-            app:layout_constraintBottom_toTopOf="@+id/edittext_internal_write"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textview_internal_file_name"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="spread_inside" />
-
         <EditText
-            android:id="@+id/edittext_internal_write"
+            android:id="@+id/edittext_external_write"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:hint="@string/internal_storage_edittext_hint"
+            android:hint="@string/external_storage_edittext_hint"
             android:inputType="textPersonName"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_internal_storage" />
+            app:layout_constraintTop_toBottomOf="@+id/spinner_external_file_name" />
 
         <Button
-            android:id="@+id/btn_internal_write"
+            android:id="@+id/btn_external_write"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_50sdp"
-            android:onClick="onInternalStorageClick"
+            android:onClick="onExternalStorageClick"
             android:text="@string/internal_storage_write_btn"
             android:textSize="@dimen/_11sdp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_internal_append"
+            app:layout_constraintBottom_toTopOf="@+id/btn_external_append"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edittext_internal_write"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_external_write"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <Button
-            android:id="@+id/btn_internal_append"
+            android:id="@+id/btn_external_append"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onInternalStorageClick"
+            android:onClick="onExternalStorageClick"
             android:text="@string/internal_storage_append_btn"
             android:textSize="@dimen/_11sdp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_internal_read"
+            app:layout_constraintBottom_toTopOf="@+id/btn_external_read"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_internal_write" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_external_write" />
 
         <Button
-            android:id="@+id/btn_internal_read"
+            android:id="@+id/btn_external_read"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onInternalStorageClick"
+            android:onClick="onExternalStorageClick"
             android:text="@string/internal_storage_read_btn"
             android:textSize="@dimen/_11sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_internal_append" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_external_append" />
 
         <TextView
-            android:id="@+id/textview_internal_read"
+            android:id="@+id/textview_external_read"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -94,7 +81,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_internal_read"
+            app:layout_constraintTop_toBottomOf="@+id/btn_external_read"
             tools:text="@tools:sample/lorem/random" />
 
     </android.support.constraint.ConstraintLayout>

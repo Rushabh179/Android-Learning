@@ -25,7 +25,7 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
     private FileOutputStream fileOutputStream;
     private OutputStreamWriter outputStreamWriter;
 
-    private String fileName;
+    private String internalFileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,59 +44,63 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
         internalSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                fileName = adapterView.getItemAtPosition(position).toString();
+                internalFileName = adapterView.getItemAtPosition(position).toString();
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {}
-        });
-
-    }
-
-    public void onInternalWrite(View view) {
-        try {
-            //fileOutputStream = openFileOutput(getString(R.string.internal_storage_file_name), MODE_PRIVATE);
-            fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
-            outputStreamWriter = new OutputStreamWriter(fileOutputStream);
-            outputStreamWriter.write(writeInternal.getText().toString());
-            outputStreamWriter.close();
-            Toast.makeText(this, R.string.internal_storage_toast_save, Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        writeInternal.setText("");
-    }
-
-    public void onInternalAppend(View view) {
-        try {
-            fileOutputStream = openFileOutput(fileName, MODE_APPEND);
-            outputStreamWriter = new OutputStreamWriter(fileOutputStream);
-            outputStreamWriter.append(writeInternal.getText().toString());
-            outputStreamWriter.close();
-            Toast.makeText(this, R.string.internal_storage_toast_save, Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        writeInternal.setText("");
-    }
-
-    public void onInternalRead(View view) {
-        try {
-            FileInputStream fileInputStream = openFileInput(fileName);
-            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-
-            char[] inputBuffer = new char[100];
-            StringBuilder stringBuilder = new StringBuilder();
-            int charRead;
-
-            while ((charRead = inputStreamReader.read(inputBuffer)) > 0) {
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                stringBuilder.append(readstring);
+            public void onNothingSelected(AdapterView<?> adapterView) {
             }
-            inputStreamReader.close();
-            readInternal.setText(stringBuilder.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
+        });
+    }
+
+    public void onInternalStorageClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_internal_write:
+                try {
+                    //fileOutputStream = openFileOutput(getString(R.string.internal_storage_file_name), MODE_PRIVATE);
+                    fileOutputStream = openFileOutput(internalFileName, MODE_PRIVATE);
+                    outputStreamWriter = new OutputStreamWriter(fileOutputStream);
+                    outputStreamWriter.write(writeInternal.getText().toString());
+                    outputStreamWriter.close();
+                    Toast.makeText(this, R.string.internal_storage_toast_save, Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                writeInternal.setText("");
+                break;
+
+            case R.id.btn_internal_append:
+                try {
+                    fileOutputStream = openFileOutput(internalFileName, MODE_APPEND);
+                    outputStreamWriter = new OutputStreamWriter(fileOutputStream);
+                    outputStreamWriter.append(writeInternal.getText().toString());
+                    outputStreamWriter.close();
+                    Toast.makeText(this, R.string.internal_storage_toast_save, Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                writeInternal.setText("");
+                break;
+
+            case R.id.btn_internal_read:
+                try {
+                    FileInputStream fileInputStream = openFileInput(internalFileName);
+                    InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+
+                    char[] inputBuffer = new char[100];
+                    StringBuilder stringBuilder = new StringBuilder();
+                    int charRead;
+
+                    while ((charRead = inputStreamReader.read(inputBuffer)) > 0) {
+                        String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                        stringBuilder.append(readstring);
+                    }
+                    inputStreamReader.close();
+                    readInternal.setText(stringBuilder.toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
         }
     }
 }

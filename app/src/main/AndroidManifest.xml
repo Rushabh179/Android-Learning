@@ -17,7 +17,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".activitymain.MainScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,6 +56,7 @@
         <activity android:name=".examples.SharedPreferencesExampleActivity" />
         <activity android:name=".examples.SharedPreferencesEditActivity" />
         <activity android:name=".examples.InternalStorageExampleActivity" />
+        <activity android:name=".examples.ExternalStorageExampleActivity"></activity>
     </application>
 
 </manifest>
