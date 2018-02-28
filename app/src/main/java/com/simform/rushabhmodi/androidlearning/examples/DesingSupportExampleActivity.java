@@ -16,7 +16,7 @@ import com.simform.rushabhmodi.androidlearning.pagetransformer.NormalPageTransfo
 import com.simform.rushabhmodi.androidlearning.pagetransformer.ZoomOutPageTransformer;
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.adapter.SectionsPagerAdapter;
-import com.simform.rushabhmodi.androidlearning.behaviour.BottomNavigationViewBehavior;
+import com.simform.rushabhmodi.androidlearning.other.BottomNavigationViewBehavior;
 
 public class DesingSupportExampleActivity extends AppCompatActivity {
 

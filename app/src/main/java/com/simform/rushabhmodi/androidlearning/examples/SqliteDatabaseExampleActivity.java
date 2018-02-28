@@ -12,7 +12,7 @@ import com.simform.rushabhmodi.androidlearning.other.SqlitePojo;
 
 public class SqliteDatabaseExampleActivity extends AppCompatActivity {
 
-    private EditText writeSqlite;
+    private EditText numberSqlite, itemSqlite, descriptionSqlite;
     private TextView readSqlite;
     private SqliteHelper sqliteHelper;
     private SqlitePojo sqlitePojo;
@@ -23,7 +23,9 @@ public class SqliteDatabaseExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sqlite_database_example);
 
-        writeSqlite = findViewById(R.id.edittext_sqlite_write);
+        numberSqlite = findViewById(R.id.edittext_sqlite_number);
+        itemSqlite = findViewById(R.id.edittext_sqlite_item);
+        descriptionSqlite = findViewById(R.id.edittext_sqlite_description);
         readSqlite = findViewById(R.id.textview_sqlite_read);
         sqlitePojo = new SqlitePojo();
         sqliteHelper = new SqliteHelper(this, null);
@@ -32,13 +34,22 @@ public class SqliteDatabaseExampleActivity extends AppCompatActivity {
     public void onSqliteClick(View view) {
         switch (view.getId()) {
             case R.id.btn_sqlite_insert:
-                sqlitePojo.setItem(writeSqlite.getText().toString());
+                /*sqlitePojo = new SqlitePojo(Integer.parseInt(numberSqlite.getText().toString()),
+                        itemSqlite.getText().toString(),
+                        descriptionSqlite.getText().toString());*/
+                if (numberSqlite.getText().toString().isEmpty()) {
+                    sqlitePojo.setNumber(0);
+                } else {
+                    sqlitePojo.setNumber(Integer.parseInt(numberSqlite.getText().toString()));
+                }
+                sqlitePojo.setItem(itemSqlite.getText().toString());
+                sqlitePojo.setDescription(descriptionSqlite.getText().toString());
                 sqliteHelper.insertItem(sqlitePojo);
                 printDatabase();
                 break;
 
             case R.id.btn_sqlite_delete:
-                sqliteHelper.deleteItem(writeSqlite.getText().toString());
+                sqliteHelper.deleteItem(itemSqlite.getText().toString());
                 printDatabase();
                 break;
 
@@ -51,6 +62,8 @@ public class SqliteDatabaseExampleActivity extends AppCompatActivity {
     private void printDatabase() {
         dbString = sqliteHelper.dbToString();
         readSqlite.setText(dbString);
-        writeSqlite.setText("");
+        numberSqlite.setText("");
+        itemSqlite.setText("");
+        descriptionSqlite.setText("");
     }
 }

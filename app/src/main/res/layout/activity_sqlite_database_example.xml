@@ -11,14 +11,34 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/edittext_sqlite_write"
-            android:layout_width="0dp"
+            android:id="@+id/edittext_sqlite_number"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_90sdp"
-            android:hint="@string/sqlite_edittext_hint"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/sqlite_number_hint"
+            android:inputType="number"
+            app:layout_constraintBaseline_toBaselineOf="@+id/edittext_sqlite_item"
+            app:layout_constraintEnd_toStartOf="@+id/edittext_sqlite_item"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edittext_sqlite_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
+            android:hint="@string/sqlite_item_hint"
+            app:layout_constraintEnd_toStartOf="@+id/edittext_sqlite_description"
+            app:layout_constraintStart_toEndOf="@+id/edittext_sqlite_number"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edittext_sqlite_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/sqlite_description_hint"
+            app:layout_constraintBaseline_toBaselineOf="@+id/edittext_sqlite_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edittext_sqlite_item" />
 
         <Button
             android:id="@+id/btn_sqlite_insert"
@@ -30,7 +50,7 @@
             app:layout_constraintBottom_toTopOf="@+id/btn_sqlite_delete"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edittext_sqlite_write" />
+            app:layout_constraintTop_toBottomOf="@+id/edittext_sqlite_item" />
 
         <Button
             android:id="@+id/btn_sqlite_delete"

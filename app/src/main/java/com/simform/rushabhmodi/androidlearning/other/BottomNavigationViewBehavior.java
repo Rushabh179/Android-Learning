@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.behaviour;
+package com.simform.rushabhmodi.androidlearning.other;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;

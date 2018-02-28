@@ -184,9 +184,11 @@
     <string name="external_storage_file_name">ExternalStorageFile.txt</string>
 
     <!-- SQLite Database Example -->
-    <string name="sqlite_edittext_hint">Enter something to database</string>
+    <string name="sqlite_number_hint">Enter number</string>
+    <string name="sqlite_item_hint">Enter item</string>
     <string name="sqlite_btn_insert">Insert</string>
     <string name="sqlite_btn_delete">Delete</string>
     <string name="sqlite_btn_show">Show</string>
+    <string name="sqlite_description_hint">Enter description</string>
 
 </resources>
