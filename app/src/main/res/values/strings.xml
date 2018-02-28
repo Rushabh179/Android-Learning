@@ -191,4 +191,9 @@
     <string name="sqlite_btn_delete">Delete</string>
     <string name="sqlite_btn_show">Show</string>
 
+    <!-- Room Persistent Library Example -->
+    <string name="room_menu_add_item">Add item</string>
+    <string name="recyclerview_list">List</string>
+    <string name="recyclerview_grid">Grid</string>
+
 </resources>

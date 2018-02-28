@@ -11,7 +11,7 @@ public class ExamplesDataFactory {
 
     public static final String parent1 = "Gestures";
     public static final String parent2 = "Intents";
-    public static final String parent3 = "Expandable RecyclerView";
+    public static final String parent3 = "RecyclerViews";
     public static final String parent4 = "Fragment";
     public static final String parent5 = "Storage";
     public static final String parent6 = "Collapsing Toolbar";
@@ -21,6 +21,9 @@ public class ExamplesDataFactory {
     public static final String parent10 = "TextInput";
     public static final String parent11 = "Design Support Library";
     public static final String parent12 = "Widgets";
+
+    public static final String parent3child1 = "Simple RecyclerViews";
+    public static final String parent3child2 = "Expandable RecyclerView";
 
     public static final String parent4child1 = "Dialog Fragment";
     public static final String parent4child2 = "List Fragment";
@@ -47,7 +50,13 @@ public class ExamplesDataFactory {
     }
 
     private static ExamplesParent makeParent3() {
-        return new ExamplesParent(parent3, null);
+        return new ExamplesParent(parent3, makeParent3Children());
+    }
+
+    private static List<ExamplesChild> makeParent3Children() {
+        ExamplesChild child3_1 = new ExamplesChild(parent3child1);
+        ExamplesChild child3_2 = new ExamplesChild(parent3child2);
+        return Arrays.asList(child3_1, child3_2);
     }
 
 

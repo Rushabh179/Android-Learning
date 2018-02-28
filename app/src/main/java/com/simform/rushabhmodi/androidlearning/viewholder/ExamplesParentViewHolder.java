@@ -47,9 +47,6 @@ public class ExamplesParentViewHolder extends GroupViewHolder {
             case ExamplesDataFactory.parent2:
                 parentContext.startActivity(new Intent(parentContext, IntentExampleActivity.class));
                 break;
-            case ExamplesDataFactory.parent3:
-                parentContext.startActivity(new Intent(parentContext, ExpandableRecyclerViewExampleActivity.class));
-                break;
             case ExamplesDataFactory.parent6:
                 parentContext.startActivity(new Intent(parentContext, CollapsingToolbarScrollingExampleActivity.class));
                 break;

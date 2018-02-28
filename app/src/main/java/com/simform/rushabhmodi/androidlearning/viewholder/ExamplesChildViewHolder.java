@@ -7,10 +7,12 @@ import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.examples.DialogFragmentExampleActivity;
+import com.simform.rushabhmodi.androidlearning.examples.ExpandableRecyclerViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.ExternalStorageExampleActivity;
+import com.simform.rushabhmodi.androidlearning.examples.SimpleRecyclerViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.InternalStorageExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.ListFragmentExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.RoomLibraryExampleActivity;
+import com.simform.rushabhmodi.androidlearning.test.RoomLibraryExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.SearchExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.SharedPreferencesExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.SqliteDatabaseExampleActivity;
@@ -34,6 +36,12 @@ public class ExamplesChildViewHolder extends ChildViewHolder {
             @Override
             public void onClick(View view) {
                 switch (childText.getText().toString()) {
+                    case ExamplesDataFactory.parent3child1:
+                        childContext.startActivity(new Intent(childContext, SimpleRecyclerViewExampleActivity.class));
+                        break;
+                    case ExamplesDataFactory.parent3child2:
+                        childContext.startActivity(new Intent(childContext, ExpandableRecyclerViewExampleActivity.class));
+                        break;
                     case ExamplesDataFactory.parent4child1:
                         childContext.startActivity(new Intent(childContext, DialogFragmentExampleActivity.class));
                         break;
