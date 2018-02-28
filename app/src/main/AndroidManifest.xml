@@ -57,7 +57,8 @@
         <activity android:name=".examples.SharedPreferencesEditActivity" />
         <activity android:name=".examples.InternalStorageExampleActivity" />
         <activity android:name=".examples.ExternalStorageExampleActivity" />
-        <activity android:name=".examples.SqliteDatabaseExampleActivity"></activity>
+        <activity android:name=".examples.SqliteDatabaseExampleActivity" />
+        <activity android:name=".examples.RoomLibraryExampleActivity"></activity>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.simform.rushabhmodi.androidlearning.examples;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,12 +24,21 @@ public class SqliteDatabaseExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sqlite_database_example);
 
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         numberSqlite = findViewById(R.id.edittext_sqlite_number);
         itemSqlite = findViewById(R.id.edittext_sqlite_item);
         descriptionSqlite = findViewById(R.id.edittext_sqlite_description);
         readSqlite = findViewById(R.id.textview_sqlite_read);
         sqlitePojo = new SqlitePojo();
         sqliteHelper = new SqliteHelper(this, null);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return false;
     }
 
     public void onSqliteClick(View view) {

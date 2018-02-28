@@ -10,6 +10,7 @@ import com.simform.rushabhmodi.androidlearning.examples.DialogFragmentExampleAct
 import com.simform.rushabhmodi.androidlearning.examples.ExternalStorageExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.InternalStorageExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.ListFragmentExampleActivity;
+import com.simform.rushabhmodi.androidlearning.examples.RoomLibraryExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.SearchExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.SharedPreferencesExampleActivity;
 import com.simform.rushabhmodi.androidlearning.examples.SqliteDatabaseExampleActivity;
@@ -50,6 +51,9 @@ public class ExamplesChildViewHolder extends ChildViewHolder {
                         break;
                     case ExamplesDataFactory.parent5child4:
                         childContext.startActivity(new Intent(childContext, SqliteDatabaseExampleActivity.class));
+                        break;
+                    case ExamplesDataFactory.parent5child5:
+                        childContext.startActivity(new Intent(childContext, RoomLibraryExampleActivity.class));
                         break;
                     case ExamplesDataFactory.parent8child1:
                         childContext.startActivity(new Intent(childContext, SearchExampleActivity.class).putExtra(childContext.getString(R.string.search_type), childContext.getString(R.string.search_simple)));

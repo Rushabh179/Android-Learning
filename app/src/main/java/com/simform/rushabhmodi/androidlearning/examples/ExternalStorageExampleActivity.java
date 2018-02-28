@@ -3,6 +3,7 @@ package com.simform.rushabhmodi.androidlearning.examples;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,6 +37,9 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_external_storage_example);
+
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         externalSpinner = findViewById(R.id.spinner_external_file_name);
         writeExternal = findViewById(R.id.edittext_external_write);
@@ -78,6 +82,12 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
     private boolean isExternalStorageReadOnly() {
         String extStorageState = Environment.getExternalStorageState();
         return Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return false;
     }
 
     public void onExternalStorageClick(View view) {

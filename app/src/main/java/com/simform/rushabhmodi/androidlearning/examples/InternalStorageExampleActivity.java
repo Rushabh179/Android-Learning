@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -44,6 +45,9 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internal_storage_example);
 
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         internalSpinner = findViewById(R.id.spinner_internal_storage);
         writeInternal = findViewById(R.id.edittext_internal_write);
         readInternal = findViewById(R.id.textview_internal_read);
@@ -62,8 +66,15 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {}
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return false;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)//Todo: review
