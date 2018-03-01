@@ -59,7 +59,8 @@
         <activity android:name=".examples.ExternalStorageExampleActivity" />
         <activity android:name=".examples.SqliteDatabaseExampleActivity" />
         <activity android:name=".test.RoomLibraryExampleActivity" />
-        <activity android:name=".examples.SimpleRecyclerViewExampleActivity"></activity>
+        <activity android:name=".examples.SimpleRecyclerViewExampleActivity" />
+        <activity android:name=".test.RoomAddActivity"></activity>
     </application>
 
 </manifest>

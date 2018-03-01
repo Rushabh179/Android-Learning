@@ -41,6 +41,7 @@ public class SimpleRecyclerViewExampleActivity extends AppCompatActivity impleme
         simpleRecyclerViewAdapter = new SimpleRecyclerViewAdapter(titleTextList);
         simpleRecyclerViewAdapter.setOnReclyclerItemClickListener(this);
         simpleRecyclerView.setAdapter(simpleRecyclerViewAdapter);
+
         decoration = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL);
         simpleRecyclerView.addItemDecoration(decoration);
     }
