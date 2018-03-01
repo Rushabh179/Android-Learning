@@ -6,16 +6,16 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.examples.DialogFragmentExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.ExpandableRecyclerViewExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.ExternalStorageExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.SimpleRecyclerViewExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.InternalStorageExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.ListFragmentExampleActivity;
-import com.simform.rushabhmodi.androidlearning.test.RoomLibraryExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.SearchExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.SharedPreferencesExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.SqliteDatabaseExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.DialogFragmentExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.ExpandableRecyclerViewExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.ExternalStorageExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.SimpleRecyclerViewExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.InternalStorageExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.ListFragmentExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.RoomLibraryExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.SearchExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.SharedPreferencesExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.SqliteDatabaseExampleActivity;
 import com.simform.rushabhmodi.androidlearning.other.ExamplesDataFactory;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 

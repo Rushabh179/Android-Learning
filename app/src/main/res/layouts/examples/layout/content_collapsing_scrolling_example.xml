@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.simform.rushabhmodi.androidlearning.examples.CollapsingToolbarScrollingExampleActivity"
+    tools:context="com.simform.rushabhmodi.androidlearning.exampleactivities.CollapsingToolbarScrollingExampleActivity"
     tools:showIn="@layout/activity_collapsing_scrolling_example">
 
     <TextView

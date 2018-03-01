@@ -6,16 +6,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.examples.ExpandableRecyclerViewExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.GestureExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.IntentExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.CollapsingToolbarScrollingExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.DesingSupportExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.TextInputExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.WebViewExampleActivity;
-import com.simform.rushabhmodi.androidlearning.examples.WidgetsExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.GestureExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.IntentExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.CollapsingToolbarScrollingExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.DesingSupportExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.TextInputExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.WebViewExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.WidgetsExampleActivity;
 import com.simform.rushabhmodi.androidlearning.other.ExamplesDataFactory;
-import com.simform.rushabhmodi.androidlearning.examples.ScrollViewsExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.ScrollViewsExampleActivity;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
 

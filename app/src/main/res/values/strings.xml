@@ -64,6 +64,10 @@
     <string name="intent_hint_implicit_data">Enter your search here</string>
     <string name="intent_btn_implicit_data">Search online</string>
 
+    <!-- RecyclerView Example -->
+    <string name="recyclerview_list">List</string>
+    <string name="recyclerview_grid">Grid</string>
+
     <!-- Dialog Fragment Example -->
     <string name="dialog_fragment_title_header">Dialog Fragments</string>
     <string name="dialog_title_alert">Alert Dialog:</string>
@@ -193,7 +197,13 @@
 
     <!-- Room Persistent Library Example -->
     <string name="room_menu_add_item">Add item</string>
-    <string name="recyclerview_list">List</string>
-    <string name="recyclerview_grid">Grid</string>
+    <string name="room_item_name">Title</string>
+    <string name="room_item_details">Details</string>
+    <string name="room_btn_save">Save</string>
+    <string name="room_option_select">Select Options</string>
+    <string name="room_option_delete">Delete</string>
+    <string name="room_option_update">Update</string>
+    <string name="room_extra">room_item</string>
+    <string name="room_database_name">roomdatabasename.db</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.examples;
+package com.simform.rushabhmodi.androidlearning.other;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.simform.rushabhmodi.androidlearning.R;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.SharedPreferencesExampleActivity;
 
 public class SharedPreferencesEditActivity extends AppCompatActivity {
 

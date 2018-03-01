@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="false"
-    tools:context="com.simform.rushabhmodi.androidlearning.examples.ListFragmentExampleActivity">
+    tools:context="com.simform.rushabhmodi.androidlearning.exampleactivities.ListFragmentExampleActivity">
 
     <fragment
         android:id="@+id/fragment_list_menu"

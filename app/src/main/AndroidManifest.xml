@@ -35,32 +35,32 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.simform.rushabhmodi.androidlearning.activitymain.HomeScreenActivity" />
         </activity>
-        <activity android:name=".examples.GestureExampleActivity" />
-        <activity android:name=".examples.IntentExampleActivity" />
-        <activity android:name=".examples.ExpandableRecyclerViewExampleActivity" />
-        <activity android:name=".examples.DialogFragmentExampleActivity" />
-        <activity android:name=".examples.ListFragmentExampleActivity" />
+        <activity android:name=".exampleactivities.GestureExampleActivity" />
+        <activity android:name=".exampleactivities.IntentExampleActivity" />
+        <activity android:name=".exampleactivities.ExpandableRecyclerViewExampleActivity" />
+        <activity android:name=".exampleactivities.DialogFragmentExampleActivity" />
+        <activity android:name=".exampleactivities.ListFragmentExampleActivity" />
         <activity
-            android:name=".examples.CollapsingToolbarScrollingExampleActivity"
+            android:name=".exampleactivities.CollapsingToolbarScrollingExampleActivity"
             android:label="@string/collapsing_scrolling_title"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".examples.ScrollViewsExampleActivity" />
-        <activity android:name=".examples.SearchExampleActivity" />
-        <activity android:name=".examples.WebViewExampleActivity" />
-        <activity android:name=".examples.TextInputExampleActivity" />
+        <activity android:name=".exampleactivities.ScrollViewsExampleActivity" />
+        <activity android:name=".exampleactivities.SearchExampleActivity" />
+        <activity android:name=".exampleactivities.WebViewExampleActivity" />
+        <activity android:name=".exampleactivities.TextInputExampleActivity" />
         <activity
-            android:name=".examples.DesingSupportExampleActivity"
+            android:name=".exampleactivities.DesingSupportExampleActivity"
             android:label="@string/title_activity_tab_layout_example"
             android:theme="@style/AppTheme.TabLayoutExample" />
-        <activity android:name=".examples.WidgetsExampleActivity" />
-        <activity android:name=".examples.SharedPreferencesExampleActivity" />
-        <activity android:name=".examples.SharedPreferencesEditActivity" />
-        <activity android:name=".examples.InternalStorageExampleActivity" />
-        <activity android:name=".examples.ExternalStorageExampleActivity" />
-        <activity android:name=".examples.SqliteDatabaseExampleActivity" />
-        <activity android:name=".test.RoomLibraryExampleActivity" />
-        <activity android:name=".examples.SimpleRecyclerViewExampleActivity" />
-        <activity android:name=".test.RoomAddActivity"></activity>
+        <activity android:name=".exampleactivities.WidgetsExampleActivity" />
+        <activity android:name=".exampleactivities.SharedPreferencesExampleActivity" />
+        <activity android:name=".other.SharedPreferencesEditActivity" />
+        <activity android:name=".exampleactivities.InternalStorageExampleActivity" />
+        <activity android:name=".exampleactivities.ExternalStorageExampleActivity" />
+        <activity android:name=".exampleactivities.SqliteDatabaseExampleActivity" />
+        <activity android:name=".exampleactivities.RoomLibraryExampleActivity" />
+        <activity android:name=".exampleactivities.SimpleRecyclerViewExampleActivity" />
+        <activity android:name=".other.RoomAddActivity"></activity>
     </application>
 
 </manifest>

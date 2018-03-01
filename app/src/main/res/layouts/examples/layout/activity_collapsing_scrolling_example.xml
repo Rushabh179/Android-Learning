@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.simform.rushabhmodi.androidlearning.examples.CollapsingToolbarScrollingExampleActivity">
+    tools:context="com.simform.rushabhmodi.androidlearning.exampleactivities.CollapsingToolbarScrollingExampleActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"

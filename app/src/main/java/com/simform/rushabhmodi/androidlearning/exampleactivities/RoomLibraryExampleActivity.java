@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.test;
+package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -14,12 +14,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.simform.rushabhmodi.androidlearning.R;
+import com.simform.rushabhmodi.androidlearning.other.RoomAddActivity;
+import com.simform.rushabhmodi.androidlearning.other.RoomAppDatabase;
+import com.simform.rushabhmodi.androidlearning.adapter.RoomRecyclerAdapter;
+import com.simform.rushabhmodi.androidlearning.other.RoomTableData;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RoomLibraryExampleActivity extends AppCompatActivity implements RoomRecyclerAdapter.OnNoteItemClick {
+/**
+ * Visit https://github.com/Pavneet-Sing/RoomDemo
+ * https://www.pluralsight.com/guides/android/making-a-notes-app-using-room-database
+ */
+
+public class RoomLibraryExampleActivity extends AppCompatActivity implements RoomRecyclerAdapter.OnRoomItemClickListener {
 
     private RecyclerView roomRecyclerView;
     private RoomAppDatabase roomAppDatabase;
@@ -78,19 +87,20 @@ public class RoomLibraryExampleActivity extends AppCompatActivity implements Roo
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 100 && resultCode > 0) {
             if (resultCode == 1) {
-                roomItemList.add((RoomTableData) data.getSerializableExtra("note"));
+                roomItemList.add((RoomTableData) data.getSerializableExtra(getString(R.string.room_extra)));
             } else if (resultCode == 2) {
-                roomItemList.set(pos, (RoomTableData) data.getSerializableExtra("note"));
+                roomItemList.set(pos, (RoomTableData) data.getSerializableExtra(getString(R.string.room_extra)));
             }
             roomRecyclerAdapter.notifyDataSetChanged();
         }
     }
 
     @Override
-    public void onNoteClick(final int pos) {
+    public void onRoomItemClick(final int pos) {
         new AlertDialog.Builder(RoomLibraryExampleActivity.this)
-                .setTitle("Select Options")
-                .setItems(new String[]{"Delete", "Update"}, new DialogInterface.OnClickListener() {
+                .setTitle(getString(R.string.room_option_select))
+                .setItems(new String[]{getString(R.string.room_option_delete), getString(R.string.room_option_update)},
+                        new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i) {
@@ -103,7 +113,7 @@ public class RoomLibraryExampleActivity extends AppCompatActivity implements Roo
                                 RoomLibraryExampleActivity.this.pos = pos;
                                 startActivityForResult(
                                         new Intent(RoomLibraryExampleActivity.this,
-                                                RoomAddActivity.class).putExtra("note", roomItemList.get(pos)),
+                                                RoomAddActivity.class).putExtra(getString(R.string.room_extra), roomItemList.get(pos)),
                                         100);
 
                                 break;
@@ -130,10 +140,10 @@ public class RoomLibraryExampleActivity extends AppCompatActivity implements Roo
         }
 
         @Override
-        protected void onPostExecute(List<RoomTableData> notes) {
-            if (notes != null && notes.size() > 0) {
+        protected void onPostExecute(List<RoomTableData> roomItemList) {
+            if (roomItemList != null && roomItemList.size() > 0) {
                 activityReference.get().roomItemList.clear();
-                activityReference.get().roomItemList.addAll(notes);
+                activityReference.get().roomItemList.addAll(roomItemList);
                 activityReference.get().roomRecyclerAdapter.notifyDataSetChanged();
             }
         }

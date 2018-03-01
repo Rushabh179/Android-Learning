@@ -1,11 +1,11 @@
-package com.simform.rushabhmodi.androidlearning.test;
+package com.simform.rushabhmodi.androidlearning.other;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.simform.rushabhmodi.androidlearning.R;
@@ -24,37 +24,45 @@ public class RoomAddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room_add);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         roomTitleText = findViewById(R.id.textinputedittext_room_title);
         roomDetailsText = findViewById(R.id.textinputedittext_room_details);
-        roomAppDatabase = roomAppDatabase.getInstance(RoomAddActivity.this);
+        roomAppDatabase = RoomAppDatabase.getInstance(RoomAddActivity.this);
 
-        if ( (roomTableData = (RoomTableData) getIntent().getSerializableExtra("note"))!=null ){
-            //getSupportActionBar().setTitle("Update Note");
+        if ((roomTableData = (RoomTableData) getIntent().getSerializableExtra(getString(R.string.room_extra))) != null) {
             update = true;
-            //button.setText("Update");
             roomTitleText.setText(roomTableData.getRoomItemName());
             roomDetailsText.setText(roomTableData.getRoomItemDetails());
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return false;
+    }
+
     public void onRoomAddClick(View view) {
-        if (update){
+        if (update) {
             roomTableData.setRoomItemDetails(roomDetailsText.getText().toString());
             roomTableData.setRoomItemName(roomTitleText.getText().toString());
             roomAppDatabase.getRoomDao().updateItem(roomTableData);
-            roomSetResult(roomTableData,2);
-        }else {
+            roomSetResult(roomTableData, 2);
+        } else {
             roomTableData = new RoomTableData(roomDetailsText.getText().toString(), roomTitleText.getText().toString());
-            new InsertTask(RoomAddActivity.this,roomTableData).execute();
+            new InsertTask(RoomAddActivity.this, roomTableData).execute();
         }
     }
 
-    private void roomSetResult(RoomTableData roomTableData, int flag){
-        setResult(flag,new Intent().putExtra("note",roomTableData));
+    private void roomSetResult(RoomTableData roomTableData, int flag) {
+        setResult(flag, new Intent().putExtra(getString(R.string.room_extra), roomTableData));
         finish();
     }
 
-    private static class InsertTask extends AsyncTask<Void,Void,Boolean> {
+    private static class InsertTask extends AsyncTask<Void, Void, Boolean> {
 
         private WeakReference<RoomAddActivity> activityReference;
         private RoomTableData roomTableData;
@@ -68,21 +76,19 @@ public class RoomAddActivity extends AppCompatActivity {
         // doInBackground methods runs on a worker thread
         @Override
         protected Boolean doInBackground(Void... objs) {
-            // retrieve auto incremented note id
+            // retrieve auto incremented item id
             long j = activityReference.get().roomAppDatabase.getRoomDao().inserItem(roomTableData);
             roomTableData.setRoomId(j);
-            Log.e("ID ", "doInBackground: "+j );
             return true;
         }
 
         // onPostExecute runs on main thread
         @Override
         protected void onPostExecute(Boolean bool) {
-            if (bool){
-                activityReference.get().roomSetResult(roomTableData,1);
+            if (bool) {
+                activityReference.get().roomSetResult(roomTableData, 1);
                 activityReference.get().finish();
             }
         }
     }
-
 }

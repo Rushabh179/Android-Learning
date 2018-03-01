@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.simform.rushabhmodi.androidlearning.examples.IntentExampleActivity">
+    tools:context="com.simform.rushabhmodi.androidlearning.exampleactivities.IntentExampleActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

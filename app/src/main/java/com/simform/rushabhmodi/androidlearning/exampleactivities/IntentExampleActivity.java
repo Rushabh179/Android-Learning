@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.examples;
+package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
 import android.app.SearchManager;
 import android.content.Intent;

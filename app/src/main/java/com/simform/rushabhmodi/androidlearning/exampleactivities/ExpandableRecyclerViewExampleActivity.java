@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.examples;
+package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

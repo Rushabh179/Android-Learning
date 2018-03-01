@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.examples;
+package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
 import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;

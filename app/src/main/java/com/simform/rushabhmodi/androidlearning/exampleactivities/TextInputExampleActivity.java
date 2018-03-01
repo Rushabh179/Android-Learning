@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.examples;
+package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
