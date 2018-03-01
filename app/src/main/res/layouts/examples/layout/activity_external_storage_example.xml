@@ -10,25 +10,50 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/textview_external_file_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/internal_file_name_title"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_external_file_name"
+            app:layout_constraintEnd_toStartOf="@+id/spinner_external_file_name"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner_external_file_name" />
+
         <Spinner
             android:id="@+id/spinner_external_file_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
             app:layout_constraintBottom_toTopOf="@+id/edittext_external_write"
+            app:layout_constraintEnd_toStartOf="@+id/imagebutton_external_add"
+            app:layout_constraintStart_toEndOf="@+id/textview_external_file_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside"/>
+
+        <ImageButton
+            android:id="@+id/imagebutton_external_add"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:contentDescription="@string/internal_storage_new_file_imagebtn_contentdesc"
+            android:onClick="onExternalStorageClick"
+            android:src="@android:drawable/ic_menu_add"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_external_file_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/spinner_external_file_name"
+            app:layout_constraintTop_toTopOf="@+id/spinner_external_file_name" />
 
         <EditText
             android:id="@+id/edittext_external_write"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
             android:hint="@string/external_storage_edittext_hint"
             android:inputType="textPersonName"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinner_external_file_name" />
 

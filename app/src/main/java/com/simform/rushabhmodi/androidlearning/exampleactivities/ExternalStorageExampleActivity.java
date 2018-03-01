@@ -1,8 +1,12 @@
 package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,17 +25,24 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ExternalStorageExampleActivity extends AppCompatActivity {
 
     private Spinner externalSpinner;
-    private EditText writeExternal;
+    private EditText writeExternal, newFileName;
     private TextView readExternal;
 
     private File externalStorageFile;
     private String externalData;
     private String externalFileName;
-    private String[] externalFileList;
+    private List<String> externalFileList;
+    ArrayAdapter<String> externalFileAdapter;
+    private LayoutInflater newFileLayoutInflater;
+    private View newFileView;
+    private AlertDialog.Builder newFileDialogBuilder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,21 +56,19 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
         writeExternal = findViewById(R.id.edittext_external_write);
         readExternal = findViewById(R.id.textview_external_read);
 
-        if (!isExternalStorageAvailable()) {
-            finish();
-            Toast.makeText(this, "External Storage Unavailable", Toast.LENGTH_SHORT).show();
-        } else if (isExternalStorageReadOnly()) {
-            finish();
-            Toast.makeText(this, "External Storage Read-Only", Toast.LENGTH_SHORT).show();
-        } else {
-            externalStorageFile = new File(getExternalFilesDir(getString(R.string.external_storage_file_path)), getString(R.string.external_storage_file_name));
+        externalFileName = "ExternalStorageFile.txt";
+
+        externalFileList = new ArrayList<>();
+        if (externalFileList.isEmpty()){
+            externalFileList.add("ExternalStorageFile.txt");
         }
+        externalFileList.addAll(Arrays.asList(getFilesDir().list()));
 
-        externalFileList = getExternalFilesDir(getString(R.string.external_storage_file_path)).list();
+        //externalFileList = getExternalFilesDir(getString(R.string.external_storage_file_path)).list();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, externalFileList);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        externalSpinner.setAdapter(adapter);
+        externalFileAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, externalFileList);
+        externalFileAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        externalSpinner.setAdapter(externalFileAdapter);
 
         externalSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -71,7 +80,17 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+
         //Toast.makeText(this, externalStorageFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
+        if (!isExternalStorageAvailable()) {
+            finish();
+            Toast.makeText(this, "External Storage Unavailable", Toast.LENGTH_SHORT).show();
+        } else if (isExternalStorageReadOnly()) {
+            finish();
+            Toast.makeText(this, "External Storage Read-Only", Toast.LENGTH_SHORT).show();
+        } else {
+            externalStorageFile = new File(getExternalFilesDir(getString(R.string.external_storage_file_path)), externalFileName);
+        }
     }
 
     private boolean isExternalStorageAvailable() {
@@ -90,8 +109,30 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
         return false;
     }
 
+    @SuppressLint("InflateParams")
     public void onExternalStorageClick(View view) {
         switch (view.getId()) {
+            case R.id.imagebutton_external_add:
+                newFileLayoutInflater = LayoutInflater.from(getBaseContext());
+                newFileView = newFileLayoutInflater.inflate(R.layout.dialog_add_new_file, null);
+                newFileName = newFileView.findViewById(R.id.edittext_dialog_new_file);
+                newFileDialogBuilder = new AlertDialog.Builder(this)
+                        .setTitle("New File")
+                        .setView(newFileView)
+                        .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                externalFileList.add(newFileName.getText().toString());
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+                newFileDialogBuilder.show();
+
             case R.id.btn_external_write:
                 try {
                     FileOutputStream fileOutputStream = new FileOutputStream(externalStorageFile);

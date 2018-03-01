@@ -53,6 +53,9 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
         readInternal = findViewById(R.id.textview_internal_read);
 
         internalFileList = new ArrayList<>();
+        if (internalFileList.isEmpty()){
+            internalFileList.add("InternalStorageFile.txt");
+        }
         internalFileList.addAll(Arrays.asList(getFilesDir().list()));
         internalFileList.remove("instant-run");//To remove extra file
         internalFileAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, internalFileList);
