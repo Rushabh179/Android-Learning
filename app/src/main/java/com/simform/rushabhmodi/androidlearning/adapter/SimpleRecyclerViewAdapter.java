@@ -1,6 +1,5 @@
 package com.simform.rushabhmodi.androidlearning.adapter;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,13 +47,11 @@ public class SimpleRecyclerViewAdapter extends RecyclerView.Adapter<SimpleRecycl
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView simpleRecyclerText;
-        private CardView simpleRecyclerCard;
 
         public ViewHolder(final View itemView) {
             super(itemView);
             simpleRecyclerText = itemView.findViewById(R.id.textview_simple_recycler);
-            simpleRecyclerCard = itemView.findViewById(R.id.cardview_simple_recycler);
-            simpleRecyclerCard.setOnClickListener(new View.OnClickListener() {
+            simpleRecyclerText.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (onRecyclerItemClickListener != null) {
