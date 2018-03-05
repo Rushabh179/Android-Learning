@@ -14,7 +14,7 @@ import com.simform.rushabhmodi.androidlearning.exampleactivities.PermissionExamp
 import com.simform.rushabhmodi.androidlearning.exampleactivities.TextInputExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.WebViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.WidgetsExampleActivity;
-import com.simform.rushabhmodi.androidlearning.other.ExamplesDataFactory;
+import com.simform.rushabhmodi.androidlearning.model.ExamplesDataFactory;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.ScrollViewsExampleActivity;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;

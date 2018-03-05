@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.other;
+package com.simform.rushabhmodi.androidlearning.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

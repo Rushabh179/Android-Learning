@@ -16,7 +16,7 @@ import com.simform.rushabhmodi.androidlearning.exampleactivities.RoomLibraryExam
 import com.simform.rushabhmodi.androidlearning.exampleactivities.SearchExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.SharedPreferencesExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.SqliteDatabaseExampleActivity;
-import com.simform.rushabhmodi.androidlearning.other.ExamplesDataFactory;
+import com.simform.rushabhmodi.androidlearning.model.ExamplesDataFactory;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 
 /**

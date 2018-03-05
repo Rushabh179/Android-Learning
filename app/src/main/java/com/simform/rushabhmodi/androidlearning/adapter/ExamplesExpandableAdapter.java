@@ -5,8 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.other.ExamplesChild;
-import com.simform.rushabhmodi.androidlearning.other.ExamplesParent;
+import com.simform.rushabhmodi.androidlearning.model.ExamplesChild;
+import com.simform.rushabhmodi.androidlearning.model.ExamplesParent;
 import com.simform.rushabhmodi.androidlearning.viewholder.ExamplesChildViewHolder;
 import com.simform.rushabhmodi.androidlearning.viewholder.ExamplesParentViewHolder;
 import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;

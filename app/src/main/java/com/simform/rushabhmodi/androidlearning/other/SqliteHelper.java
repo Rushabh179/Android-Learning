@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.simform.rushabhmodi.androidlearning.model.SqlitePojo;
+
 /**
  * Created by rushabh.modi on 27/02/18.
  */

@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.other;
+package com.simform.rushabhmodi.androidlearning.model;
 
 import java.util.Arrays;
 import java.util.List;

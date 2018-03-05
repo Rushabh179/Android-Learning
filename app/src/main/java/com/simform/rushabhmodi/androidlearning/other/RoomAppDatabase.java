@@ -7,6 +7,7 @@ import android.content.Context;
 
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.interfaces.RoomDao;
+import com.simform.rushabhmodi.androidlearning.model.RoomTableData;
 
 /**
  * Created by rushabh.modi on 01/03/18.

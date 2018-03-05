@@ -17,7 +17,7 @@ import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.other.RoomAddActivity;
 import com.simform.rushabhmodi.androidlearning.other.RoomAppDatabase;
 import com.simform.rushabhmodi.androidlearning.adapter.RoomRecyclerAdapter;
-import com.simform.rushabhmodi.androidlearning.other.RoomTableData;
+import com.simform.rushabhmodi.androidlearning.model.RoomTableData;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

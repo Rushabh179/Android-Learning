@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.adapter.ExamplesExpandableAdapter;
 
-import static com.simform.rushabhmodi.androidlearning.other.ExamplesDataFactory.makeParents;
+import static com.simform.rushabhmodi.androidlearning.model.ExamplesDataFactory.makeParents;
 
 /**
  * Created by rushabh.modi on 31/01/18.

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
-import com.simform.rushabhmodi.androidlearning.other.RoomTableData;
+import com.simform.rushabhmodi.androidlearning.model.RoomTableData;
 
 import java.util.List;
 

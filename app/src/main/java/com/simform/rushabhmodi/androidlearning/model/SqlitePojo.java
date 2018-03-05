@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.other;
+package com.simform.rushabhmodi.androidlearning.model;
 
 /**
  * Created by rushabh.modi on 27/02/18.

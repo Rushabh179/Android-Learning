@@ -1,4 +1,4 @@
-package com.simform.rushabhmodi.androidlearning.other;
+package com.simform.rushabhmodi.androidlearning.model;
 
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 

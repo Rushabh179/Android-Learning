@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.other.SqliteHelper;
-import com.simform.rushabhmodi.androidlearning.other.SqlitePojo;
+import com.simform.rushabhmodi.androidlearning.model.SqlitePojo;
 
 public class SqliteDatabaseExampleActivity extends AppCompatActivity {
 
