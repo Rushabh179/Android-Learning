@@ -9,7 +9,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Toast;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -22,7 +21,6 @@ import static android.Manifest.permission.CAMERA;
 public class PermissionExampleActivity extends AppCompatActivity {
 
     private static final int PERMISSION_REQUEST_CODE = 200;
-    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +28,12 @@ public class PermissionExampleActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_main);
         if (checkPermission()) {
             Toast.makeText(this, "Permission already granted.", Toast.LENGTH_LONG).show();
-        } else {
+        } else if (!checkPermission()) {
             Toast.makeText(this, "Please request permission.", Toast.LENGTH_LONG).show();
-        }
-        if (!checkPermission()) {
             requestPermission();
         } else {
             Toast.makeText(this, "Permission already granted.", Toast.LENGTH_LONG).show();
         }
-
     }
 
     private boolean checkPermission() {
@@ -66,26 +61,24 @@ public class PermissionExampleActivity extends AppCompatActivity {
                         Toast.makeText(this, "Permission Denied, You cannot access location data and camera.", Toast.LENGTH_LONG).show();
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                             if (shouldShowRequestPermissionRationale(ACCESS_FINE_LOCATION)) {
-                                showMessageOKCancel(
-                                        new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                                    requestPermissions(new String[]{ACCESS_FINE_LOCATION, CAMERA},
-                                                            PERMISSION_REQUEST_CODE);
-                                                }
-                                            }
-                                        });
+                                showMessageOKCancel(new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                            requestPermissions(new String[]{ACCESS_FINE_LOCATION, CAMERA},
+                                                    PERMISSION_REQUEST_CODE);
+                                        }
+                                    }
+                                });
                                 return;
                             }
                         }
-
                     }
                 }
                 break;
         }
     }
-    
+
     private void showMessageOKCancel(DialogInterface.OnClickListener okListener) {
         new AlertDialog.Builder(this)
                 .setMessage("You need to allow access to both the permissions")
