@@ -206,4 +206,13 @@
     <string name="room_extra">room_item</string>
     <string name="room_database_name">roomdatabasename.db</string>
 
+    <!-- Notification Example -->
+    <string name="notification_title_header">Notifications</string>
+    <string name="notification_text_simple">Simple notification:</string>
+    <string name="notification_btn_simple">Pop a default notification</string>
+    <string name="notification_text_action">Action notification:</string>
+    <string name="notification_btn_action">Notification with reply</string>
+    <string name="notification_text_push">Push Notification:</string>
+    <string name="notification_btn_push">Open firebase for push notification</string>
+
 </resources>

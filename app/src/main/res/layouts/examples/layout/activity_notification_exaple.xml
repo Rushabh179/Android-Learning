@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.simform.rushabhmodi.androidlearning.exampleactivities.NotificationExapleActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textview_notification_title_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/notification_title_header"
+            android:textColor="@color/title_examples_header"
+            android:textSize="@dimen/_33sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_notification_simple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/notification_text_simple"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_notification_simple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_notification_title_header"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <Button
+            android:id="@+id/btn_notification_simple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:background="@color/intent_btn_explicit"
+            android:text="@string/notification_btn_simple"
+            android:onClick="onNotificationClick"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_notification_action"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_notification_simple" />
+
+        <TextView
+            android:id="@+id/textview_notification_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/notification_text_action"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_notification_action"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_notification_simple" />
+
+        <Button
+            android:id="@+id/btn_notification_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/intent_btn_implicit"
+            android:onClick="onNotificationClick"
+            android:text="@string/notification_btn_action"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_notification_push"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_notification_action" />
+
+        <TextView
+            android:id="@+id/textview_notification_push"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/notification_text_push"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_notification_push"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_notification_action" />
+
+        <Button
+            android:id="@+id/btn_notification_push"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/intent_btn_explicit_data"
+            android:onClick="onNotificationClick"
+            android:text="@string/notification_btn_push"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_notification_push" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
