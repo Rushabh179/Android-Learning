@@ -13,7 +13,7 @@ import com.simform.rushabhmodi.androidlearning.model.RoomTableData;
  * Created by rushabh.modi on 01/03/18.
  */
 
-@Database(entities = {RoomTableData.class}, version = 1)
+@Database(entities = {RoomTableData.class}, version = 1, exportSchema = false)
 public abstract class RoomAppDatabase extends RoomDatabase {
 
     private static RoomAppDatabase roomAppDatabaseInstance;

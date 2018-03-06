@@ -64,6 +64,7 @@ public class NotificationExapleActivity extends AppCompatActivity {
                         .setTicker("Default notification ticker")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                         .setWhen(System.currentTimeMillis())
+                        .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL)
                         .setContentTitle("Title of the default notification")
                         .setContentText("A simple text body of the default notification")
                         .setStyle(new NotificationCompat.BigTextStyle().bigText("A large text to show with notification as an example to understand the use of showing large text in the notification"))
