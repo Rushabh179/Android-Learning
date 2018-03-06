@@ -211,8 +211,13 @@
     <string name="notification_text_simple">Simple notification:</string>
     <string name="notification_btn_simple">Pop a default notification</string>
     <string name="notification_text_action">Action notification:</string>
-    <string name="notification_btn_action">Notification with reply</string>
+    <string name="notification_btn_action">Notification with actions</string>
     <string name="notification_text_push">Push Notification:</string>
     <string name="notification_btn_push">Open firebase for push notification</string>
+    <string name="notification_channel_id">com.simform.rushabhmodi.androidlearning.exampleactivities</string>
+    <string name="notification_text_key_repy">text_key_reply</string>
+    <string name="notification_firebase_uri">https://console.firebase.google.com/project/android-learning-542e7/notification/compose</string>
+    <string name="notification_text_progress">Progress Notification:</string>
+    <string name="notification_btn_progress">Show Download</string>
 
 </resources>

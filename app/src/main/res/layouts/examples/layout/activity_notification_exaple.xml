@@ -42,8 +42,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
             android:background="@color/intent_btn_explicit"
-            android:text="@string/notification_btn_simple"
             android:onClick="onNotificationClick"
+            android:text="@string/notification_btn_simple"
             android:textSize="@dimen/_11sdp"
             app:layout_constraintBottom_toTopOf="@+id/textview_notification_action"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,10 +69,34 @@
             android:onClick="onNotificationClick"
             android:text="@string/notification_btn_action"
             android:textSize="@dimen/_11sdp"
-            app:layout_constraintBottom_toTopOf="@+id/textview_notification_push"
+            app:layout_constraintBottom_toTopOf="@+id/textview_notification_progress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textview_notification_action" />
+
+        <TextView
+            android:id="@+id/textview_notification_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/notification_text_progress"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_notification_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_notification_action" />
+
+        <Button
+            android:id="@+id/btn_notification_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/intent_btn_implicit_data"
+            android:onClick="onNotificationClick"
+            android:text="@string/notification_btn_progress"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_notification_push"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_notification_progress" />
 
         <TextView
             android:id="@+id/textview_notification_push"
@@ -83,7 +107,7 @@
             app:layout_constraintBottom_toTopOf="@+id/btn_notification_push"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_notification_action" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_notification_progress" />
 
         <Button
             android:id="@+id/btn_notification_push"

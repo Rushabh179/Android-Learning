@@ -7,6 +7,7 @@ import android.support.v4.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.simform.rushabhmodi.androidlearning.R;
 
 /**
  * Created by rushabh.modi on 05/03/18.
@@ -35,8 +36,7 @@ public class PushNotificationExampleActivity extends FirebaseMessagingService {
 
         assert remoteMessage.getNotification() != null;
 
-        String ANDROID_CHANNEL_ID = "com.simform.rushabhmodi.androidlearning.exampleactivities";
-        pushNotificationBuilder = new NotificationCompat.Builder(this, ANDROID_CHANNEL_ID);
+        pushNotificationBuilder = new NotificationCompat.Builder(this, getString(R.string.notification_channel_id));
         pushNotificationBuilder.setAutoCancel(true)
                 .setSmallIcon(android.R.drawable.stat_notify_chat)
                 .setTicker("This is the ticker")
