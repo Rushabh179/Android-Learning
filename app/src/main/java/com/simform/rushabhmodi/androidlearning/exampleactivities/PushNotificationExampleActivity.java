@@ -4,6 +4,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -17,6 +18,7 @@ public class PushNotificationExampleActivity extends FirebaseMessagingService {
 
     //private static final String TAG = "FCM Service";
     private NotificationCompat.Builder pushNotificationBuilder;
+    private NotificationManagerCompat pushNotificationManager;
     private PendingIntent pushPendingIntent;
     private Intent intent;
     private int uniqueID = 99;
@@ -49,9 +51,8 @@ public class PushNotificationExampleActivity extends FirebaseMessagingService {
                 .setContentIntent(pushPendingIntent);
 
         //Issue notification
-        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        if (notificationManager != null) {
-            notificationManager.notify(uniqueID, pushNotificationBuilder.build());
-        }
+        pushNotificationManager = NotificationManagerCompat.from(this);
+        pushNotificationManager.notify(uniqueID, pushNotificationBuilder.build());
+
     }
 }

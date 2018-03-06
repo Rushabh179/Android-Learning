@@ -1,9 +1,6 @@
 package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,8 +18,11 @@ import java.util.Random;
 
 public class NotificationExapleActivity extends AppCompatActivity {
 
-    private NotificationCompat.Builder defaultNotificationBuilder, actionNotificationBuilder;
-    private int uniqueID;
+    private NotificationCompat.Builder defaultNotificationBuilder, actionNotificationBuilder,
+            repliedNotificationBuilder, progressNotificationBuilder;
+    private NotificationManagerCompat defaultNotificationManager, repliedNotificationManager,
+            actionNotificationManager, progressNotificationManager;
+    private int uniqueID = 0;
 
     private Intent intent;
     private PendingIntent pendingIntent;
@@ -37,22 +37,20 @@ public class NotificationExapleActivity extends AppCompatActivity {
 
         intent = getIntent();
         pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
         processReply(intent);
     }
 
     private void processReply(Intent intent) {
         if (RemoteInput.getResultsFromIntent(intent) != null) {
             Toast.makeText(this, RemoteInput.getResultsFromIntent(intent).getString(getString(R.string.notification_text_key_repy)), Toast.LENGTH_LONG).show();
-            NotificationCompat.Builder repliedNotification = new NotificationCompat.Builder(this, getString(R.string.notification_channel_id))
+            repliedNotificationBuilder = new NotificationCompat.Builder(this, getString(R.string.notification_channel_id))
                     .setAutoCancel(true)
                     .setSmallIcon(android.R.drawable.stat_notify_chat)
                     .setContentText("Inline Reply received");
 
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            if (notificationManager != null) {
-                notificationManager.notify(100, repliedNotification.build());
-            }
+            repliedNotificationManager = NotificationManagerCompat.from(this);
+            repliedNotificationManager.notify(100, repliedNotificationBuilder.build());
+
         }
     }
 
@@ -72,43 +70,40 @@ public class NotificationExapleActivity extends AppCompatActivity {
                         .setContentIntent(pendingIntent);
                 //Issue notification
                 uniqueID = new Random().nextInt(5);
-                NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                if (notificationManager != null) {
-                    notificationManager.notify(uniqueID, defaultNotificationBuilder.build());
-                }
+                defaultNotificationManager = NotificationManagerCompat.from(this);
+                defaultNotificationManager.notify(uniqueID, defaultNotificationBuilder.build());
                 break;
 
             case R.id.btn_notification_action:
                 // Key for the string that's delivered in the action's intent.
                 actionNotificationBuilder = new NotificationCompat.Builder(this, getString(R.string.notification_channel_id));
-                String replyLabel = "Reply";
+                uniqueID = 100;
                 RemoteInput remoteInput = new RemoteInput.Builder(getString(R.string.notification_text_key_repy))
-                        .setLabel(replyLabel)
+                        .setLabel(getString(R.string.notification_reply_label))
                         .build();
                 // Build a PendingIntent for the reply action to trigger.
                 NotificationCompat.Action action =
                         new NotificationCompat.Action.Builder(android.R.drawable.stat_notify_more,
-                                replyLabel, pendingIntent)
+                                getString(R.string.notification_reply_label), pendingIntent)
                                 .addRemoteInput(remoteInput)
                                 .build();
                 // Build the notification and add the action.
-                Notification newMessageNotification = actionNotificationBuilder
+                actionNotificationBuilder
                         .setSmallIcon(android.R.drawable.stat_notify_chat)
                         .setContentTitle("Action Notification title")
                         .setContentText("Content to be showed with actions")
                         .addAction(android.R.drawable.arrow_up_float, "Open", pendingIntent)
                         .addAction(action)
                         .build();
-                uniqueID = 100;
                 // Issue the notification.
-                NotificationManagerCompat actionNotificationManagerCompat = NotificationManagerCompat.from(this);
-                actionNotificationManagerCompat.notify(uniqueID, newMessageNotification);
+                actionNotificationManager = NotificationManagerCompat.from(this);
+                actionNotificationManager.notify(uniqueID, actionNotificationBuilder.build());
                 break;
 
             case R.id.btn_notification_progress:
-                final NotificationManagerCompat progressNotificationManager = NotificationManagerCompat.from(this);
-                final NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, getString(R.string.notification_channel_id));
-                mBuilder.setContentTitle("Download")
+                progressNotificationManager = NotificationManagerCompat.from(this);
+                progressNotificationBuilder = new NotificationCompat.Builder(this, getString(R.string.notification_channel_id));
+                progressNotificationBuilder.setContentTitle("Download")
                         .setContentText("Download in progress")
                         .setSmallIcon(android.R.drawable.stat_sys_download)
                         .setPriority(NotificationCompat.PRIORITY_LOW);
@@ -118,24 +113,23 @@ public class NotificationExapleActivity extends AppCompatActivity {
                         // a potentially  time consuming task
                         int incr;
                         // Do the "lengthy" operation 20 times
-                        for (incr = 0; incr <= 100; incr+=10) {
+                        for (incr = 0; incr <= 100; incr += 10) {
                             // Sets the progress indicator to a max value, the current completion percentage, and "determinate" state
-                            mBuilder.setProgress(100, incr, false);
+                            progressNotificationBuilder.setProgress(100, incr, false);
                             // Displays the progress bar for the first time.
-                            progressNotificationManager.notify(uniqueID, mBuilder.build());
+                            progressNotificationManager.notify(uniqueID, progressNotificationBuilder.build());
                             // Sleeps the thread
                             try {
                                 Thread.sleep(1000);
                             } catch (InterruptedException e) {
-                               e.printStackTrace();
+                                e.printStackTrace();
                             }
                         }
                         // When the loop is finished, updates the notification
-                        mBuilder.setContentText("Download complete")
+                        progressNotificationBuilder.setContentText("Download complete")
                                 .setSmallIcon(android.R.drawable.stat_sys_download_done)
-                                // Removes the progress bar
-                                .setProgress(0,0,false);
-                        progressNotificationManager.notify(uniqueID, mBuilder.build());
+                                .setProgress(0, 0, false);
+                        progressNotificationManager.notify(uniqueID, progressNotificationBuilder.build());
                     }
                 }).start();
                 break;
