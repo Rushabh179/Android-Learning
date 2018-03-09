@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.simform.rushabhmodi.androidlearning.exampleactivities.ServiceExampleActivity">
+
+    <TextView
+        android:id="@+id/textview_service_title_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/service_title_header"
+        android:textColor="@color/title_examples_header"
+        android:textSize="@dimen/_33sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_service_started"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/service_started_text"
+        android:textSize="@dimen/_24sdp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_service_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_service_title_header" />
+
+    <Button
+        android:id="@+id/btn_service_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="onServiceClick"
+        android:text="@string/service_btn_start"
+        app:layout_constraintBottom_toTopOf="@+id/textview_service_bind"
+        app:layout_constraintEnd_toStartOf="@+id/btn_service_stop"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_service_started" />
+
+    <Button
+        android:id="@+id/btn_service_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="onServiceClick"
+        android:text="@string/service_btn_stop"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_service_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_service_start" />
+
+    <TextView
+        android:id="@+id/textview_service_bind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/service_bind_text"
+        android:textSize="@dimen/_24sdp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_service_bind"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_service_start" />
+
+    <Button
+        android:id="@+id/btn_service_bind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light"
+        android:onClick="onServiceClick"
+        android:text="@string/service_btn_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_service_unbind"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_service_bind" />
+
+    <Button
+        android:id="@+id/btn_service_unbind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_dark"
+        android:onClick="onServiceClick"
+        android:text="@string/service_btn_stop"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_service_bind"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_service_bind" />
+
+</android.support.constraint.ConstraintLayout>

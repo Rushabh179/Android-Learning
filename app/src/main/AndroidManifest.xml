@@ -28,6 +28,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -76,6 +77,10 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <service android:name=".service.StartedService" />
+        <service android:name=".service.BindedService" />
+
+        <activity android:name=".exampleactivities.ServiceExampleActivity" />
     </application>
 
 </manifest>

@@ -226,4 +226,11 @@
     <string name="notification_btn_progress">Show Download</string>
     <string name="notification_reply_label">Reply</string>
 
+    <!-- Service Example -->
+    <string name="service_title_header">Service</string>
+    <string name="service_btn_start">Start service</string>
+    <string name="service_btn_stop">Stop service</string>
+    <string name="service_started_text">Started Service:</string>
+    <string name="service_bind_text">Bind Service:</string>
+
 </resources>

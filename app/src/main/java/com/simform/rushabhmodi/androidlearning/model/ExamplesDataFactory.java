@@ -23,7 +23,7 @@ public class ExamplesDataFactory {
     public static final String parent12 = "Widgets";
     public static final String parent13 = "Permission";
     public static final String parent14 = "Notification";
-    public static final String parent15 = "Example 15";
+    public static final String parent15 = "Service";
 
     public static final String parent3child1 = "Simple RecyclerViews";
     public static final String parent3child2 = "Expandable RecyclerView";
