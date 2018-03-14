@@ -21,7 +21,7 @@ public class JobSchedulerService extends JobService {
 
     @Override
     public boolean onStartJob(JobParameters jobParameters) {
-        Toast.makeText(this, "Job started", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Job started", Toast.LENGTH_SHORT).show();
         isWorking = true;
         startWorkOnNewThread(jobParameters);
         return isWorking;
@@ -33,6 +33,7 @@ public class JobSchedulerService extends JobService {
                 doWork(jobParameters);
             }
         }).start();
+        Toast.makeText(this, "Check logs", Toast.LENGTH_LONG).show();
     }
 
     private void doWork(JobParameters jobParameters) {
@@ -48,7 +49,8 @@ public class JobSchedulerService extends JobService {
             }
         }
 
-        Toast.makeText(this, "Job finished", Toast.LENGTH_LONG).show();
+        Log.d("Job scheduler", "Job finished");
+        //Toast.makeText(this, "Job finished", Toast.LENGTH_LONG).show();
         isWorking = false;
         //boolean needsReschedule = false;
         jobFinished(jobParameters, false);

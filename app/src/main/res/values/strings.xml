@@ -236,5 +236,7 @@
     <string name="service_btn_unbind">Unbind</string>
     <string name="service_intent_text">Intent Service:</string>
     <string name="service_btn_intent">Start download</string>
+    <string name="service_job_text">Job Scheduler Service:</string>
+    <string name="service_btn_job">Start Job</string>
 
 </resources>

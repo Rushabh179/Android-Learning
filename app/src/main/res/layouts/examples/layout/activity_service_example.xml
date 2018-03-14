@@ -121,11 +121,36 @@
             android:padding="@dimen/_10sdp"
             android:text="@string/service_btn_intent"
             android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_service_job"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_service_intent" />
+
+        <TextView
+            android:id="@+id/textview_service_job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/service_job_text"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_service_job"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_service_intent" />
+
+        <Button
+            android:id="@+id/btn_service_job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_light"
+            android:onClick="onServiceClick"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/service_btn_job"
+            android:textSize="@dimen/_11sdp"
             android:layout_marginTop="@dimen/_15sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_service_intent" />
+            app:layout_constraintTop_toBottomOf="@+id/textview_service_job" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

@@ -1,20 +1,26 @@
 package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.service.BindedService;
 import com.simform.rushabhmodi.androidlearning.service.DownloadIntentService;
+import com.simform.rushabhmodi.androidlearning.service.JobSchedulerService;
 import com.simform.rushabhmodi.androidlearning.service.StartedService;
 import com.simform.rushabhmodi.androidlearning.service.BindedService.MyBinder;
 
@@ -64,6 +70,7 @@ public class ServiceExampleActivity extends AppCompatActivity {
         unregisterReceiver(broadcastReceiver);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void onServiceClick(View view) {
         switch (view.getId()) {
             case R.id.btn_service_start:
@@ -87,6 +94,23 @@ public class ServiceExampleActivity extends AppCompatActivity {
                 intentServiceIntent.putExtra(DownloadIntentService.FILENAME, "demofile.txt");
                 intentServiceIntent.putExtra(DownloadIntentService.URL, "http://www.sample-videos.com/text/Sample-text-file-10kb.txt");
                 startService(intentServiceIntent);
+                break;
+            case R.id.btn_service_job:
+                ComponentName componentName = new ComponentName(this, JobSchedulerService.class);
+                JobInfo jobInfo = new JobInfo.Builder(12, componentName)
+                        .setRequiresCharging(true)
+                        .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
+                        .build();
+
+                JobScheduler jobScheduler = (JobScheduler)getSystemService(JOB_SCHEDULER_SERVICE);
+                assert jobScheduler != null;
+                int resultCode = jobScheduler.schedule(jobInfo);
+                if (resultCode == JobScheduler.RESULT_SUCCESS) {
+                    Toast.makeText(this, "Job Scheduled", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Job not scheduled", Toast.LENGTH_LONG).show();
+                }
+                break;
         }
     }
 
