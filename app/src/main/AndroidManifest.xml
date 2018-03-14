@@ -81,6 +81,7 @@
         </service>
         <service android:name=".service.StartedService" />
         <service android:name=".service.BindedService" />
+        <service android:name=".service.DownloadIntentService" />
 
         <activity android:name=".exampleactivities.ServiceExampleActivity" />
     </application>
