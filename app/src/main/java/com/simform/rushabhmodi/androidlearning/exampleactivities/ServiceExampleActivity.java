@@ -48,6 +48,8 @@ public class ServiceExampleActivity extends AppCompatActivity {
                 }
                 stopService(bindedServiceIntent);
                 break;
+            case R.id.btn_service_intent:
+                
         }
     }
 
