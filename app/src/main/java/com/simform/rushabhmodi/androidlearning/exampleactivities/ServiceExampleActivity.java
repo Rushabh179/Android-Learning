@@ -18,7 +18,6 @@ public class ServiceExampleActivity extends AppCompatActivity {
 
     private Intent startedServiceIntent, bindedServiceIntent;
 
-    private BindedService bindedService;
     boolean serviceBound = false;
 
     @Override
@@ -49,7 +48,6 @@ public class ServiceExampleActivity extends AppCompatActivity {
                 }
                 stopService(bindedServiceIntent);
                 break;
-
         }
     }
 
@@ -63,7 +61,7 @@ public class ServiceExampleActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             MyBinder myBinder = (MyBinder) service;
-            bindedService = myBinder.getService();
+            myBinder.getService();
             serviceBound = true;
         }
     };
