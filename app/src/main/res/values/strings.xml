@@ -228,9 +228,11 @@
 
     <!-- Service Example -->
     <string name="service_title_header">Service</string>
-    <string name="service_btn_start">Start service</string>
-    <string name="service_btn_stop">Stop service</string>
+    <string name="service_btn_start">Start Audio</string>
+    <string name="service_btn_stop">Stop Audio</string>
     <string name="service_started_text">Started Service:</string>
     <string name="service_bind_text">Bind Service:</string>
+    <string name="service_btn_bind">Bind</string>
+    <string name="service_btn_unbind">Unbind</string>
 
 </resources>
