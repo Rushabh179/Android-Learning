@@ -50,7 +50,7 @@ public class DownloadIntentService extends IntentService {
             stream = url.openConnection().getInputStream();
             InputStreamReader reader = new InputStreamReader(stream);
             fos = new FileOutputStream(output.getPath());
-            int next = -1;
+            int next;
             while ((next = reader.read()) != -1) {
                 fos.write(next);
             }
