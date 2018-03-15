@@ -76,6 +76,9 @@ public class ExamplesParentViewHolder extends GroupViewHolder {
             case ExamplesDataFactory.parent15:
                 parentContext.startActivity(new Intent(parentContext, ServiceExampleActivity.class));
                 break;
+            case ExamplesDataFactory.parent16:
+                parentContext.startActivity(new Intent(parentContext, ServiceExampleActivity.class));
+                break;
             default:
                 super.onClick(v);
         }

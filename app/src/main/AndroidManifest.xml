@@ -73,8 +73,9 @@
         <activity android:name=".exampleactivities.PermissionExampleActivity" />
         <activity android:name=".exampleactivities.NotificationExapleActivity" />
 
-        <service android:name=".exampleactivities.PushNotificationExampleActivity"
-            tools:ignore="ExportedService"><!-- To remove lint -->
+        <service
+            android:name=".exampleactivities.PushNotificationExampleActivity"
+            tools:ignore="ExportedService"> <!-- To remove lint -->
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
@@ -82,10 +83,12 @@
         <service android:name=".service.StartedService" />
         <service android:name=".service.BindedService" />
         <service android:name=".service.DownloadIntentService" />
-        <service android:name=".service.JobSchedulerService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service
+            android:name=".service.JobSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity android:name=".exampleactivities.ServiceExampleActivity" />
+        <activity android:name=".exampleactivities.WebServiceExampleActivity"></activity>
     </application>
 
 </manifest>
