@@ -2,6 +2,9 @@ Firebase chat:
 (And to refer documentation)
 https://github.com/hieuapp/android-firebase-chat
 
+Firebase authentication:
+https://www.androidhive.info/2016/06/android-getting-started-firebase-simple-login-registration-auth/
+
 TMDB:
 https://www.themoviedb.org/documentation/api
 
@@ -20,3 +23,17 @@ https://www.codementor.io/flame3/send-push-notifications-to-android-with-firebas
 
 Binded Service:
 https://github.com/Truiton/BoundService
+
+Intent Service:
+https://github.com/androidsrc/SampleIntentService
+https://code.tutsplus.com/tutorials/android-fundamentals-intentservice-basics--mobile-6183
+http://androidsrc.net/android-intentservice-working-advantages-using/
+
+Foreground Service:
+http://www.truiton.com/2014/10/android-foreground-service-example/
+
+Job Scheduling:
+https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129
+
+Sample files:
+http://www.sample-videos.com/
