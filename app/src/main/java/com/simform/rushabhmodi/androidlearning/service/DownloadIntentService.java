@@ -34,11 +34,13 @@ public class DownloadIntentService extends IntentService {
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         Toast.makeText(this, "OnHandle", Toast.LENGTH_LONG).show();
+        assert intent != null;
         String urlPath = intent.getStringExtra(URL);
         String fileName = intent.getStringExtra(FILENAME);
         File output = new File(Environment.getExternalStorageDirectory(),
                 fileName);
         if (output.exists()) {
+            //noinspection ResultOfMethodCallIgnored
             output.delete();
         }
 

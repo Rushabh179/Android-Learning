@@ -13,21 +13,24 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.service.BindedService;
+import com.simform.rushabhmodi.androidlearning.service.BindedService.MyBinder;
 import com.simform.rushabhmodi.androidlearning.service.DownloadIntentService;
 import com.simform.rushabhmodi.androidlearning.service.JobSchedulerService;
 import com.simform.rushabhmodi.androidlearning.service.StartedService;
-import com.simform.rushabhmodi.androidlearning.service.BindedService.MyBinder;
 
 public class ServiceExampleActivity extends AppCompatActivity {
 
-    private Intent startedServiceIntent, bindedServiceIntent, intentServiceIntent;
     private boolean serviceBound = false;
+    private Intent startedServiceIntent, bindedServiceIntent, intentServiceIntent;
+    private ComponentName jobComponentName;
+    private JobInfo jobInfo;
+    private JobScheduler jobScheduler;
 
     private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
@@ -52,6 +55,8 @@ public class ServiceExampleActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_example);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         startedServiceIntent = new Intent(this, StartedService.class);
         bindedServiceIntent = new Intent(this, BindedService.class);
@@ -68,6 +73,12 @@ public class ServiceExampleActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         unregisterReceiver(broadcastReceiver);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return false;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -96,13 +107,13 @@ public class ServiceExampleActivity extends AppCompatActivity {
                 startService(intentServiceIntent);
                 break;
             case R.id.btn_service_job:
-                ComponentName componentName = new ComponentName(this, JobSchedulerService.class);
-                JobInfo jobInfo = new JobInfo.Builder(12, componentName)
+                jobComponentName = new ComponentName(this, JobSchedulerService.class);
+                jobInfo = new JobInfo.Builder(12, jobComponentName)
                         .setRequiresCharging(true)
                         .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
                         .build();
 
-                JobScheduler jobScheduler = (JobScheduler)getSystemService(JOB_SCHEDULER_SERVICE);
+                jobScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
                 assert jobScheduler != null;
                 int resultCode = jobScheduler.schedule(jobInfo);
                 if (resultCode == JobScheduler.RESULT_SUCCESS) {
