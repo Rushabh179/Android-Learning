@@ -23,6 +23,7 @@ public class HttpHandler {
             URL url = new URL(requestUrl);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod("GET");
+
             InputStream inputStream = new BufferedInputStream(httpURLConnection.getInputStream());
             response = convertStreamToString(inputStream);
         } catch (IOException e) {
@@ -40,7 +41,6 @@ public class HttpHandler {
             while ((line = bufferedReader.readLine()) != null){
                 stringBuilder.append(line).append("\n");
             }
-            return null;
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

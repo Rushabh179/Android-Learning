@@ -23,11 +23,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@+id/textview_web_service_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_web_service_name"
+        tools:text="@tools:sample/us_phones" />
+
+    <TextView
+        android:id="@+id/textview_web_service_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_web_service_name"
-        tools:text="@tools:sample/us_phones" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_web_service_phone"
+        tools:text="email@mail.com" />
 
 </android.support.constraint.ConstraintLayout>
