@@ -14,6 +14,7 @@ import com.simform.rushabhmodi.androidlearning.exampleactivities.NotificationExa
 import com.simform.rushabhmodi.androidlearning.exampleactivities.PermissionExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.ServiceExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.TextInputExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.WebServiceExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.WebViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.WidgetsExampleActivity;
 import com.simform.rushabhmodi.androidlearning.model.ExamplesDataFactory;
@@ -77,7 +78,7 @@ public class ExamplesParentViewHolder extends GroupViewHolder {
                 parentContext.startActivity(new Intent(parentContext, ServiceExampleActivity.class));
                 break;
             case ExamplesDataFactory.parent16:
-                parentContext.startActivity(new Intent(parentContext, ServiceExampleActivity.class));
+                parentContext.startActivity(new Intent(parentContext, WebServiceExampleActivity.class));
                 break;
             default:
                 super.onClick(v);
