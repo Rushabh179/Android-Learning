@@ -96,7 +96,7 @@
     <!-- Collapsing Toolbar Example -->
     <string name="collapsing_scrolling_title">Collapsing Toolbar</string>
     <string name="collapsing_uri">https://antonioleiva.com/collapsing-toolbar-layout/</string>
-    <string name="collapsing_snackbar">Get info about collapsing toolbar online</string>
+    <string name="collapsing_snackbar">Hold to get info about collapsing toolbar online</string>
 
     <!-- Search Example -->
     <string name="search_type">SEARCH_TYPE</string>

@@ -59,14 +59,14 @@ public class CollapsingToolbarScrollingExampleActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.collapsing_uri))));
+                Snackbar.make(view, R.string.collapsing_snackbar, Snackbar.LENGTH_LONG).show();
             }
         });
 
         fab.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                Snackbar.make(view, R.string.collapsing_snackbar, Snackbar.LENGTH_LONG).show();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.collapsing_uri))));
                 return true;
             }
         });

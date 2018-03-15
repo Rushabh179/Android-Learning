@@ -87,13 +87,16 @@ public class ServiceExampleActivity extends AppCompatActivity {
             case R.id.btn_service_start:
                 startService(startedServiceIntent);
                 break;
+
             case R.id.btn_service_stop:
                 stopService(startedServiceIntent);
-                break;
+                 break;
+
             case R.id.btn_service_bind:
                 startService(bindedServiceIntent);
                 bindService(bindedServiceIntent, serviceConnection, Context.BIND_AUTO_CREATE);
                 break;
+
             case R.id.btn_service_unbind:
                 if (serviceBound) {
                     unbindService(serviceConnection);
@@ -101,18 +104,19 @@ public class ServiceExampleActivity extends AppCompatActivity {
                 }
                 stopService(bindedServiceIntent);
                 break;
+
             case R.id.btn_service_intent:
                 intentServiceIntent.putExtra(DownloadIntentService.FILENAME, "demofile.txt");
                 intentServiceIntent.putExtra(DownloadIntentService.URL, "http://www.sample-videos.com/text/Sample-text-file-10kb.txt");
                 startService(intentServiceIntent);
                 break;
+
             case R.id.btn_service_job:
                 jobComponentName = new ComponentName(this, JobSchedulerService.class);
                 jobInfo = new JobInfo.Builder(12, jobComponentName)
                         .setRequiresCharging(true)
                         .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
                         .build();
-
                 jobScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
                 assert jobScheduler != null;
                 int resultCode = jobScheduler.schedule(jobInfo);
