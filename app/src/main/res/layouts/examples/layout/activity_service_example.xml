@@ -116,15 +116,27 @@
             android:id="@+id/btn_service_intent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:background="@android:color/holo_purple"
             android:onClick="onServiceClick"
             android:padding="@dimen/_10sdp"
             android:text="@string/service_btn_intent"
             android:textSize="@dimen/_11sdp"
-            app:layout_constraintBottom_toTopOf="@+id/textview_service_job"
+            app:layout_constraintBottom_toTopOf="@+id/imageview_service_download"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textview_service_intent" />
+
+        <ImageView
+            android:id="@+id/imageview_service_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/service_image_contentdesc"
+            app:layout_constraintBottom_toTopOf="@+id/textview_service_job"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_service_intent"
+            tools:src="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/textview_service_job"
@@ -135,18 +147,18 @@
             app:layout_constraintBottom_toTopOf="@+id/btn_service_job"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_service_intent" />
+            app:layout_constraintTop_toBottomOf="@+id/imageview_service_download" />
 
         <Button
             android:id="@+id/btn_service_job"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
             android:background="@android:color/holo_green_light"
             android:onClick="onServiceClick"
             android:padding="@dimen/_10sdp"
             android:text="@string/service_btn_job"
             android:textSize="@dimen/_11sdp"
-            android:layout_marginTop="@dimen/_15sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

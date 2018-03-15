@@ -238,5 +238,6 @@
     <string name="service_btn_intent">Start download</string>
     <string name="service_job_text">Job Scheduler Service:</string>
     <string name="service_btn_job">Start Job</string>
+    <string name="service_image_contentdesc">Downlaoded Image</string>
 
 </resources>

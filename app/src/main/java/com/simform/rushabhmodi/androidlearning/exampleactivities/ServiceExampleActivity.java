@@ -8,13 +8,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.RequiresApi;
+import android.os.ResultReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
@@ -31,8 +36,10 @@ public class ServiceExampleActivity extends AppCompatActivity {
     private ComponentName jobComponentName;
     private JobInfo jobInfo;
     private JobScheduler jobScheduler;
+    private ImageView serviceImageView;
+    private IntentResultReceiver intentResultReceiver;
 
-    private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+    /*private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             Bundle bundle = intent.getExtras();
@@ -49,7 +56,7 @@ public class ServiceExampleActivity extends AppCompatActivity {
                 }
             }
         }
-    };
+    };*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +64,9 @@ public class ServiceExampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_service_example);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        serviceImageView = findViewById(R.id.imageview_service_download);
+        intentResultReceiver = new IntentResultReceiver(new Handler());
 
         startedServiceIntent = new Intent(this, StartedService.class);
         bindedServiceIntent = new Intent(this, BindedService.class);
@@ -66,19 +76,50 @@ public class ServiceExampleActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        registerReceiver(broadcastReceiver, new IntentFilter(DownloadIntentService.NOTIFICATION));
+        //registerReceiver(broadcastReceiver, new IntentFilter(DownloadIntentService.NOTIFICATION));
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        unregisterReceiver(broadcastReceiver);
+        //unregisterReceiver(broadcastReceiver);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         finish();
         return false;
+    }
+
+    private class IntentResultReceiver extends ResultReceiver {
+
+        public IntentResultReceiver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        protected void onReceiveResult(int resultCode, Bundle resultData) {
+            switch (resultCode) {
+                case DownloadIntentService.DOWNLOAD_ERROR:
+                    Toast.makeText(getApplicationContext(), "error in download", Toast.LENGTH_SHORT).show();
+                    //pd.setVisibility(View.INVISIBLE);
+                    break;
+
+                case DownloadIntentService.DOWNLOAD_SUCCESS:
+                    String filePath = resultData.getString("filePath");
+                    Bitmap bmp = BitmapFactory.decodeFile(filePath);
+                    if (serviceImageView != null && bmp != null) {
+                        serviceImageView.setImageBitmap(bmp);
+                        Toast.makeText(getApplicationContext(), "image download via IntentService is done", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "error in decoding downloaded file", Toast.LENGTH_SHORT).show();
+                    }
+                    //pd.setIndeterminate(false);
+                    //pd.setVisibility(View.INVISIBLE);
+                    break;
+            }
+            super.onReceiveResult(resultCode, resultData);
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -90,7 +131,7 @@ public class ServiceExampleActivity extends AppCompatActivity {
 
             case R.id.btn_service_stop:
                 stopService(startedServiceIntent);
-                 break;
+                break;
 
             case R.id.btn_service_bind:
                 startService(bindedServiceIntent);
@@ -106,8 +147,9 @@ public class ServiceExampleActivity extends AppCompatActivity {
                 break;
 
             case R.id.btn_service_intent:
-                intentServiceIntent.putExtra(DownloadIntentService.FILENAME, "demofile.txt");
-                intentServiceIntent.putExtra(DownloadIntentService.URL, "http://www.sample-videos.com/text/Sample-text-file-10kb.txt");
+                intentServiceIntent.putExtra(DownloadIntentService.FILENAME, "sdcard/demofile.png");
+                intentServiceIntent.putExtra(DownloadIntentService.RECEIVER, intentResultReceiver);
+                intentServiceIntent.putExtra(DownloadIntentService.URL, "http://developer.android.com/assets/images/dac_logo.png");
                 startService(intentServiceIntent);
                 break;
 
