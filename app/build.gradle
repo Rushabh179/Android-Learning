@@ -69,6 +69,7 @@ dependencies {
     //Room Persistent library runtime
     annotationProcessor "android.arch.persistence.room:compiler:1.1.0-alpha3" //Room compiler
     implementation 'com.squareup.okhttp3:okhttp:3.10.0' //OkHttp
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0' //Retrofit
 }
 
 apply plugin: 'com.google.gms.google-services'
