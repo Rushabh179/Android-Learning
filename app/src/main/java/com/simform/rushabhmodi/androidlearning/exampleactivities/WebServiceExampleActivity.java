@@ -138,5 +138,4 @@ public class WebServiceExampleActivity extends AppCompatActivity {
             webServiceList.setAdapter(adapter);
         }
     }
-    
 }

@@ -16,6 +16,7 @@ import com.simform.rushabhmodi.androidlearning.exampleactivities.RoomLibraryExam
 import com.simform.rushabhmodi.androidlearning.exampleactivities.SearchExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.SharedPreferencesExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.SqliteDatabaseExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.WebServiceExampleActivity;
 import com.simform.rushabhmodi.androidlearning.model.ExamplesDataFactory;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 
@@ -68,6 +69,12 @@ public class ExamplesChildViewHolder extends ChildViewHolder {
                         break;
                     case ExamplesDataFactory.parent8child2:
                         childContext.startActivity(new Intent(childContext, SearchExampleActivity.class).putExtra(childContext.getString(R.string.search_type), childContext.getString(R.string.search_enhanced)));
+                        break;
+                    case ExamplesDataFactory.parent16child1:
+                        childContext.startActivity(new Intent(childContext, WebServiceExampleActivity.class));
+                        break;
+                    case ExamplesDataFactory.parent16child2:
+                        childContext.startActivity(new Intent(childContext, WebServiceExampleActivity.class));
                         break;
                 }
             }

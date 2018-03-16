@@ -25,6 +25,7 @@ public class ExamplesDataFactory {
     public static final String parent14 = "Notification";
     public static final String parent15 = "Service";
     public static final String parent16 = "Web Service";
+    public static final String parent17 = "Example 17";
 
     public static final String parent3child1 = "Simple RecyclerViews";
     public static final String parent3child2 = "Expandable RecyclerView";
@@ -41,12 +42,15 @@ public class ExamplesDataFactory {
     public static final String parent8child1 = "Simple SearchView";
     public static final String parent8child2 = "Enhanced SearchView";
 
+    public static final String parent16child1 = "JSON parsing";
+    public static final String parent16child2 = "parent16child2";
+
     public static List<ExamplesParent> makeParents() {
         return Arrays.asList(
                 makeParent1(), makeParent2(), makeParent3(), makeParent4(), makeParent5(),
                 makeParent6(), makeParent7(), makeParent8(), makeParent9(), makeParent10(),
                 makeParent11(), makeParent12(), makeParent13(), makeParent14(), makeParent15(),
-                makeParent16());
+                makeParent16(), makeParent17());
     }
 
     private static ExamplesParent makeParent1() {
@@ -137,6 +141,16 @@ public class ExamplesDataFactory {
     }
 
     private static ExamplesParent makeParent16() {
-        return new ExamplesParent(parent16, null);
+        return new ExamplesParent(parent16, makeParent16Children());
+    }
+
+    private static List<ExamplesChild> makeParent16Children() {
+        ExamplesChild child16_1 = new ExamplesChild(parent16child1);
+        ExamplesChild child16_2 = new ExamplesChild(parent16child2);
+        return Arrays.asList(child16_1, child16_2);
+    }
+
+    private static ExamplesParent makeParent17() {
+        return new ExamplesParent(parent17, null);
     }
 }
