@@ -88,7 +88,8 @@
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity android:name=".exampleactivities.ServiceExampleActivity" />
-        <activity android:name=".exampleactivities.WebServiceExampleActivity"></activity>
+        <activity android:name=".exampleactivities.WebServiceExampleActivity" />
+        <activity android:name=".exampleactivities.OkHttpExampleActivity"></activity>
     </application>
 
 </manifest>

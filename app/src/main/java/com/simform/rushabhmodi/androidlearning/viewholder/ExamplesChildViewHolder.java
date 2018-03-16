@@ -9,6 +9,7 @@ import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.DialogFragmentExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.ExpandableRecyclerViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.ExternalStorageExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.OkHttpExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.SimpleRecyclerViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.InternalStorageExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.ListFragmentExampleActivity;
@@ -74,7 +75,7 @@ public class ExamplesChildViewHolder extends ChildViewHolder {
                         childContext.startActivity(new Intent(childContext, WebServiceExampleActivity.class));
                         break;
                     case ExamplesDataFactory.parent16child2:
-                        childContext.startActivity(new Intent(childContext, WebServiceExampleActivity.class));
+                        childContext.startActivity(new Intent(childContext, OkHttpExampleActivity.class));
                         break;
                 }
             }

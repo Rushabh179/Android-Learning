@@ -43,7 +43,7 @@ public class ExamplesDataFactory {
     public static final String parent8child2 = "Enhanced SearchView";
 
     public static final String parent16child1 = "JSON parsing";
-    public static final String parent16child2 = "parent16child2";
+    public static final String parent16child2 = "OkHttp";
 
     public static List<ExamplesParent> makeParents() {
         return Arrays.asList(
