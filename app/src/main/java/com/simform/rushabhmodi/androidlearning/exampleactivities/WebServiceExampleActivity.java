@@ -131,8 +131,8 @@ public class WebServiceExampleActivity extends AppCompatActivity {
                 progressDialog.dismiss();
 
             ListAdapter adapter = new SimpleAdapter(
-                    WebServiceExampleActivity.this, contactList,
-                    R.layout.list_item_web_service, new String[]{"name", "mobile", "email"},
+                    WebServiceExampleActivity.this, contactList, R.layout.list_item_web_service,
+                    new String[]{"name", "mobile", "email"},
                     new int[]{R.id.textview_web_service_name, R.id.textview_web_service_phone, R.id.textview_web_service_email});
 
             webServiceList.setAdapter(adapter);
