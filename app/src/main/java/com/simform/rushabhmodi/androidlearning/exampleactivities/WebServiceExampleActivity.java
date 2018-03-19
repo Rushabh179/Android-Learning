@@ -93,7 +93,7 @@ public class WebServiceExampleActivity extends AppCompatActivity {
                         contact.put("id", id);
                         contact.put("name", name);
                         contact.put("email", email);
-                        contact.put("mobile", mobile);
+                        contact.put("mobile", mobile+", "+home);
 
                         // adding contact to contact list
                         contactList.add(contact);

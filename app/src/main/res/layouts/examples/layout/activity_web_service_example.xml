@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/swiperefresh_web_service"
+    android:id="@+id/listview_web_service"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.simform.rushabhmodi.androidlearning.exampleactivities.WebServiceExampleActivity">
-
-    <ListView
-        android:id="@+id/listview_web_service"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</android.support.v4.widget.SwipeRefreshLayout>
+    tools:context="com.simform.rushabhmodi.androidlearning.exampleactivities.WebServiceExampleActivity" />
