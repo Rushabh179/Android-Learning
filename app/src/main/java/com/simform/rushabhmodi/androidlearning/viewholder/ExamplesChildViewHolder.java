@@ -10,6 +10,7 @@ import com.simform.rushabhmodi.androidlearning.exampleactivities.DialogFragmentE
 import com.simform.rushabhmodi.androidlearning.exampleactivities.ExpandableRecyclerViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.ExternalStorageExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.OkHttpExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.RetrofitExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.SimpleRecyclerViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.InternalStorageExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.ListFragmentExampleActivity;
@@ -76,6 +77,9 @@ public class ExamplesChildViewHolder extends ChildViewHolder {
                         break;
                     case ExamplesDataFactory.parent16child2:
                         childContext.startActivity(new Intent(childContext, OkHttpExampleActivity.class));
+                        break;
+                    case ExamplesDataFactory.parent16child3:
+                        childContext.startActivity(new Intent(childContext, RetrofitExampleActivity.class));
                         break;
                 }
             }

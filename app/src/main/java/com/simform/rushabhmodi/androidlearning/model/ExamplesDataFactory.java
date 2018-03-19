@@ -44,6 +44,7 @@ public class ExamplesDataFactory {
 
     public static final String parent16child1 = "JSON parsing";
     public static final String parent16child2 = "OkHttp";
+    public static final String parent16child3 = "Retrofit";
 
     public static List<ExamplesParent> makeParents() {
         return Arrays.asList(
@@ -147,7 +148,8 @@ public class ExamplesDataFactory {
     private static List<ExamplesChild> makeParent16Children() {
         ExamplesChild child16_1 = new ExamplesChild(parent16child1);
         ExamplesChild child16_2 = new ExamplesChild(parent16child2);
-        return Arrays.asList(child16_1, child16_2);
+        ExamplesChild child16_3 = new ExamplesChild(parent16child3);
+        return Arrays.asList(child16_1, child16_2, child16_3);
     }
 
     private static ExamplesParent makeParent17() {
