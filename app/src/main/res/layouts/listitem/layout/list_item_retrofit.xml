@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintlayout_retrofit"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?android:attr/selectableItemBackground"
-    android:padding="@dimen/_15sdp"
+    android:padding="@dimen/_10sdp"
     tools:context=".exampleactivities.RetrofitExampleActivity">
+
+    <ImageView
+        android:id="@+id/imageview_movie_poster"
+        android:layout_width="74dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/recycler_image_contentdesc"
+        android:paddingEnd="@dimen/_5sdp"
+        android:paddingStart="@dimen/_5sdp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/textview_movie_description"
+        app:layout_constraintEnd_toStartOf="@+id/textview_movie_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textview_movie_title"
+        tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textview_movie_title"
@@ -20,7 +33,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textview_movie_subtitle"
         app:layout_constraintEnd_toStartOf="@+id/imageview_movie_star"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageview_movie_poster"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Title" />
 
