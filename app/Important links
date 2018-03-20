@@ -5,9 +5,6 @@ https://github.com/hieuapp/android-firebase-chat
 Firebase authentication:
 https://www.androidhive.info/2016/06/android-getting-started-firebase-simple-login-registration-auth/
 
-TMDB:
-https://www.themoviedb.org/documentation/api
-
 Expandable RecyclerView:
 https://github.com/thoughtbot/expandable-recycler-view/
 
@@ -35,9 +32,24 @@ http://www.truiton.com/2014/10/android-foreground-service-example/
 Job Scheduling:
 https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129
 
-Sample files:
+Sample files for testing:
 http://www.sample-videos.com/
+
+Simple JSON parsing:
+https://www.androidhive.info/2012/01/android-json-parsing-tutorial/
+https://www.tutorialspoint.com/android/android_json_parser.htm
+
+Random person API:
+https://randomuser.me/
+https://api.randomuser.me/
+
+OkHttp:
+https://www.journaldev.com/13629/okhttp-android-example-tutorial
 
 TMDB retrofit tutorial:
 https://www.androidhive.info/2016/05/android-working-with-retrofit-http-library/
+API guide:
+https://developers.themoviedb.org/3/getting-started/introduction
+https://www.themoviedb.org/documentation/api
+TMDB key:
 7e8f60e325cd06e164799af1e317d7a7
