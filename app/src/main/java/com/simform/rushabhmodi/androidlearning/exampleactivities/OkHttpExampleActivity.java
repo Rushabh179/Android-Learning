@@ -11,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.adapter.OkHttpRecyclerAdapter;
@@ -47,6 +48,8 @@ public class OkHttpExampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_okhttp_example);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Toast.makeText(this, "Swipe to refresh", Toast.LENGTH_LONG).show();
 
         infoList = new ArrayList<>();
         handler = new Handler(Looper.getMainLooper());
