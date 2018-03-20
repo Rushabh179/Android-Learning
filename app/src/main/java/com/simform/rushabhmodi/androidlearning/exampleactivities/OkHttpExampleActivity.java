@@ -11,7 +11,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.adapter.OkHttpRecyclerAdapter;
@@ -82,49 +81,48 @@ public class OkHttpExampleActivity extends AppCompatActivity {
                 okHttpSwipeRefresh.setRefreshing(false);
             }
         });
-
     }
 
     void okHttpRun() throws IOException {
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder().url(url).build();
-        for (int i = 1; i <= 5; i++) {
-            okHttpClient.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                    call.cancel();
-                }
 
-                @Override
-                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                    @SuppressWarnings("ConstantConditions") final String jsonResponse = response.body().string();
-                    //OkHttpExampleActivity.this.runOnUiThread(new Runnable() {
-                        //@Override
-                      //  public void run() {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                JSONObject json = new JSONObject(jsonResponse);
-                                info = new HashMap<>();
-                                String fullname = json.getJSONArray("results").getJSONObject(0).getJSONObject("name").getString("first");
-                                Log.i("Names:", fullname);
-                                info.put("name", fullname);
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                call.cancel();
+            }
 
-                                infoList.add(info);
-                                //txtString.setText(json.getJSONObject("data").getString("first_name")+ " "+json.getJSONObject("data").getString("last_name"));
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                @SuppressWarnings("ConstantConditions") final String jsonResponse = response.body().string();
+                //OkHttpExampleActivity.this.runOnUiThread(new Runnable() {
+                //@Override
+                //  public void run() {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            JSONObject json = new JSONObject(jsonResponse);
+                            info = new HashMap<>();
+                            String fullname = json.getJSONArray("results").getJSONObject(0).getJSONObject("name").getString("first");
+                            Log.i("Names:", fullname);
+                            info.put("name", fullname);
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+                            infoList.add(info);
+                            //txtString.setText(json.getJSONObject("data").getString("first_name")+ " "+json.getJSONObject("data").getString("last_name"));
 
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    });
-                    //}
-                   // });
-                }
-            });
-        }
+
+                    }
+                });
+                //}
+                // });
+            }
+        });
+
         okHttpRecyclerAdapter = new OkHttpRecyclerAdapter(infoList);
         okHttpRecyclerAdapter.notifyDataSetChanged();
         okHttpList.setAdapter(okHttpRecyclerAdapter);

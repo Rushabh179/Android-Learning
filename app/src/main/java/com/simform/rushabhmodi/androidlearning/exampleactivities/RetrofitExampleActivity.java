@@ -3,8 +3,10 @@ package com.simform.rushabhmodi.androidlearning.exampleactivities;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
@@ -28,6 +30,8 @@ public class RetrofitExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.base_layout_recyclerview);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (API_KEY.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please obtain your API KEY from themoviedb.org first!", Toast.LENGTH_LONG).show();
@@ -35,24 +39,33 @@ public class RetrofitExampleActivity extends AppCompatActivity {
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview_base);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
-        RetrofitApiInterface apiService =
-                RetrofitApiClient.getClient().create(RetrofitApiInterface.class);
+        RetrofitApiInterface apiService = RetrofitApiClient.getClient().create(RetrofitApiInterface.class);
 
         Call<RetrofitMoviesResponse> call = apiService.getTopRatedMovies(API_KEY);
         call.enqueue(new Callback<RetrofitMoviesResponse>() {
             @Override
             public void onResponse(@NonNull Call<RetrofitMoviesResponse> call, @NonNull Response<RetrofitMoviesResponse> response) {
                 int statusCode = response.code();
+                //noinspection ConstantConditions
                 List<RetrofitMovie> movies = response.body().getResults();
-                recyclerView.setAdapter(new RetrofitRecyclerAdapter(movies, R.layout.list_item_retrofit, getApplicationContext()));
+                movies.remove(0);
+                recyclerView.setAdapter(new RetrofitRecyclerAdapter(movies, R.layout.list_item_retrofit, RetrofitExampleActivity.this));
             }
 
             @Override
             public void onFailure(@NonNull Call<RetrofitMoviesResponse> call, @NonNull Throwable throwable) {
                 // Log error here since request failed
-               call.cancel();
+                Toast.makeText(getApplicationContext(), "Call failed!!", Toast.LENGTH_LONG).show();
+                call.cancel();
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return false;
     }
 }

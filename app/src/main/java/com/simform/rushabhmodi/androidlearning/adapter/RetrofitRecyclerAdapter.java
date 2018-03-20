@@ -1,7 +1,10 @@
 package com.simform.rushabhmodi.androidlearning.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.constraint.ConstraintLayout;
+import android.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,13 +20,13 @@ import java.util.List;
  * Created by rushabh.modi on 19/03/18.
  */
 
-public class RetrofitRecyclerAdapter  extends RecyclerView.Adapter<RetrofitRecyclerAdapter.MovieViewHolder> {
+public class RetrofitRecyclerAdapter extends RecyclerView.Adapter<RetrofitRecyclerAdapter.MovieViewHolder> {
 
     private List<RetrofitMovie> movies;
     private int rowLayout;
     private Context context;
 
-    public static class MovieViewHolder extends RecyclerView.ViewHolder {
+    public class MovieViewHolder extends RecyclerView.ViewHolder {
         ConstraintLayout moviesLayout;
         TextView movieTitle;
         TextView data;
@@ -37,6 +40,23 @@ public class RetrofitRecyclerAdapter  extends RecyclerView.Adapter<RetrofitRecyc
             data = v.findViewById(R.id.textview_movie_subtitle);
             movieDescription = v.findViewById(R.id.textview_movie_description);
             rating = v.findViewById(R.id.textview_movie_rating);
+
+            moviesLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    new AlertDialog.Builder(context)
+                            .setTitle(movieTitle.getText().toString())
+                            .setMessage(movieDescription.getText().toString())
+                            .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            })
+                            .create()
+                            .show();
+                }
+            });
         }
     }
 
@@ -47,12 +67,12 @@ public class RetrofitRecyclerAdapter  extends RecyclerView.Adapter<RetrofitRecyc
     }
 
     @Override
-    public RetrofitRecyclerAdapter.MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout, parent, false);
         return new MovieViewHolder(view);
     }
 
-
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(MovieViewHolder holder, final int position) {
         holder.movieTitle.setText(movies.get(position).getTitle());
