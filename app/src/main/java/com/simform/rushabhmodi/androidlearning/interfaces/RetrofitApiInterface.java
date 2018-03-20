@@ -16,6 +16,15 @@ public interface RetrofitApiInterface {
     @GET("movie/top_rated")
     Call<RetrofitMoviesResponse> getTopRatedMovies(@Query("api_key") String apiKey);
 
+    @GET("tv/top_rated")
+    Call<RetrofitMoviesResponse> getTopRatedTvShows(@Query("api_key") String apiKey);
+
+    @GET("movie/popular")
+    Call<RetrofitMoviesResponse> getPopularMovies(@Query("api_key") String apiKey);
+
+    @GET("tv/popular")
+    Call<RetrofitMoviesResponse> getPopularTvShows(@Query("api_key") String apiKey);
+
     @GET("movie/{id}")
     Call<RetrofitMoviesResponse> getMovieDetails(@Path("id") int id, @Query("api_key") String apiKey);
 }

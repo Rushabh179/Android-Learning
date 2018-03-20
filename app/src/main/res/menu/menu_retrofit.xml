@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_item_top_movies"
+        android:title="@string/retrofit_top_movies"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_top_tvshows"
+        android:title="@string/retrofit_top_tvshows"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_popular_movies"
+        android:title="@string/retrofit_popular_movies"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_popular_tvshows"
+        android:title="@string/retrofit_popular_tvshows"
+        app:showAsAction="never" />
+
+</menu>

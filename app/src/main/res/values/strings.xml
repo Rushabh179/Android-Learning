@@ -240,4 +240,10 @@
     <string name="service_btn_job">Start Job</string>
     <string name="service_image_contentdesc">Downlaoded Image</string>
 
+    <!-- Retrofit -->
+    <string name="retrofit_top_movies">Top Movies</string>
+    <string name="retrofit_top_tvshows">Top TV shows</string>
+    <string name="retrofit_popular_tvshows">Popular TV shows</string>
+    <string name="retrofit_popular_movies">Popular Movies</string>
+
 </resources>

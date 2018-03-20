@@ -29,6 +29,8 @@ public class RetrofitMovie {
     private String originalLanguage;
     @SerializedName("title")
     private String title;
+    @SerializedName("name")//For TV shows
+    private String name;//For TV shows
     @SerializedName("backdrop_path")
     private String backdropPath;
     @SerializedName("popularity")
@@ -52,6 +54,7 @@ public class RetrofitMovie {
         this.originalTitle = originalTitle;
         this.originalLanguage = originalLanguage;
         this.title = title;
+        this.name = name;//For TV shows
         this.backdropPath = backdropPath;
         this.popularity = popularity;
         this.voteCount = voteCount;
@@ -129,6 +132,14 @@ public class RetrofitMovie {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getName() {//For TV shows
+        return name;
+    }
+
+    public void setName(String name) {//For TV shows
+        this.name = name;
     }
 
     public String getBackdropPath() {

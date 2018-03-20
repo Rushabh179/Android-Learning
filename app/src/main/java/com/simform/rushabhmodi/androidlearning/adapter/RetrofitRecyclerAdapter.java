@@ -18,6 +18,7 @@ import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.model.RetrofitMovie;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by rushabh.modi on 19/03/18.
@@ -28,6 +29,7 @@ public class RetrofitRecyclerAdapter extends RecyclerView.Adapter<RetrofitRecycl
     private List<RetrofitMovie> movies;
     private int rowLayout;
     private Context context;
+    private String type;
 
     public class MovieViewHolder extends RecyclerView.ViewHolder {
         ConstraintLayout moviesLayout;
@@ -65,7 +67,8 @@ public class RetrofitRecyclerAdapter extends RecyclerView.Adapter<RetrofitRecycl
         }
     }
 
-    public RetrofitRecyclerAdapter(List<RetrofitMovie> movies, int rowLayout, Context context) {
+    public RetrofitRecyclerAdapter(String type, List<RetrofitMovie> movies, int rowLayout, Context context) {
+        this.type = type;
         this.movies = movies;
         this.rowLayout = rowLayout;
         this.context = context;
@@ -81,12 +84,15 @@ public class RetrofitRecyclerAdapter extends RecyclerView.Adapter<RetrofitRecycl
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, final int position) {
-        holder.movieTitle.setText(movies.get(position).getTitle());
+        if (Objects.equals(type, "movie"))
+            holder.movieTitle.setText(movies.get(position).getTitle());
+        else
+            holder.movieTitle.setText(movies.get(position).getName());
         holder.data.setText(movies.get(position).getReleaseDate());
         holder.movieDescription.setText(movies.get(position).getOverview());
         holder.rating.setText(movies.get(position).getVoteAverage().toString());
         Glide.with(context)
-                .load("https://image.tmdb.org/t/p/w600_and_h900_bestv2"+movies.get(position).getPosterPath())
+                .load("https://image.tmdb.org/t/p/w600_and_h900_bestv2" + movies.get(position).getPosterPath())
                 .into(holder.moviePoster);
     }
 
