@@ -2,9 +2,9 @@ package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -31,13 +31,17 @@ public class RetrofitExampleActivity extends AppCompatActivity {
     Call<RetrofitMoviesResponse> call;
     RetrofitApiInterface apiService;
     RecyclerView recyclerView;
+    ActionBar retrofitActionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.base_layout_recyclerview);
         if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            retrofitActionBar = getSupportActionBar();
+
+        retrofitActionBar.setDisplayHomeAsUpEnabled(true);
+        retrofitActionBar.setTitle(getString(R.string.retrofit_top_movies));
 
         if (API_KEY.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please obtain your API KEY from themoviedb.org first!", Toast.LENGTH_LONG).show();
@@ -84,18 +88,22 @@ public class RetrofitExampleActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_item_top_movies:
+                retrofitActionBar.setTitle(getString(R.string.retrofit_top_movies));
                 call = apiService.getTopRatedMovies(API_KEY);
                 makeApiCall("movie");
                 break;
             case R.id.menu_item_top_tvshows:
+                retrofitActionBar.setTitle(getString(R.string.retrofit_top_tvshows));
                 call = apiService.getTopRatedTvShows(API_KEY);
                 makeApiCall("tvshow");
                 break;
             case R.id.menu_item_popular_movies:
+                retrofitActionBar.setTitle(getString(R.string.retrofit_popular_movies));
                 call = apiService.getPopularMovies(API_KEY);
                 makeApiCall("movie");
                 break;
             case R.id.menu_item_popular_tvshows:
+                retrofitActionBar.setTitle(getString(R.string.retrofit_popular_tvshows));
                 call = apiService.getPopularTvShows(API_KEY);
                 makeApiCall("tvshow");
                 break;
