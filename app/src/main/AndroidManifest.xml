@@ -90,7 +90,7 @@
         <activity android:name=".exampleactivities.ServiceExampleActivity" />
         <activity android:name=".exampleactivities.WebServiceExampleActivity" />
         <activity android:name=".exampleactivities.OkHttpExampleActivity" />
-        <activity android:name=".exampleactivities.RetrofitExampleActivity"></activity>
+        <activity android:name=".exampleactivities.RetrofitExampleActivity" />
     </application>
 
 </manifest>
