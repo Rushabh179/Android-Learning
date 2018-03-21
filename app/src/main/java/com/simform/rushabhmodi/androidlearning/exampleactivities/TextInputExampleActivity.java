@@ -1,16 +1,14 @@
 package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
+import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.MenuItem;
 
 import com.simform.rushabhmodi.androidlearning.R;
 
-public class TextInputExampleActivity extends AppCompatActivity {
+public class TextInputExampleActivity extends BaseExampleActivity {
 
     private TextInputLayout defaultErrorLayout, customErrorLayout;
     private TextInputEditText defaultErrorText, customErrorText;
@@ -19,9 +17,6 @@ public class TextInputExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_input_example);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         defaultErrorLayout = findViewById(R.id.textInputLayout_error_default);
         customErrorLayout = findViewById(R.id.textInputLayout_error_custom);
@@ -66,9 +61,4 @@ public class TextInputExampleActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return false;
-    }
 }

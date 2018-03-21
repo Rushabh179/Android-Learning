@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.app.RemoteInput;
-import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -16,7 +14,7 @@ import com.simform.rushabhmodi.androidlearning.R;
 
 import java.util.Random;
 
-public class NotificationExapleActivity extends AppCompatActivity {
+public class NotificationExapleActivity extends BaseExampleActivity {
 
     private NotificationCompat.Builder defaultNotificationBuilder, actionNotificationBuilder,
             repliedNotificationBuilder, progressNotificationBuilder;
@@ -31,9 +29,6 @@ public class NotificationExapleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification_exaple);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         intent = getIntent();
         pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -139,12 +134,6 @@ public class NotificationExapleActivity extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_VIEW)
                         .setData(Uri.parse(getString(R.string.notification_firebase_uri))));
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return false;
     }
 
     @Override

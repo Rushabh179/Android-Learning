@@ -21,7 +21,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class WebServiceExampleActivity extends AppCompatActivity {
+public class WebServiceExampleActivity extends BaseExampleActivity {
 
     private ListView webServiceList;
     private ProgressDialog progressDialog;
@@ -32,18 +32,10 @@ public class WebServiceExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_service_example);
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         webServiceList = findViewById(R.id.listview_web_service);
         contactList = new ArrayList<>();
         new GetContacts().execute();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return false;
     }
 
     @SuppressLint("StaticFieldLeak")//TODO: review

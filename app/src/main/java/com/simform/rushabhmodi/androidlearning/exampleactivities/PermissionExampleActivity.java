@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -18,7 +17,7 @@ import static android.Manifest.permission.CAMERA;
  * Created by rushabh.modi on 01/03/18.
  */
 
-public class PermissionExampleActivity extends AppCompatActivity {
+public class PermissionExampleActivity extends BaseExampleActivity {
 
     private static final int PERMISSION_REQUEST_CODE = 200;
 

@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.activitymain.HomeScreenActivity;
 
-public class IntentExampleActivity extends AppCompatActivity {
+public class IntentExampleActivity extends BaseExampleActivity {
 
     private EditText nameEditText, searchEditText;
     private Button explicitIntentBtn, implicitIntentBtn, explicitDataIntentBtn, implicitDataIntentBtn;
@@ -23,9 +23,6 @@ public class IntentExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intent_example);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String message = getString(R.string.intent_toast_default);
         Intent intent = getIntent();
@@ -76,9 +73,4 @@ public class IntentExampleActivity extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return false;
-    }
 }

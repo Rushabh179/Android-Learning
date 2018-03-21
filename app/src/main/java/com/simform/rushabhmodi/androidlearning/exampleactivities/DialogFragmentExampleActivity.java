@@ -3,15 +3,13 @@ package com.simform.rushabhmodi.androidlearning.exampleactivities;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.fragment.BaseDialogFragment;
 
-public class DialogFragmentExampleActivity extends AppCompatActivity implements View.OnClickListener {
+public class DialogFragmentExampleActivity extends BaseExampleActivity implements View.OnClickListener {
 
     private Button alertDialogBtn, customDialogBtn, listDialogBtn;
     private Fragment dialogFragment;
@@ -23,9 +21,6 @@ public class DialogFragmentExampleActivity extends AppCompatActivity implements 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog_fragment_example);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         alertDialogBtn = findViewById(R.id.btn_alert_dialog);
         customDialogBtn = findViewById(R.id.btn_custom_dialog);
@@ -60,11 +55,5 @@ public class DialogFragmentExampleActivity extends AppCompatActivity implements 
 
         baseDialogFragment.setArguments(bundle);
         baseDialogFragment.show(dialogFragmentManager, getString(R.string.dialog_fragment_tag));
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return false;
     }
 }

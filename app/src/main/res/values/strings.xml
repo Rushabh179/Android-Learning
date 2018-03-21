@@ -249,4 +249,9 @@
     <string name="retrofit_popular_tvshows">Popular TV shows</string>
     <string name="retrofit_popular_movies">Popular Movies</string>
 
+    <!-- Preferences -->
+    <string name="preference_theme_key">preference_theme_key</string>
+    <string name="preference_theme_summary">Select a color of the toolbar</string>
+    <string name="preference_theme_title">Theme</string>
+
 </resources>

@@ -1,7 +1,6 @@
 package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,7 +17,7 @@ import com.simform.rushabhmodi.androidlearning.interfaces.OnRecyclerItemClickLis
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleRecyclerViewExampleActivity extends AppCompatActivity implements OnRecyclerItemClickListener {
+public class SimpleRecyclerViewExampleActivity extends BaseExampleActivity implements OnRecyclerItemClickListener {
 
     private RecyclerView simpleRecyclerView;
     private SimpleRecyclerViewAdapter simpleRecyclerViewAdapter;
@@ -29,8 +28,6 @@ public class SimpleRecyclerViewExampleActivity extends AppCompatActivity impleme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.base_layout_recyclerview);
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         simpleRecyclerView = findViewById(R.id.recyclerview_base);
         simpleRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));

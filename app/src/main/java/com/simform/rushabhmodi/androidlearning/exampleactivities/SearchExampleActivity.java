@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class SearchExampleActivity extends AppCompatActivity {
+public class SearchExampleActivity extends BaseExampleActivity {
 
     private SearchView searchSearchView;
     private ListView searchListView;
@@ -33,9 +33,6 @@ public class SearchExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_example);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         searchSearchView = findViewById(R.id.searchview_search);
         searchListView = findViewById(R.id.listview_search);
@@ -92,9 +89,4 @@ public class SearchExampleActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return false;
-    }
 }

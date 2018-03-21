@@ -52,6 +52,5 @@ public class PushNotificationExampleActivity extends FirebaseMessagingService {
         //Issue notification
         pushNotificationManager = NotificationManagerCompat.from(this);
         pushNotificationManager.notify(uniqueID, pushNotificationBuilder.build());
-
     }
 }

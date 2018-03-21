@@ -3,7 +3,6 @@ package com.simform.rushabhmodi.androidlearning.exampleactivities;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,7 +24,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RetrofitExampleActivity extends AppCompatActivity {
+public class RetrofitExampleActivity extends BaseExampleActivity {
 
     private final static String API_KEY = "7e8f60e325cd06e164799af1e317d7a7";
     Call<RetrofitMoviesResponse> call;
@@ -40,7 +39,6 @@ public class RetrofitExampleActivity extends AppCompatActivity {
         if (getSupportActionBar() != null)
             retrofitActionBar = getSupportActionBar();
 
-        retrofitActionBar.setDisplayHomeAsUpEnabled(true);
         retrofitActionBar.setTitle(getString(R.string.retrofit_top_movies));
 
         if (API_KEY.isEmpty()) {

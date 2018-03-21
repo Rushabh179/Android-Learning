@@ -3,7 +3,6 @@ package com.simform.rushabhmodi.androidlearning.exampleactivities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.other.SharedPreferencesEditActivity;
 
-public class SharedPreferencesExampleActivity extends AppCompatActivity {
+public class SharedPreferencesExampleActivity extends BaseExampleActivity {
 
     SharedPreferences sharedPreferences;
     private TextView firstNameTextView, lastNameTextView, ageTextView;
@@ -20,9 +19,6 @@ public class SharedPreferencesExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shared_preferences_example);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         firstNameTextView = findViewById(R.id.edittext_sharedpref_first_name);
         lastNameTextView = findViewById(R.id.edittext_sharedpref_last_name);
@@ -50,6 +46,6 @@ public class SharedPreferencesExampleActivity extends AppCompatActivity {
         } else {
             finish();
         }
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 }

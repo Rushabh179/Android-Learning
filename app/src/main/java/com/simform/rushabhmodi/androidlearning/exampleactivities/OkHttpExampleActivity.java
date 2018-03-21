@@ -29,7 +29,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class OkHttpExampleActivity extends AppCompatActivity {
+public class OkHttpExampleActivity extends BaseExampleActivity {
 
     private RecyclerView okHttpList;
     private OkHttpRecyclerAdapter okHttpRecyclerAdapter;
@@ -46,8 +46,6 @@ public class OkHttpExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_okhttp_example);
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Toast.makeText(this, "Swipe to refresh", Toast.LENGTH_LONG).show();
 
@@ -129,11 +127,5 @@ public class OkHttpExampleActivity extends AppCompatActivity {
         okHttpRecyclerAdapter = new OkHttpRecyclerAdapter(infoList);
         okHttpRecyclerAdapter.notifyDataSetChanged();
         okHttpList.setAdapter(okHttpRecyclerAdapter);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return false;
     }
 }

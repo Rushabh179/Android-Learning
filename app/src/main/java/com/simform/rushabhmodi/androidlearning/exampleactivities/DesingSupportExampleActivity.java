@@ -100,5 +100,4 @@ public class DesingSupportExampleActivity extends AppCompatActivity {
         }
         return false;
     }
-
 }

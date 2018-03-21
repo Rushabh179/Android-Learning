@@ -1,7 +1,6 @@
 package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +22,7 @@ import com.simform.rushabhmodi.androidlearning.R;
 
 import java.util.ArrayList;
 
-public class WidgetsExampleActivity extends AppCompatActivity {
+public class WidgetsExampleActivity extends BaseExampleActivity {
 
     private Button widgetBtn;
     private ToggleButton widgetToggleBtn;

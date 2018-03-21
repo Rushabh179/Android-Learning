@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class InternalStorageExampleActivity extends AppCompatActivity {
+public class InternalStorageExampleActivity extends BaseExampleActivity {
 
     private Spinner internalSpinner;
     private EditText writeInternal, newFileName;
@@ -44,9 +44,6 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internal_storage_example);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         internalSpinner = findViewById(R.id.spinner_internal_storage);
         writeInternal = findViewById(R.id.edittext_internal_write);
@@ -72,12 +69,6 @@ public class InternalStorageExampleActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return false;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)//Todo: review

@@ -1,13 +1,11 @@
 package com.simform.rushabhmodi.androidlearning.exampleactivities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
 
-public class ScrollViewsExampleActivity extends AppCompatActivity {
+public class ScrollViewsExampleActivity extends BaseExampleActivity {
 
     private TextView nestedScrollTextview, mainScrollTextview, horizontalscrollTextView;
     private String nestedScrollString = "A random NestedScrollView text.\n",
@@ -18,9 +16,6 @@ public class ScrollViewsExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scroll_views_example);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         nestedScrollTextview = findViewById(R.id.textview_scrollview_nested);
         mainScrollTextview = findViewById(R.id.textview_scrollview_main);
@@ -37,9 +32,4 @@ public class ScrollViewsExampleActivity extends AppCompatActivity {
         horizontalscrollTextView.setText(horizontalscrollString);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return false;
-    }
 }

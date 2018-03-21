@@ -3,11 +3,9 @@ package com.simform.rushabhmodi.androidlearning.exampleactivities;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ExternalStorageExampleActivity extends AppCompatActivity {
+public class ExternalStorageExampleActivity extends BaseExampleActivity {
 
     private Spinner externalSpinner;
     private EditText writeExternal, newFileName;
@@ -39,7 +37,7 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
     private String externalData;
     private String externalFileName;
     private List<String> externalFileList;
-    ArrayAdapter<String> externalFileAdapter;
+    private ArrayAdapter<String> externalFileAdapter;
     private LayoutInflater newFileLayoutInflater;
     private View newFileView;
     private AlertDialog.Builder newFileDialogBuilder;
@@ -48,9 +46,6 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_external_storage_example);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         externalSpinner = findViewById(R.id.spinner_external_file_name);
         writeExternal = findViewById(R.id.edittext_external_write);
@@ -101,12 +96,6 @@ public class ExternalStorageExampleActivity extends AppCompatActivity {
     private boolean isExternalStorageReadOnly() {
         String extStorageState = Environment.getExternalStorageState();
         return Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return false;
     }
 
     @SuppressLint("InflateParams")
