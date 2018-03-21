@@ -93,6 +93,7 @@
         <activity android:name=".exampleactivities.RetrofitExampleActivity" />
         <activity android:name=".activitymain.OptionsActivity" />
         <activity android:name=".exampleactivities.BaseExampleActivity" />
+        <activity android:name=".activitymain.AppCompatPreferenceActivity" />
     </application>
 
 </manifest>

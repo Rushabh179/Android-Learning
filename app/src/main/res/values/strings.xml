@@ -251,7 +251,7 @@
 
     <!-- Preferences -->
     <string name="preference_theme_key">preference_theme_key</string>
-    <string name="preference_theme_summary">Select a color of the toolbar</string>
+    <string name="preference_theme_summary">Select color of the toolbar</string>
     <string name="preference_theme_title">Theme</string>
 
 </resources>

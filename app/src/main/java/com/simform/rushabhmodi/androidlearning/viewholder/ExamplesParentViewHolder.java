@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
+import com.simform.rushabhmodi.androidlearning.activitymain.OptionsActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.GestureExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.IntentExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.CollapsingToolbarExampleActivity;
@@ -75,6 +76,9 @@ public class ExamplesParentViewHolder extends GroupViewHolder {
                 break;
             case ExamplesDataFactory.parent15:
                 parentContext.startActivity(new Intent(parentContext, ServiceExampleActivity.class));
+                break;
+            case ExamplesDataFactory.parent17:
+                parentContext.startActivity(new Intent(parentContext, OptionsActivity.class));
                 break;
             default:
                 super.onClick(v);
