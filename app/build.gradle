@@ -65,8 +65,7 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.5'//SDP for accurate dimensions in every device
     implementation 'com.android.support:palette-v7:27.1.0' //Palette
     //debugImplementation 'com.amitshekhar.android:debug-db:1.0.3' Databse debugging - todo: remove afterwards
-    implementation "android.arch.persistence.room:runtime:1.1.0-alpha3"
-    //Room Persistent library runtime
+    implementation "android.arch.persistence.room:runtime:1.1.0-alpha3" //Room library runtime
     annotationProcessor "android.arch.persistence.room:compiler:1.1.0-alpha3" //Room compiler
     implementation 'com.squareup.okhttp3:okhttp:3.10.0' //OkHttp
     implementation 'com.squareup.retrofit2:retrofit:2.4.0' //Retrofit
@@ -75,7 +74,5 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.6.1' //Glide- image loading
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 }
-
-
 
 apply plugin: 'com.google.gms.google-services'

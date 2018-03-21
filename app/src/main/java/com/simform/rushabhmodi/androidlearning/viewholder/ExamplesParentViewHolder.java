@@ -8,13 +8,12 @@ import android.widget.TextView;
 import com.simform.rushabhmodi.androidlearning.R;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.GestureExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.IntentExampleActivity;
-import com.simform.rushabhmodi.androidlearning.exampleactivities.CollapsingToolbarScrollingExampleActivity;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.CollapsingToolbarExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.DesingSupportExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.NotificationExapleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.PermissionExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.ServiceExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.TextInputExampleActivity;
-import com.simform.rushabhmodi.androidlearning.exampleactivities.WebServiceExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.WebViewExampleActivity;
 import com.simform.rushabhmodi.androidlearning.exampleactivities.WidgetsExampleActivity;
 import com.simform.rushabhmodi.androidlearning.model.ExamplesDataFactory;
@@ -51,7 +50,7 @@ public class ExamplesParentViewHolder extends GroupViewHolder {
                 parentContext.startActivity(new Intent(parentContext, IntentExampleActivity.class));
                 break;
             case ExamplesDataFactory.parent6:
-                parentContext.startActivity(new Intent(parentContext, CollapsingToolbarScrollingExampleActivity.class));
+                parentContext.startActivity(new Intent(parentContext, CollapsingToolbarExampleActivity.class));
                 break;
             case ExamplesDataFactory.parent7:
                 parentContext.startActivity(new Intent(parentContext, ScrollViewsExampleActivity.class));

@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import com.simform.rushabhmodi.androidlearning.R;
 
-public class CollapsingToolbarScrollingExampleActivity extends AppCompatActivity {
+public class CollapsingToolbarExampleActivity extends AppCompatActivity {
 
     private TextView collapsingContentTextView;
     private CollapsingToolbarLayout collapsingToolbarLayout;
@@ -28,7 +28,7 @@ public class CollapsingToolbarScrollingExampleActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collapsing_scrolling_example);
+        setContentView(R.layout.activity_collapsing_toolbar_example);
         Toolbar toolbar = findViewById(R.id.toolbar_collapsing);
         setSupportActionBar(toolbar);
 

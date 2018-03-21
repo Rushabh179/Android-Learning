@@ -54,6 +54,7 @@ public class MainScreenActivity extends AppCompatActivity {
                         startActivity(new Intent(MainScreenActivity.this, HomeScreenActivity.class));
                         break;
                     case 1:
+                        startActivity(new Intent(MainScreenActivity.this, OptionsActivity.class));
                         break;
                     case 2:
                         finish();

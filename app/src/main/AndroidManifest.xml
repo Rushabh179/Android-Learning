@@ -50,7 +50,7 @@
         <activity android:name=".exampleactivities.DialogFragmentExampleActivity" />
         <activity android:name=".exampleactivities.ListFragmentExampleActivity" />
         <activity
-            android:name=".exampleactivities.CollapsingToolbarScrollingExampleActivity"
+            android:name=".exampleactivities.CollapsingToolbarExampleActivity"
             android:label="@string/collapsing_scrolling_title"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".exampleactivities.ScrollViewsExampleActivity" />
@@ -91,6 +91,7 @@
         <activity android:name=".exampleactivities.WebServiceExampleActivity" />
         <activity android:name=".exampleactivities.OkHttpExampleActivity" />
         <activity android:name=".exampleactivities.RetrofitExampleActivity" />
+        <activity android:name=".activitymain.OptionsActivity" />
     </application>
 
 </manifest>

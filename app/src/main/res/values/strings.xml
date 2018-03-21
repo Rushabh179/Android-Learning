@@ -15,6 +15,9 @@
     <string name="home_examples">Examples</string>
     <string name="home_quiz">Quiz</string>
 
+    <!-- Options -->
+    <string name="options_change">Change</string>
+
     <!-- Shortcut -->
     <string name="compose_shortcut_short_label1">Short label</string>
     <string name="compose_shortcut_long_label1">Long label</string>
