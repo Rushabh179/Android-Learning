@@ -59,7 +59,6 @@ public class HomeNavigationActivity extends AppCompatActivity
         }
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
@@ -72,7 +71,7 @@ public class HomeNavigationActivity extends AppCompatActivity
         } else if (id == R.id.nav_item_3) {
             Toast.makeText(this, R.string.toast_not_ready, Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_sub_item_1) {
-
+            Toast.makeText(this, R.string.toast_not_ready, Toast.LENGTH_SHORT).show();
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
