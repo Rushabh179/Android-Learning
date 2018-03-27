@@ -1,6 +1,7 @@
 package com.simform.rushabhmodi.androidlearning.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,14 +33,17 @@ public class PlaceholderFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_design_support_example, container, false);
         TextView textView = rootView.findViewById(R.id.section_label);
-        String tabString = getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)) + "\n";
-        for (int i = 0; i <= 70; i++) {
-            tabString += getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)) + "\n";
+        String tabString;
+        if (getArguments()!=null) {
+            tabString = getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)) + "\n";
+            for (int i = 0; i <= 70; i++) {
+                tabString += getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)) + "\n";
+            }
+            textView.setText(tabString);//getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
         }
-        textView.setText(tabString);//getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
         return rootView;
     }
 }
