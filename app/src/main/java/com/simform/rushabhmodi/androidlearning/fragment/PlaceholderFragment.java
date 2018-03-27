@@ -37,7 +37,7 @@ public class PlaceholderFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_design_support_example, container, false);
         TextView textView = rootView.findViewById(R.id.section_label);
         String tabString;
-        if (getArguments()!=null) {
+        if (getArguments() != null) {
             tabString = getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)) + "\n";
             for (int i = 0; i <= 70; i++) {
                 tabString += getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)) + "\n";
