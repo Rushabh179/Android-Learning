@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  * Created by rushabh.modi on 01/03/18.
@@ -38,11 +39,12 @@ public class PermissionExampleActivity extends BaseExampleActivity {
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_FINE_LOCATION);
         int result1 = ContextCompat.checkSelfPermission(getApplicationContext(), CAMERA);
-        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
+        int result2 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_CONTACTS);
+        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED && result2 == PackageManager.PERMISSION_GRANTED;
     }
 
     private void requestPermission() {
-        ActivityCompat.requestPermissions(this, new String[]{ACCESS_FINE_LOCATION, CAMERA}, PERMISSION_REQUEST_CODE);
+        ActivityCompat.requestPermissions(this, new String[]{ACCESS_FINE_LOCATION, CAMERA, READ_CONTACTS}, PERMISSION_REQUEST_CODE);
     }
 
     @Override
@@ -53,8 +55,9 @@ public class PermissionExampleActivity extends BaseExampleActivity {
 
                     boolean locationAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                     boolean cameraAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                    boolean contactAccepted = grantResults[2] == PackageManager.PERMISSION_GRANTED;
 
-                    if (locationAccepted && cameraAccepted)
+                    if (locationAccepted && cameraAccepted && contactAccepted)
                         Toast.makeText(this, "Permission Granted, Now you can access location data and camera.", Toast.LENGTH_LONG).show();
                     else {
                         Toast.makeText(this, "Permission Denied, You cannot access location data and camera.", Toast.LENGTH_LONG).show();
@@ -64,7 +67,7 @@ public class PermissionExampleActivity extends BaseExampleActivity {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                            requestPermissions(new String[]{ACCESS_FINE_LOCATION, CAMERA},
+                                            requestPermissions(new String[]{ACCESS_FINE_LOCATION, CAMERA, READ_CONTACTS},
                                                     PERMISSION_REQUEST_CODE);
                                         }
                                     }
