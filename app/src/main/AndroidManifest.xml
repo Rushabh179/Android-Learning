@@ -95,7 +95,7 @@
         <activity android:name=".activitymain.OptionsActivity" />
         <activity android:name=".exampleactivities.BaseExampleActivity" />
         <activity android:name=".activitymain.AppCompatPreferenceActivity" />
-        <activity android:name=".test.ContentProviderExampleActivity"></activity>
+        <activity android:name=".test.ContentProviderExampleActivity" />
     </application>
 
 </manifest>
