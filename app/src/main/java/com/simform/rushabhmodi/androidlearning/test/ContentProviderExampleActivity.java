@@ -75,8 +75,7 @@ public class ContentProviderExampleActivity extends BaseExampleActivity {
             do {
                 long contctId = contactsCursor.getLong(contactsCursor
                         .getColumnIndex("_ID")); // Get contact ID
-                Uri dataUri = ContactsContract.Data.CONTENT_URI; // URI to get
-                // data of contacts
+                Uri dataUri = ContactsContract.Data.CONTENT_URI; // URI to get data of contacts
                 Cursor dataCursor = getContentResolver().query(dataUri, null,
                         ContactsContract.Data.CONTACT_ID + " = " + contctId,
                         null, null);
