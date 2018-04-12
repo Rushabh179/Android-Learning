@@ -4,18 +4,18 @@ import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.simform.rushabhmodi.androidlearning.R;
+import com.simform.rushabhmodi.androidlearning.exampleactivities.BaseExampleActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContentProviderExampleActivity extends AppCompatActivity {
+public class ContentProviderExampleActivity extends BaseExampleActivity {
 
     private RecyclerView contactRecyclerView;
     private List<String> contactNameList;
@@ -76,8 +76,7 @@ public class ContentProviderExampleActivity extends AppCompatActivity {
                 long contctId = contactsCursor.getLong(contactsCursor
                         .getColumnIndex("_ID")); // Get contact ID
                 Uri dataUri = ContactsContract.Data.CONTENT_URI; // URI to get
-                // data of
-                // contacts
+                // data of contacts
                 Cursor dataCursor = getContentResolver().query(dataUri, null,
                         ContactsContract.Data.CONTACT_ID + " = " + contctId,
                         null, null);
